@@ -32,6 +32,7 @@ Partial Class Login
         Me.ContraseñaTexBox = New System.Windows.Forms.TextBox()
         Me.IngresarButton = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,6 +114,9 @@ Partial Class Login
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 8
         '
+        'Timer2
+        '
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -145,4 +149,5 @@ Partial Class Login
     Friend WithEvents ContraseñaTexBox As TextBox
     Friend WithEvents IngresarButton As Button
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Timer2 As Timer
 End Class

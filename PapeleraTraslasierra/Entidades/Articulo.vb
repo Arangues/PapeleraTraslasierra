@@ -106,22 +106,32 @@ Public Class Articulo
 
     Public Sub Validador()
 
-        '    If String.IsNullOrEmpty(Nombre) Then
-        '        Throw New Exception("El cliente debe tener un nombre y apellido")
-        '    End If
+        If String.IsNullOrEmpty(Nombre) Then
+            Throw New Exception("El articulo debe tener un nombre ")
+        End If
 
-        '    If DNI.Length > 8 Or DNI.Length < 7 Then
-        '        Throw New Exception("El número de documento no es valido")
-        '    End If
+        If String.IsNullOrEmpty(Categoria) Then
+            Throw New Exception("El articulo debe tener un nombre y apellido")
+        End If
 
-        '    If String.IsNullOrEmpty(NumeroTarjeta) Then
-        '        Throw New Exception("Ingrese direccion")
-        '    End If
-
-        '    If Clave.ToString().Length > 8 Then
-        '        Throw New Exception("Ingrese Localidad")
-        '    End If
-
+        If String.IsNullOrEmpty(PrecioUnitario) Then
+            Throw New Exception("El articulo debe tener un precio unitario")
+        End If
+        If String.IsNullOrEmpty(PrecioVenta) Then
+            Throw New Exception("El articulo debe tener un precio venta")
+        End If
+        If String.IsNullOrEmpty(Stock) Then
+            Throw New Exception("El articulo debe tener un stock")
+        End If
+        If String.IsNullOrEmpty(StockMin) Then
+            Throw New Exception("El articulo debe tener un stockMin")
+        End If
+        If String.IsNullOrEmpty(StockMax) Then
+            Throw New Exception("El articulo debe tener un stockMax")
+        End If
+        If String.IsNullOrEmpty(Descripcion) Then
+        End If
+        Throw New Exception("El articulo debe tener una descripcion")
     End Sub
 
 

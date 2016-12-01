@@ -2,21 +2,72 @@
 Imports Mappers
 Imports Reglas
 Imports Entidades
+Imports AForge.Video.DirectShow
+Imports BarcodeLib.BarcodeReader
+
+
 Public Class Login
 
-    Dim _usuario As String
+    Private _usuario As String
     Dim contador As Byte = 4
     Private Shared _cargarLista As Boolean = True
+    Private Dispositivos As FilterInfoCollection
+    Private FuenteDeVideo As VideoCaptureDevice
+
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Timer1.Enabled = True
+        IniciarVideo()
+        'Timer2.Enabled = True
         UsuarioTextBox.Hide()
         ContraseñaTexBox.Hide()
         PictureBox.Hide()
-
-
         IngresarButton.Hide()
 
+
+
+
     End Sub
+
+    Private Sub IniciarVideo()
+        'Dispositivos = New FilterInfoCollection(FilterCategory.VideoInputDevice)
+        'FuenteDeVideo = New VideoCaptureDevice(Dispositivos(0).MonikerString)
+        'Video.VideoSource = FuenteDeVideo
+        'Video.Start()
+        'Video.Show()
+    End Sub
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Timer2_Tick_1(sender As Object, e As EventArgs) Handles Timer2.Tick
+        'If Video.GetCurrentVideoFrame() IsNot Nothing Then
+        '    Dim img As New Bitmap(Video.GetCurrentVideoFrame())
+
+        '    Dim resultados As String() = BarcodeReader.read(img, BarcodeReader.QRCODE)
+
+        '    If resultados Is Nothing OrElse resultados.Count() = 0 Then
+        '        Return
+        '    End If
+        '    _usuario = resultados(0)
+        '    Timer1.[Stop]()
+        '    Video.SignalToStop()
+        '    Video.Hide()
+        ' End If
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If ProgressBar1.Value = 100 Then
@@ -60,16 +111,20 @@ Public Class Login
         End If
 
         If UsuarioRegla.ValidarUsuario(_usuario, ContraseñaTexBox.Text) Then
-                Me.Hide()
-                Dim menu = New frm_menu()
-                menu.UsuarioMenu = _usuario
-                menu.ShowDialog()
-            Else
-                MsgBox("El usuario o la contraseña son incorrectas")
-            End If
+            Me.Hide()
+            Dim menu = New frm_menu()
+            menu.UsuarioMenu = _usuario
+            menu.ShowDialog()
+        Else
+            MsgBox("El usuario o la contraseña son incorrectas")
+        End If
 
 
 
 
     End Sub
+
+
+
+
 End Class

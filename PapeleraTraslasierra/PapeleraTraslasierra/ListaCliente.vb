@@ -2,6 +2,7 @@
 Imports Entidades
 Public Class ListaCliente
     Public usuarioCliente_ As String
+    Dim CLiente As New Cliente
 
     Public Property UsuarioArticulo() As String
         Get
@@ -25,8 +26,10 @@ Public Class ListaCliente
         Dim frmcliente As New ABMCliente
         frmcliente.Cliente = New Cliente
         If frmcliente.ShowDialog() = DialogResult.OK Then
+            CLiente.Validador()
             Dim pregunta As DialogResult = MsgBox("¿ Desea agregar al cliente" & " " & frmcliente.Cliente.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar registro")
             If pregunta = DialogResult.Yes Then
+
                 ClienteMappers.InsertarCliente(frmcliente.Cliente)
                 ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
             End If
