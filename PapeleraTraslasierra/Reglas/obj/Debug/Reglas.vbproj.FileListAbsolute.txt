@@ -1,0 +1,45 @@
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbprojResolveAssemblyReference.cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.Resources.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbproj.GenerateResource.Cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Datos.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Datos.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\bin\Debug\Datos.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbprojResolveAssemblyReference.cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.Resources.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbproj.GenerateResource.Cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.pdb
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.dll
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.pdb
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Reglas.xml
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.dll
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.dll
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Datos.dll
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Entidades.xml
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.pdb
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Mappers.xml
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\Reglas\bin\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbprojResolveAssemblyReference.cache
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.Resources.resources
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.vbproj.GenerateResource.Cache
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.dll
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.xml
+C:\DotNet\PapeleraTraslasierra\Reglas\obj\Debug\Reglas.pdb

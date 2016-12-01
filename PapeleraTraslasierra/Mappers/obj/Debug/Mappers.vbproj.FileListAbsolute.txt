@@ -1,0 +1,45 @@
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbprojResolveAssemblyReference.cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.Resources.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbproj.GenerateResource.Cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Datos.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Datos.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Datos.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Datos.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Datos.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Datos.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbprojResolveAssemblyReference.cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.Resources.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbproj.GenerateResource.Cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.pdb
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.dll
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.pdb
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Mappers.xml
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Datos.dll
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.dll
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\Mappers\bin\Debug\Entidades.xml
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbprojResolveAssemblyReference.cache
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.Resources.resources
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.vbproj.GenerateResource.Cache
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.dll
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.xml
+C:\DotNet\PapeleraTraslasierra\Mappers\obj\Debug\Mappers.pdb

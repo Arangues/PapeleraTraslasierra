@@ -1,0 +1,24 @@
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.Resources.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.dll
+C:\DotNet\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.xml
+C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.Resources.resources
+C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
+C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.dll
+C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.xml
+C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.pdb

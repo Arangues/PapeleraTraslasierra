@@ -1,0 +1,88 @@
+c:\users\sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe.config
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbprojResolveAssemblyReference.cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Resources.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbproj.GenerateResource.Cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.exe
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frmInicio.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe.config
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbprojResolveAssemblyReference.cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMArticulo.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMCliente.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMProveedores.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frmFactura.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaArticulos.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaCliente.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaFactura.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaProveedor.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frm_menu.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Resources.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbproj.GenerateResource.Cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.exe
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListProveedor.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe.config
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.exe
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.pdb
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\PapeleraTraslasierra.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.dll
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.dll
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.dll
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.dll
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Entidades.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.pdb
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Mappers.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.pdb
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\bin\Debug\Reglas.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbprojResolveAssemblyReference.cache
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMArticulo.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMCliente.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMProveedores.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListProveedor.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frmFactura.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaArticulos.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaCliente.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaFactura.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Login.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.MDIMenu.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frm_menu.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Resources.resources
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.vbproj.GenerateResource.Cache
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.exe
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.xml
+C:\DotNet\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.pdb

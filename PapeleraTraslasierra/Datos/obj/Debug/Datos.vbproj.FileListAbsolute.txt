@@ -1,0 +1,25 @@
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\bin\Debug\Datos.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\bin\Debug\Datos.pdb
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\bin\Debug\Datos.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.dll
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.xml
+C:\Users\Sergio\documents\visual studio 2015\Projects\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\bin\Debug\Datos.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\bin\Debug\Datos.pdb
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\bin\Debug\Datos.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\obj\Debug\Datos.Resources.resources
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\obj\Debug\Datos.dll
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\obj\Debug\Datos.xml
+C:\Users\SGASGA\Desktop\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\Datos\bin\Debug\Datos.dll
+C:\DotNet\PapeleraTraslasierra\Datos\bin\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\Datos\bin\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.Resources.resources
+C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
+C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.dll
+C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
