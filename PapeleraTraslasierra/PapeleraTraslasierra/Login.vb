@@ -54,14 +54,21 @@ Public Class Login
     Private Sub IngresarButton_Click(sender As Object, e As EventArgs) Handles IngresarButton.Click
         Dim menustrip As New frm_menu
         _usuario = UsuarioTextBox.Text
-        If UsuarioRegla.ValidarUsuario(_usuario, ContraseñaTexBox.Text) Then
-            Me.Hide()
-            Dim menu = New frm_menu()
-            menu.UsuarioMenu = _usuario
-            menu.ShowDialog()
-        Else
-            MsgBox("El usuario o la contraseña son incorrectas")
+        If (_usuario = "" Or ContraseñaTexBox.Text = "") Then
+            MsgBox("Los campos deben contener datos")
+            Exit Sub
         End If
+
+        If UsuarioRegla.ValidarUsuario(_usuario, ContraseñaTexBox.Text) Then
+                Me.Hide()
+                Dim menu = New frm_menu()
+                menu.UsuarioMenu = _usuario
+                menu.ShowDialog()
+            Else
+                MsgBox("El usuario o la contraseña son incorrectas")
+            End If
+
+
 
 
     End Sub

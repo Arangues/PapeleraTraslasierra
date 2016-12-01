@@ -14,10 +14,10 @@
 
         UsuarioLabel.Text = usuarioMenu_
         MsgBox("Vienvenido " + usuarioMenu_)
-        If usuarioMenu_.Trim = tipo.Trim Then
-            My.Forms.frm_menu.UsuarioMenuStrinp.Enabled = False
+        '   If usuarioMenu_.Trim = tipo.Trim Then
+        'My.Forms.frm_menu.UsuarioMenuStrinp.Enabled = False
 
-        End If
+        'End If
     End Sub
 
     Private Sub ClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClienteToolStripMenuItem.Click

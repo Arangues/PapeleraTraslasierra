@@ -434,7 +434,7 @@ Partial Class frmFactura
         '
         'txt_nFactura
         '
-        Me.txt_nFactura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EncabezadoFacturaBindingSource, "NumeroFactura", True))
+        Me.txt_nFactura.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EncabezadoFacturaBindingSource, "IdFactura", True))
         Me.txt_nFactura.Location = New System.Drawing.Point(127, 51)
         Me.txt_nFactura.Name = "txt_nFactura"
         Me.txt_nFactura.Size = New System.Drawing.Size(100, 20)
@@ -489,6 +489,7 @@ Partial Class frmFactura
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txt_buscar_nombre)
         Me.Controls.Add(Me.dgv_facturas_prod)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmFactura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
