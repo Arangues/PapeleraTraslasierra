@@ -36,6 +36,8 @@ Partial Class ListaCliente
         Me.ButtonAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
         CType(Me.dgv_Cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,10 +48,10 @@ Partial Class ListaCliente
         Me.dgv_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Cliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn})
         Me.dgv_Cliente.DataSource = Me.ClienteBindingSource
-        Me.dgv_Cliente.Location = New System.Drawing.Point(27, 50)
+        Me.dgv_Cliente.Location = New System.Drawing.Point(27, 77)
         Me.dgv_Cliente.Name = "dgv_Cliente"
         Me.dgv_Cliente.ReadOnly = True
-        Me.dgv_Cliente.Size = New System.Drawing.Size(595, 349)
+        Me.dgv_Cliente.Size = New System.Drawing.Size(595, 322)
         Me.dgv_Cliente.TabIndex = 0
         '
         'NombreDataGridViewTextBoxColumn
@@ -140,6 +142,24 @@ Partial Class ListaCliente
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.SystemColors.Window
+        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label9.Location = New System.Drawing.Point(181, 54)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 15)
+        Me.Label9.TabIndex = 36
+        Me.Label9.Text = "Buscar por nombre"
+        '
+        'txt_buscar_nombre
+        '
+        Me.txt_buscar_nombre.Location = New System.Drawing.Point(285, 51)
+        Me.txt_buscar_nombre.Name = "txt_buscar_nombre"
+        Me.txt_buscar_nombre.Size = New System.Drawing.Size(150, 20)
+        Me.txt_buscar_nombre.TabIndex = 35
+        '
         'ListaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,6 +167,8 @@ Partial Class ListaCliente
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(648, 429)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txt_buscar_nombre)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_eliminar)
@@ -178,4 +200,6 @@ Partial Class ListaCliente
     Friend WithEvents TelefonoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txt_buscar_nombre As TextBox
 End Class

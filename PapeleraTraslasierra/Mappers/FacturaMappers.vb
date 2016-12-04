@@ -1,12 +1,13 @@
 ﻿Imports Entidades
 Imports Datos
 Imports System.Data.SqlClient
+Imports System.Windows.Forms
 
 Public Class FacturaMappers
 
     Public Shared Function ObtenerTodos() As List(Of Factura)
         Dim Conexion As ConexionDB
-        Dim NombreStoreProcedure As String = "ObtenerTodos"
+        Dim NombreStoreProcedure As String = "FacturaObtnerTodos"
 
 
         Dim datos As DataTable = Conexion.ObtenerDatos(NombreStoreProcedure)
@@ -37,6 +38,7 @@ Public Class FacturaMappers
         misParametros.Add(New SqlParameter("@idFactura", nuevaFactura.IdFactura))
         misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
         misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
+        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.Facturatotal))
 
 
 
@@ -72,6 +74,7 @@ Public Class FacturaMappers
         misParametros.Add(New SqlParameter("@idFactura", nuevaFactura.IdFactura))
         misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
         misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
+        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.Facturatotal))
 
 
 
@@ -86,7 +89,8 @@ Public Class FacturaMappers
         Dim miFactura As New Factura(CInt(row("IdFactura")))
         miFactura.IdFactura = CInt(row("idFactura"))
         miFactura.Tipo = row("Tipo").ToString()
-        'miFactura.Tipo = DateTime("Tipo").ToString()
+        miFactura.Facturatotal = Convert.ToDecimal(row("FacturaTotal"))
+        miFactura.Fecha = Convert.ToDateTime(row("Fecha"))
 
 
         Return miFactura
@@ -166,5 +170,73 @@ Public Class FacturaMappers
 
         Return ConvertirRowEnFactura(datos.Rows(0))
     End Function
+
+    Public Shared Function CargarComboClientes(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("ClienteCargarCombo", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "Nombre"
+                .ValueMember = "idCLiente"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
+
+
+    Public Shared Function TipoFacturaCargarCombo(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("TipoCargarCombo", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "Tipo"
+                .ValueMember = "idTipo"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
+
+    Public Function ActualizarDetalleActual(ByVal tabla As DataGridView, ByRef subtotal As Decimal, ByVal txtSubtotal As TextBox)
+        Try
+            Dim fila As Integer = 0
+            subtotal = 0
+            For Each row As DataGridViewRow In tabla.Rows
+                subtotal = subtotal + tabla.Rows(fila).Cells("precio").Value
+                fila += 1
+            Next
+            txtSubtotal.Text = subtotal
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+
+
 
 End Class

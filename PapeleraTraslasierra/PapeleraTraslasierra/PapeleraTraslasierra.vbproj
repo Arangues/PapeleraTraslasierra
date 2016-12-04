@@ -216,6 +216,7 @@
     <None Include="My Project\DataSources\Entidades.Cliente.datasource" />
     <None Include="My Project\DataSources\Entidades.Detalle_Factura.datasource" />
     <None Include="My Project\DataSources\Entidades.EncabezadoFactura.datasource" />
+    <None Include="My Project\DataSources\Entidades.Factura.datasource" />
     <None Include="My Project\DataSources\Entidades.Proveedor.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

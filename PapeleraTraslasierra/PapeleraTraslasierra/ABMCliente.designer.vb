@@ -176,9 +176,9 @@ Partial Class ABMCliente
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label7.Location = New System.Drawing.Point(124, 9)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(83, 25)
+        Me.Label7.Size = New System.Drawing.Size(73, 25)
         Me.Label7.TabIndex = 34
-        Me.Label7.Text = "Clientes"
+        Me.Label7.Text = "Cliente"
         '
         'ABMCliente
         '

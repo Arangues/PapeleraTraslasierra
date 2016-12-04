@@ -23,9 +23,8 @@ Partial Class frmFactura
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmFactura))
-        Me.DetalleFacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EncabezadoFacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TXT_BUSCAR_CODIGO = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -37,19 +36,8 @@ Partial Class frmFactura
         Me.txt_Pagar = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cmb_Cobrar = New System.Windows.Forms.Button()
-        Me.AgregarArticulosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.NombreDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dgv_facturas_prod = New System.Windows.Forms.DataGridView()
-        Me.IdArticuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -58,31 +46,34 @@ Partial Class frmFactura
         Me.cmb_Agregar = New System.Windows.Forms.Button()
         Me.txt_nombre_art = New System.Windows.Forms.TextBox()
         Me.txt_preciov_art = New System.Windows.Forms.TextBox()
-        Me.ComboBoxCliente = New System.Windows.Forms.ComboBox()
+        Me.ClienteComboBox = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.txt_fecha = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.FechaLabel = New System.Windows.Forms.Label()
         Me.txt_nFactura = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TipoFacturaComboBox = New System.Windows.Forms.ComboBox()
+        Me.DetalleFacturaDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DetalleFacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NombreDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EncabezadoFacturaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AgregarArticulosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdArticuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.dgv_facturas_prod, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DetalleFacturaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DetalleFacturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EncabezadoFacturaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AgregarArticulosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgv_facturas_prod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DetalleFacturaBindingSource
-        '
-        Me.DetalleFacturaBindingSource.DataSource = GetType(Entidades.FacturaDetalle)
-        '
-        'EncabezadoFacturaBindingSource
-        '
-        Me.EncabezadoFacturaBindingSource.DataSource = GetType(Entidades.Factura)
         '
         'Label10
         '
@@ -183,57 +174,6 @@ Partial Class frmFactura
         Me.cmb_Cobrar.Text = "Cobrar"
         Me.cmb_Cobrar.UseVisualStyleBackColor = True
         '
-        'AgregarArticulosBindingSource
-        '
-        Me.AgregarArticulosBindingSource.DataSource = GetType(Entidades.Articulo)
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
-        Me.GroupBox4.ForeColor = System.Drawing.Color.White
-        Me.GroupBox4.Location = New System.Drawing.Point(47, 145)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(519, 342)
-        Me.GroupBox4.TabIndex = 34
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Detalle factura"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn1, Me.PrecioDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.DetalleFacturaBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(510, 311)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'NombreDataGridViewTextBoxColumn1
-        '
-        Me.NombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn1.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn1.Name = "NombreDataGridViewTextBoxColumn1"
-        '
-        'PrecioDataGridViewTextBoxColumn
-        '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        '
-        'CantidadDataGridViewTextBoxColumn
-        '
-        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
-        '
-        'TotalDataGridViewTextBoxColumn
-        '
-        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
-        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
-        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(746, 448)
@@ -254,31 +194,6 @@ Partial Class frmFactura
         Me.dgv_facturas_prod.ReadOnly = True
         Me.dgv_facturas_prod.Size = New System.Drawing.Size(355, 242)
         Me.dgv_facturas_prod.TabIndex = 1
-        '
-        'IdArticuloDataGridViewTextBoxColumn
-        '
-        Me.IdArticuloDataGridViewTextBoxColumn.DataPropertyName = "idArticulo"
-        Me.IdArticuloDataGridViewTextBoxColumn.HeaderText = "idArticulo"
-        Me.IdArticuloDataGridViewTextBoxColumn.Name = "IdArticuloDataGridViewTextBoxColumn"
-        Me.IdArticuloDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrecioVentaDataGridViewTextBoxColumn
-        '
-        Me.PrecioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta"
-        Me.PrecioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta"
-        Me.PrecioVentaDataGridViewTextBoxColumn.Name = "PrecioVentaDataGridViewTextBoxColumn"
-        Me.PrecioVentaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ArticuloBindingSource
-        '
-        Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
         '
         'Label6
         '
@@ -364,13 +279,13 @@ Partial Class frmFactura
         Me.txt_preciov_art.Size = New System.Drawing.Size(160, 23)
         Me.txt_preciov_art.TabIndex = 44
         '
-        'ComboBoxCliente
+        'ClienteComboBox
         '
-        Me.ComboBoxCliente.FormattingEnabled = True
-        Me.ComboBoxCliente.Location = New System.Drawing.Point(127, 103)
-        Me.ComboBoxCliente.Name = "ComboBoxCliente"
-        Me.ComboBoxCliente.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBoxCliente.TabIndex = 52
+        Me.ClienteComboBox.FormattingEnabled = True
+        Me.ClienteComboBox.Location = New System.Drawing.Point(127, 103)
+        Me.ClienteComboBox.Name = "ClienteComboBox"
+        Me.ClienteComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.ClienteComboBox.TabIndex = 52
         '
         'Label2
         '
@@ -394,22 +309,6 @@ Partial Class frmFactura
         Me.Label1.TabIndex = 57
         Me.Label1.Text = "Tipo"
         '
-        'TextBox1
-        '
-        Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EncabezadoFacturaBindingSource, "Tipo", True))
-        Me.TextBox1.Location = New System.Drawing.Point(127, 77)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(38, 20)
-        Me.TextBox1.TabIndex = 58
-        '
-        'txt_fecha
-        '
-        Me.txt_fecha.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EncabezadoFacturaBindingSource, "Fecha", True))
-        Me.txt_fecha.Location = New System.Drawing.Point(127, 25)
-        Me.txt_fecha.Name = "txt_fecha"
-        Me.txt_fecha.Size = New System.Drawing.Size(100, 20)
-        Me.txt_fecha.TabIndex = 54
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -421,16 +320,16 @@ Partial Class frmFactura
         Me.Label8.TabIndex = 55
         Me.Label8.Text = "N° Factura"
         '
-        'Label9
+        'FechaLabel
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.White
-        Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(84, 28)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
-        Me.Label9.TabIndex = 53
-        Me.Label9.Text = "Fecha"
+        Me.FechaLabel.AutoSize = True
+        Me.FechaLabel.BackColor = System.Drawing.Color.Transparent
+        Me.FechaLabel.ForeColor = System.Drawing.Color.White
+        Me.FechaLabel.Location = New System.Drawing.Point(128, 24)
+        Me.FechaLabel.Name = "FechaLabel"
+        Me.FechaLabel.Size = New System.Drawing.Size(37, 13)
+        Me.FechaLabel.TabIndex = 53
+        Me.FechaLabel.Text = "Fecha"
         '
         'txt_nFactura
         '
@@ -450,6 +349,101 @@ Partial Class frmFactura
         Me.Button2.Text = "Cerrar"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.White
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(84, 24)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.TabIndex = 60
+        Me.Label3.Text = "Fecha"
+        '
+        'TipoFacturaComboBox
+        '
+        Me.TipoFacturaComboBox.FormattingEnabled = True
+        Me.TipoFacturaComboBox.Location = New System.Drawing.Point(127, 76)
+        Me.TipoFacturaComboBox.Name = "TipoFacturaComboBox"
+        Me.TipoFacturaComboBox.Size = New System.Drawing.Size(44, 21)
+        Me.TipoFacturaComboBox.TabIndex = 61
+        '
+        'DetalleFacturaDataGridView
+        '
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.DetalleFacturaDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DetalleFacturaDataGridView.AutoGenerateColumns = False
+        Me.DetalleFacturaDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder
+        Me.DetalleFacturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DetalleFacturaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn1, Me.PrecioDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.TotalDataGridViewTextBoxColumn})
+        Me.DetalleFacturaDataGridView.DataSource = Me.DetalleFacturaBindingSource
+        Me.DetalleFacturaDataGridView.Location = New System.Drawing.Point(48, 145)
+        Me.DetalleFacturaDataGridView.Name = "DetalleFacturaDataGridView"
+        Me.DetalleFacturaDataGridView.Size = New System.Drawing.Size(510, 311)
+        Me.DetalleFacturaDataGridView.TabIndex = 62
+        '
+        'DetalleFacturaBindingSource
+        '
+        Me.DetalleFacturaBindingSource.DataSource = GetType(Entidades.FacturaDetalle)
+        '
+        'NombreDataGridViewTextBoxColumn1
+        '
+        Me.NombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn1.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn1.Name = "NombreDataGridViewTextBoxColumn1"
+        '
+        'PrecioDataGridViewTextBoxColumn
+        '
+        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
+        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
+        '
+        'CantidadDataGridViewTextBoxColumn
+        '
+        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad"
+        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
+        '
+        'TotalDataGridViewTextBoxColumn
+        '
+        Me.TotalDataGridViewTextBoxColumn.DataPropertyName = "Total"
+        Me.TotalDataGridViewTextBoxColumn.HeaderText = "Total"
+        Me.TotalDataGridViewTextBoxColumn.Name = "TotalDataGridViewTextBoxColumn"
+        '
+        'EncabezadoFacturaBindingSource
+        '
+        Me.EncabezadoFacturaBindingSource.DataSource = GetType(Entidades.Factura)
+        '
+        'AgregarArticulosBindingSource
+        '
+        Me.AgregarArticulosBindingSource.DataSource = GetType(Entidades.Articulo)
+        '
+        'IdArticuloDataGridViewTextBoxColumn
+        '
+        Me.IdArticuloDataGridViewTextBoxColumn.DataPropertyName = "idArticulo"
+        Me.IdArticuloDataGridViewTextBoxColumn.HeaderText = "idArticulo"
+        Me.IdArticuloDataGridViewTextBoxColumn.Name = "IdArticuloDataGridViewTextBoxColumn"
+        Me.IdArticuloDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioVentaDataGridViewTextBoxColumn
+        '
+        Me.PrecioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta"
+        Me.PrecioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta"
+        Me.PrecioVentaDataGridViewTextBoxColumn.Name = "PrecioVentaDataGridViewTextBoxColumn"
+        Me.PrecioVentaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ArticuloBindingSource
+        '
+        Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -458,14 +452,15 @@ Partial Class frmFactura
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(951, 531)
+        Me.Controls.Add(Me.DetalleFacturaDataGridView)
+        Me.Controls.Add(Me.TipoFacturaComboBox)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.txt_fecha)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.FechaLabel)
         Me.Controls.Add(Me.txt_nFactura)
-        Me.Controls.Add(Me.ComboBoxCliente)
+        Me.Controls.Add(Me.ClienteComboBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -483,7 +478,6 @@ Partial Class frmFactura
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.txt_vuelto)
-        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.TXT_BUSCAR_CODIGO)
         Me.Controls.Add(Me.Label11)
@@ -494,12 +488,11 @@ Partial Class frmFactura
         Me.Name = "frmFactura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FACTURA"
+        CType(Me.dgv_facturas_prod, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DetalleFacturaDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DetalleFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EncabezadoFacturaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AgregarArticulosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgv_facturas_prod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -516,7 +509,6 @@ Partial Class frmFactura
     Friend WithEvents txt_Pagar As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents cmb_Cobrar As System.Windows.Forms.Button
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents factura As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents AgregarArticulosBindingSource As BindingSource
@@ -527,11 +519,6 @@ Partial Class frmFactura
     Friend WithEvents IdArticuloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioVentaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents NombreDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -540,13 +527,18 @@ Partial Class frmFactura
     Friend WithEvents cmb_Agregar As Button
     Friend WithEvents txt_nombre_art As TextBox
     Friend WithEvents txt_preciov_art As TextBox
-    Friend WithEvents ComboBoxCliente As ComboBox
+    Friend WithEvents ClienteComboBox As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents txt_fecha As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
+    Friend WithEvents FechaLabel As Label
     Friend WithEvents txt_nFactura As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TipoFacturaComboBox As ComboBox
+    Friend WithEvents DetalleFacturaDataGridView As DataGridView
+    Friend WithEvents NombreDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

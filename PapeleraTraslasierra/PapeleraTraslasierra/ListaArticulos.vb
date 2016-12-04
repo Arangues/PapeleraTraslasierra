@@ -1,5 +1,7 @@
 ﻿Imports Mappers
 Imports Entidades
+Imports System.Data.SqlClient
+Imports Datos
 
 Public Class ListaArticulos
     Public usuarioArticulo_ As String
@@ -32,8 +34,6 @@ Public Class ListaArticulos
 
     Private Sub ListaArticulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If usuarioArticulo_ = "Sergio" Then
-            modificarArticuloButton.Visible = False
-            agregarArticuloButton.Visible = False
             eliminarArticuloButton.Visible = False
         End If
         ArticuloBindingSource.DataSource = ArticuloMappers.ObtenerTodos
@@ -46,15 +46,15 @@ Public Class ListaArticulos
 
 
         Dim frmArticulo As New ABMArticulo
-            frmArticulo.Articulo = ArticuloBindingSource.Current
+        frmArticulo.Articulo = ArticuloBindingSource.Current
 
-            If frmArticulo.ShowDialog() = DialogResult.OK Then
-                Dim pregunta As DialogResult = MsgBox("¿ Desea Modificar al Articulo" & " " & frmArticulo.Articulo.Nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar registro")
-                If pregunta = DialogResult.Yes Then
-                    ArticuloMappers.ModificarArticulo(frmArticulo.Articulo)
-                End If
+        If frmArticulo.ShowDialog() = DialogResult.OK Then
+            Dim pregunta As DialogResult = MsgBox("¿ Desea Modificar al Articulo" & " " & frmArticulo.Articulo.Nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar registro")
+            If pregunta = DialogResult.Yes Then
+                ArticuloMappers.ModificarArticulo(frmArticulo.Articulo)
             End If
-            ArticuloBindingSource.DataSource = ArticuloMappers.ObtenerTodos
+        End If
+        ArticuloBindingSource.DataSource = ArticuloMappers.ObtenerTodos
 
 
 
@@ -73,5 +73,22 @@ Public Class ListaArticulos
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
+        Dim conexion As New ConexionDB
+        Dim buscar As New SqlDataAdapter("select * from Articulo where Nombre like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
+        Dim ds As New DataSet()
+        buscar.Fill(ds, "Articulo")
+        dgv_CLIENTE.DataSource = ds.Tables(0)
+
+    End Sub
+
+    Private Sub TXT_BUSCAR_CATEGORIA_TextChanged(sender As Object, e As EventArgs) Handles TXT_BUSCAR_CATEGORIA.TextChanged
+        Dim conexion As New ConexionDB
+        Dim buscar As New SqlDataAdapter("select * from Articulo where Categoria like '%" + TXT_BUSCAR_CATEGORIA.Text + "%'", conexion.Conexion)
+        Dim ds As New DataSet()
+        buscar.Fill(ds, "Articulo")
+        dgv_CLIENTE.DataSource = ds.Tables(0)
     End Sub
 End Class

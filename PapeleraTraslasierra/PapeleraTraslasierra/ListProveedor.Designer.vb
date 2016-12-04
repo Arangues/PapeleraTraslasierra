@@ -24,7 +24,7 @@ Partial Class ListProveedor
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListProveedor))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewProveedor = New System.Windows.Forms.DataGridView()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DireccionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,20 +37,22 @@ Partial Class ListProveedor
         Me.ButtonAgregar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
+        CType(Me.DataGridViewProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridViewProveedor
         '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ProveedorBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 41)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(652, 320)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridViewProveedor.AutoGenerateColumns = False
+        Me.DataGridViewProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewProveedor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
+        Me.DataGridViewProveedor.DataSource = Me.ProveedorBindingSource
+        Me.DataGridViewProveedor.Location = New System.Drawing.Point(28, 65)
+        Me.DataGridViewProveedor.Name = "DataGridViewProveedor"
+        Me.DataGridViewProveedor.Size = New System.Drawing.Size(652, 296)
+        Me.DataGridViewProveedor.TabIndex = 0
         '
         'NombreDataGridViewTextBoxColumn
         '
@@ -141,6 +143,24 @@ Partial Class ListProveedor
         Me.Button1.Text = "Cerrar"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.SystemColors.Window
+        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label9.Location = New System.Drawing.Point(219, 42)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 15)
+        Me.Label9.TabIndex = 38
+        Me.Label9.Text = "Buscar por nombre"
+        '
+        'txt_buscar_nombre
+        '
+        Me.txt_buscar_nombre.Location = New System.Drawing.Point(323, 39)
+        Me.txt_buscar_nombre.Name = "txt_buscar_nombre"
+        Me.txt_buscar_nombre.Size = New System.Drawing.Size(150, 20)
+        Me.txt_buscar_nombre.TabIndex = 37
+        '
         'ListProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -148,25 +168,27 @@ Partial Class ListProveedor
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(711, 390)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txt_buscar_nombre)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.btn_modificar)
         Me.Controls.Add(Me.ButtonAgregar)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridViewProveedor)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListProveedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Proveedores"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewProveedor As DataGridView
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents btn_eliminar As Button
     Friend WithEvents btn_modificar As Button
@@ -179,4 +201,6 @@ Partial Class ListProveedor
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txt_buscar_nombre As TextBox
 End Class

@@ -76,11 +76,7 @@
     End Sub
     Public Sub Validador()
 
-        If String.IsNullOrEmpty(IdCliente) Or String.IsNullOrEmpty(nombre) Or String.IsNullOrEmpty(direccion) Or String.IsNullOrEmpty(localidad) Or String.IsNullOrEmpty(Telefono) Or String.IsNullOrEmpty(Email) Then
-            Throw New Exception("El cliente no puede tener ningun campo vacio")
 
-            Exit Sub
-        End If
 
         If String.IsNullOrEmpty(IdCliente) Then
             Throw New Exception("El cliente debe tener un id")

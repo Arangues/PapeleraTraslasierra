@@ -7,6 +7,18 @@ Imports BarcodeLib.BarcodeReader
 
 
 Public Class Login
+    Public usuariotipo_ As String
+
+    Public Property usuarioTipo() As String
+        Get
+            Return usuariotipo_
+        End Get
+        Set(ByVal value As String)
+            usuariotipo_ = value
+        End Set
+    End Property
+
+
 
     Private _usuario As String
     Dim contador As Byte = 4
@@ -60,15 +72,6 @@ Public Class Login
 
 
 
-
-
-
-
-
-
-
-
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If ProgressBar1.Value = 100 Then
             ' Me.Opacity -= 0.07
@@ -111,16 +114,17 @@ Public Class Login
         End If
 
         If UsuarioRegla.ValidarUsuario(_usuario, ContraseñaTexBox.Text) Then
+            UsuarioTextBox.Text = ""
+            ContraseñaTexBox.Text = ""
             Me.Hide()
             Dim menu = New frm_menu()
             menu.UsuarioMenu = _usuario
             menu.ShowDialog()
+
         Else
             MsgBox("El usuario o la contraseña son incorrectas")
         End If
-
-
-
+        Me.Show()
 
     End Sub
 

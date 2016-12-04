@@ -10,8 +10,9 @@ Imports System.Threading.Tasks
 Public Class ConexionDB
 
     Private Shared strConexion As String = "Data Source=SGA\SQL2014; DataBase=Papelera; integrated security=sspi"
-
     Private Shared objConexion As New SqlConnection(strConexion)
+    Public Conexion As New SqlConnection(strConexion)
+
 
     Public Shared Sub AbrirConexion()
         Try

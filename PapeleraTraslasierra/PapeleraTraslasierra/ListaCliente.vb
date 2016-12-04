@@ -1,5 +1,8 @@
 ﻿Imports Mappers
 Imports Entidades
+Imports Datos
+Imports System.Data.SqlClient
+
 Public Class ListaCliente
     Public usuarioCliente_ As String
     Dim CLiente As New Cliente
@@ -26,15 +29,17 @@ Public Class ListaCliente
         Dim frmcliente As New ABMCliente
         frmcliente.Cliente = New Cliente
         If frmcliente.ShowDialog() = DialogResult.OK Then
-            CLiente.Validador()
+
             Dim pregunta As DialogResult = MsgBox("¿ Desea agregar al cliente" & " " & frmcliente.Cliente.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar registro")
             If pregunta = DialogResult.Yes Then
 
                 ClienteMappers.InsertarCliente(frmcliente.Cliente)
                 ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+                dgv_Cliente.Refresh()
             End If
             ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
         End If
+
     End Sub
 
     Private Sub btn_modificar_Click(sender As Object, e As EventArgs) Handles btn_modificar.Click
@@ -63,5 +68,21 @@ Public Class ListaCliente
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
+
+
+        Dim conexion As New ConexionDB
+            Dim buscar As New SqlDataAdapter("select * from Cliente where Nombre like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
+            Dim ds As New DataSet()
+            buscar.Fill(ds, "Cliente")
+            dgv_Cliente.DataSource = ds.Tables(0)
+
+    End Sub
+
+    Private Sub txt_buscar_nombre_LostFocus(sender As Object, e As EventArgs) Handles txt_buscar_nombre.LostFocus
+        txt_buscar_nombre.Text = ""
+        ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
     End Sub
 End Class

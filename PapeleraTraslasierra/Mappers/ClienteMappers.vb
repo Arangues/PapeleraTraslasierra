@@ -198,6 +198,12 @@ Public Class ClienteMappers
         Return ConvertirRowEnCliente(datos.Rows(0))
     End Function
 
+
+
+
+
+
+
 End Class
 
 

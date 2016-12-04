@@ -25,6 +25,15 @@ Partial Class ListaArticulos
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListaArticulos))
         Me.dgv_CLIENTE = New System.Windows.Forms.DataGridView()
+        Me.eliminarArticuloButton = New System.Windows.Forms.Button()
+        Me.modificarArticuloButton = New System.Windows.Forms.Button()
+        Me.agregarArticuloButton = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TXT_BUSCAR_CATEGORIA = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.IdArticuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -33,15 +42,6 @@ Partial Class ListaArticulos
         Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.eliminarArticuloButton = New System.Windows.Forms.Button()
-        Me.modificarArticuloButton = New System.Windows.Forms.Button()
-        Me.agregarArticuloButton = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TXT_BUSCAR_CODIGO = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,91 @@ Partial Class ListaArticulos
         Me.dgv_CLIENTE.ReadOnly = True
         Me.dgv_CLIENTE.Size = New System.Drawing.Size(747, 286)
         Me.dgv_CLIENTE.TabIndex = 0
+        '
+        'eliminarArticuloButton
+        '
+        Me.eliminarArticuloButton.Location = New System.Drawing.Point(209, 13)
+        Me.eliminarArticuloButton.Name = "eliminarArticuloButton"
+        Me.eliminarArticuloButton.Size = New System.Drawing.Size(75, 23)
+        Me.eliminarArticuloButton.TabIndex = 9
+        Me.eliminarArticuloButton.Text = "Eliminar"
+        Me.eliminarArticuloButton.UseVisualStyleBackColor = True
+        '
+        'modificarArticuloButton
+        '
+        Me.modificarArticuloButton.Location = New System.Drawing.Point(128, 13)
+        Me.modificarArticuloButton.Name = "modificarArticuloButton"
+        Me.modificarArticuloButton.Size = New System.Drawing.Size(75, 23)
+        Me.modificarArticuloButton.TabIndex = 8
+        Me.modificarArticuloButton.Text = "Modificar"
+        Me.modificarArticuloButton.UseVisualStyleBackColor = True
+        '
+        'agregarArticuloButton
+        '
+        Me.agregarArticuloButton.Location = New System.Drawing.Point(47, 13)
+        Me.agregarArticuloButton.Name = "agregarArticuloButton"
+        Me.agregarArticuloButton.Size = New System.Drawing.Size(75, 23)
+        Me.agregarArticuloButton.TabIndex = 7
+        Me.agregarArticuloButton.Text = "Agregar"
+        Me.agregarArticuloButton.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.Window
+        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label10.Location = New System.Drawing.Point(434, 55)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(107, 15)
+        Me.Label10.TabIndex = 30
+        Me.Label10.Text = "Buscar por categoria"
+        '
+        'TXT_BUSCAR_CATEGORIA
+        '
+        Me.TXT_BUSCAR_CATEGORIA.Location = New System.Drawing.Point(547, 52)
+        Me.TXT_BUSCAR_CATEGORIA.Name = "TXT_BUSCAR_CATEGORIA"
+        Me.TXT_BUSCAR_CATEGORIA.Size = New System.Drawing.Size(150, 20)
+        Me.TXT_BUSCAR_CATEGORIA.TabIndex = 29
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.SystemColors.Window
+        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label9.Location = New System.Drawing.Point(174, 55)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 15)
+        Me.Label9.TabIndex = 28
+        Me.Label9.Text = "Buscar por nombre"
+        '
+        'txt_buscar_nombre
+        '
+        Me.txt_buscar_nombre.Location = New System.Drawing.Point(278, 52)
+        Me.txt_buscar_nombre.Name = "txt_buscar_nombre"
+        Me.txt_buscar_nombre.Size = New System.Drawing.Size(150, 20)
+        Me.txt_buscar_nombre.TabIndex = 27
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.SkyBlue
+        Me.Button1.Location = New System.Drawing.Point(728, 11)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(53, 23)
+        Me.Button1.TabIndex = 31
+        Me.Button1.Text = "Cerrar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(629, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(87, 25)
+        Me.Label1.TabIndex = 32
+        Me.Label1.Text = "Articulos"
         '
         'IdArticuloDataGridViewTextBoxColumn
         '
@@ -111,92 +196,6 @@ Partial Class ListaArticulos
         '
         Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
         '
-        'eliminarArticuloButton
-        '
-        Me.eliminarArticuloButton.Location = New System.Drawing.Point(209, 13)
-        Me.eliminarArticuloButton.Name = "eliminarArticuloButton"
-        Me.eliminarArticuloButton.Size = New System.Drawing.Size(75, 23)
-        Me.eliminarArticuloButton.TabIndex = 9
-        Me.eliminarArticuloButton.Text = "Eliminar"
-        Me.eliminarArticuloButton.UseVisualStyleBackColor = True
-        '
-        'modificarArticuloButton
-        '
-        Me.modificarArticuloButton.Enabled = False
-        Me.modificarArticuloButton.Location = New System.Drawing.Point(128, 13)
-        Me.modificarArticuloButton.Name = "modificarArticuloButton"
-        Me.modificarArticuloButton.Size = New System.Drawing.Size(75, 23)
-        Me.modificarArticuloButton.TabIndex = 8
-        Me.modificarArticuloButton.Text = "Modificar"
-        Me.modificarArticuloButton.UseVisualStyleBackColor = True
-        '
-        'agregarArticuloButton
-        '
-        Me.agregarArticuloButton.Location = New System.Drawing.Point(47, 13)
-        Me.agregarArticuloButton.Name = "agregarArticuloButton"
-        Me.agregarArticuloButton.Size = New System.Drawing.Size(75, 23)
-        Me.agregarArticuloButton.TabIndex = 7
-        Me.agregarArticuloButton.Text = "Agregar"
-        Me.agregarArticuloButton.UseVisualStyleBackColor = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.Window
-        Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label10.Location = New System.Drawing.Point(434, 55)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 15)
-        Me.Label10.TabIndex = 30
-        Me.Label10.Text = "Buscar por codigo"
-        '
-        'TXT_BUSCAR_CODIGO
-        '
-        Me.TXT_BUSCAR_CODIGO.Location = New System.Drawing.Point(535, 52)
-        Me.TXT_BUSCAR_CODIGO.Name = "TXT_BUSCAR_CODIGO"
-        Me.TXT_BUSCAR_CODIGO.Size = New System.Drawing.Size(150, 20)
-        Me.TXT_BUSCAR_CODIGO.TabIndex = 29
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.SystemColors.Window
-        Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label9.Location = New System.Drawing.Point(174, 55)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 15)
-        Me.Label9.TabIndex = 28
-        Me.Label9.Text = "Buscar por nombre"
-        '
-        'txt_buscar_nombre
-        '
-        Me.txt_buscar_nombre.Location = New System.Drawing.Point(278, 52)
-        Me.txt_buscar_nombre.Name = "txt_buscar_nombre"
-        Me.txt_buscar_nombre.Size = New System.Drawing.Size(150, 20)
-        Me.txt_buscar_nombre.TabIndex = 27
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.SkyBlue
-        Me.Button1.Location = New System.Drawing.Point(728, 11)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(53, 23)
-        Me.Button1.TabIndex = 31
-        Me.Button1.Text = "Cerrar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(629, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(87, 25)
-        Me.Label1.TabIndex = 32
-        Me.Label1.Text = "Articulos"
-        '
         'ListaArticulos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -208,7 +207,7 @@ Partial Class ListaArticulos
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.TXT_BUSCAR_CODIGO)
+        Me.Controls.Add(Me.TXT_BUSCAR_CATEGORIA)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txt_buscar_nombre)
         Me.Controls.Add(Me.eliminarArticuloButton)
@@ -231,7 +230,7 @@ Partial Class ListaArticulos
     Friend WithEvents modificarArticuloButton As Button
     Friend WithEvents agregarArticuloButton As Button
     Friend WithEvents Label10 As Label
-    Friend WithEvents TXT_BUSCAR_CODIGO As TextBox
+    Friend WithEvents TXT_BUSCAR_CATEGORIA As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txt_buscar_nombre As TextBox
     Friend WithEvents ArticuloBindingSource As BindingSource

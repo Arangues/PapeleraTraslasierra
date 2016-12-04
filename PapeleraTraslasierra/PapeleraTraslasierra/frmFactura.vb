@@ -1,5 +1,7 @@
 ﻿Imports Mappers
 Imports Entidades
+Imports Datos
+Imports System.Data.SqlClient
 
 Public Class frmFactura
 
@@ -7,6 +9,9 @@ Public Class frmFactura
 
 
     Private Sub Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FechaLabel.Text = Date.Today
+        FacturaMappers.CargarComboClientes(ClienteComboBox)
+        FacturaMappers.TipoFacturaCargarCombo(TipoFacturaComboBox)
         ArticuloBindingSource.DataSource = ArticuloMappers.ObtenerTodos
 
         facturaEnEdicion = New Factura
@@ -18,14 +23,7 @@ Public Class frmFactura
         AgregarArticulosBindingSource.DataSource = ArticuloBindingSource.Current
     End Sub
 
-    Private Sub cmb_Agregar_Click(sender As Object, e As EventArgs)
-        Dim detalle As New FacturaDetalle
-        detalle.Cantidad = txt_cantidad.Text
 
-        facturaEnEdicion.Detalle.Add(detalle)
-        DetalleFacturaBindingSource.DataSource = facturaEnEdicion.Detalle
-
-    End Sub
 
     Private Sub cmb_Cobrar_Click(sender As Object, e As EventArgs) Handles cmb_Cobrar.Click
         Reglas.FacturaRegla.GenerarFactura(facturaEnEdicion)
@@ -38,4 +36,49 @@ Public Class frmFactura
         End If
 
     End Sub
+
+
+
+
+    Private Sub cmb_Agregar_Click_1(sender As Object, e As EventArgs) Handles cmb_Agregar.Click
+        Dim detalle As New FacturaDetalle
+        Dim subtotal As Decimal
+        Dim total As Double = 0
+        Dim precio As Decimal
+        Dim cantidad As Integer
+        cantidad = txt_cantidad.Text
+        precio = txt_preciov_art.Text
+        subtotal = precio * cantidad
+
+        detalle.Nombre = txt_nombre_art.Text
+        detalle.Cantidad = cantidad
+        detalle.Precio = precio
+        detalle.Total = subtotal
+
+        facturaEnEdicion.Detalle.Add(detalle)
+        DetalleFacturaBindingSource.DataSource = facturaEnEdicion.Detalle
+        Dim fila As DataGridViewRow = New DataGridViewRow()
+        For Each fila In DetalleFacturaDataGridView.Rows
+            total += Convert.ToDouble(fila.Cells(3).Value)
+        Next
+
+        txt_Pagar.Text = total
+    End Sub
+
+    Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
+        Dim conexion As New ConexionDB
+        Dim buscar As New SqlDataAdapter("select * from Articulo where Nombre like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
+        Dim ds As New DataSet()
+        buscar.Fill(ds, "Articulo")
+        dgv_facturas_prod.DataSource = ds.Tables(0)
+    End Sub
+
+    Private Sub TXT_BUSCAR_CODIGO_TextChanged(sender As Object, e As EventArgs) Handles TXT_BUSCAR_CODIGO.TextChanged
+        Dim conexion As New ConexionDB
+        Dim buscar As New SqlDataAdapter("select * from Articulo where idArticulo like '%" + TXT_BUSCAR_CODIGO.Text + "%'", conexion.Conexion)
+        Dim ds As New DataSet()
+        buscar.Fill(ds, "Articulo")
+        dgv_facturas_prod.DataSource = ds.Tables(0)
+    End Sub
+
 End Class

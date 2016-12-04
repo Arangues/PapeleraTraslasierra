@@ -32,6 +32,7 @@ Partial Class frm_menu
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStripPapelera.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -40,7 +41,7 @@ Partial Class frm_menu
         '
         Me.MenuStripPapelera.BackColor = System.Drawing.Color.SkyBlue
         Me.MenuStripPapelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ArticulosToolStripMenuItem, Me.UsuarioMenuStrinp})
+        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ArticulosToolStripMenuItem, Me.UsuarioMenuStrinp, Me.CambiarUsuarioToolStripMenuItem})
         Me.MenuStripPapelera.Location = New System.Drawing.Point(0, 0)
         Me.MenuStripPapelera.Name = "MenuStripPapelera"
         Me.MenuStripPapelera.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -125,6 +126,12 @@ Partial Class frm_menu
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Usuario:"
         '
+        'CambiarUsuarioToolStripMenuItem
+        '
+        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
+        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
+        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario"
+        '
         'frm_menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -159,4 +166,5 @@ Partial Class frm_menu
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents UsuarioLabel As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents CambiarUsuarioToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -1,5 +1,7 @@
 ﻿Imports Mappers
 Imports Entidades
+Imports Datos
+Imports System.Data.SqlClient
 
 Public Class ListProveedor
     Public usuarioProveedor_ As String
@@ -63,5 +65,13 @@ Public Class ListProveedor
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
+        Dim conexion As New ConexionDB
+        Dim buscar As New SqlDataAdapter("select * from Proveedor where Categoria like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
+        Dim ds As New DataSet()
+        buscar.Fill(ds, "Proveedor")
+        DataGridViewProveedor.DataSource = ds.Tables(0)
     End Sub
 End Class

@@ -1,11 +1,12 @@
-﻿Imports System.Windows.Forms
+﻿
 Imports datos
 Imports Entidades
 Imports Mappers
-Imports p
+
 Public Class UsuarioRegla
     Public Shared listUsuario As New List(Of Usuario)()
     Private Shared _cargarLista As Boolean = True
+
 
     Private Shared Sub Listar()
 
@@ -23,6 +24,9 @@ Public Class UsuarioRegla
         End If
 
         For Each Resultado As Usuario In listUsuario
+            If Resultado.Usuario.Equals(Usuario) AndAlso Resultado.Password.Equals(Contraseña) Then
+                Return True
+            End If
             If Resultado.Usuario.Equals(Usuario) AndAlso Resultado.Password.Equals(Contraseña) Then
                 Return True
             End If

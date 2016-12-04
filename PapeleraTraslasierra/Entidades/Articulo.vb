@@ -130,8 +130,9 @@ Public Class Articulo
             Throw New Exception("El articulo debe tener un stockMax")
         End If
         If String.IsNullOrEmpty(Descripcion) Then
+            Throw New Exception("El articulo debe tener una descripcion")
         End If
-        Throw New Exception("El articulo debe tener una descripcion")
+
     End Sub
 
 

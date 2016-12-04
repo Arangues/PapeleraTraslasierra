@@ -22,6 +22,7 @@ Partial Class ListaFactura
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListaFactura))
         Me.dgv_CLIENTE = New System.Windows.Forms.DataGridView()
         Me.btn_eliminar = New System.Windows.Forms.Button()
@@ -29,16 +30,25 @@ Partial Class ListaFactura
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.FacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdFacturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FacturatotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv_CLIENTE
         '
+        Me.dgv_CLIENTE.AutoGenerateColumns = False
         Me.dgv_CLIENTE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_CLIENTE.Location = New System.Drawing.Point(22, 52)
+        Me.dgv_CLIENTE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdFacturaDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.FacturatotalDataGridViewTextBoxColumn})
+        Me.dgv_CLIENTE.DataSource = Me.FacturasBindingSource
+        Me.dgv_CLIENTE.Location = New System.Drawing.Point(22, 67)
         Me.dgv_CLIENTE.Name = "dgv_CLIENTE"
         Me.dgv_CLIENTE.ReadOnly = True
-        Me.dgv_CLIENTE.Size = New System.Drawing.Size(603, 355)
+        Me.dgv_CLIENTE.Size = New System.Drawing.Size(544, 340)
         Me.dgv_CLIENTE.TabIndex = 0
         '
         'btn_eliminar
@@ -90,6 +100,38 @@ Partial Class ListaFactura
         Me.Label1.TabIndex = 36
         Me.Label1.Text = "Facturas"
         '
+        'FacturasBindingSource
+        '
+        Me.FacturasBindingSource.DataSource = GetType(Entidades.Factura)
+        '
+        'IdFacturaDataGridViewTextBoxColumn
+        '
+        Me.IdFacturaDataGridViewTextBoxColumn.DataPropertyName = "IdFactura"
+        Me.IdFacturaDataGridViewTextBoxColumn.HeaderText = "IdFactura"
+        Me.IdFacturaDataGridViewTextBoxColumn.Name = "IdFacturaDataGridViewTextBoxColumn"
+        Me.IdFacturaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TipoDataGridViewTextBoxColumn
+        '
+        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
+        Me.TipoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FechaDataGridViewTextBoxColumn
+        '
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FacturatotalDataGridViewTextBoxColumn
+        '
+        Me.FacturatotalDataGridViewTextBoxColumn.DataPropertyName = "Facturatotal"
+        Me.FacturatotalDataGridViewTextBoxColumn.HeaderText = "Facturatotal"
+        Me.FacturatotalDataGridViewTextBoxColumn.Name = "FacturatotalDataGridViewTextBoxColumn"
+        Me.FacturatotalDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'ListaFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -111,6 +153,7 @@ Partial Class ListaFactura
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FACTURAS"
         CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -121,4 +164,9 @@ Partial Class ListaFactura
     Friend WithEvents ButtonAceptar As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents IdFacturaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FacturatotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FacturasBindingSource As BindingSource
 End Class
