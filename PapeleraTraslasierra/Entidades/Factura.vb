@@ -1,5 +1,6 @@
 ﻿Public Class Factura
     Dim idFactura_ As Integer
+    Dim facturaNumero_ As Integer
     Dim tipo_ As String
     Dim fecha_ As DateTime
     Dim facturaTotal_ As Decimal
@@ -50,7 +51,16 @@
         End Set
     End Property
 
+    Public Property FacturaNumero As Integer
+        Get
+            Return facturaNumero_
+        End Get
+        Set(value As Integer)
+            facturaNumero_ = value
+        End Set
+    End Property
+
     Public Sub AsignarFacturaId(nuevoIdFactura As Integer)
-        IdFactura = nuevoIdFactura
+        nuevoIdFactura = IdFactura
     End Sub
 End Class

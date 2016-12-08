@@ -30,21 +30,21 @@ Partial Class ABMArticulo
         Me.TexboxId = New System.Windows.Forms.TextBox()
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TexboxStockMax = New System.Windows.Forms.TextBox()
+        Me.Campo_StockMax = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TexboxStockMin = New System.Windows.Forms.TextBox()
+        Me.Campo_StockMin = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TexboxStock = New System.Windows.Forms.TextBox()
+        Me.Campo_Stock = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TexboxPrecioVenta = New System.Windows.Forms.TextBox()
+        Me.campo_PrecioVenta = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TexboxPrecioUnitario = New System.Windows.Forms.TextBox()
+        Me.campo_PrecioUnitario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TexboxNombre = New System.Windows.Forms.TextBox()
-        Me.TexboxCategoria = New System.Windows.Forms.ComboBox()
+        Me.Campo_Nombre = New System.Windows.Forms.TextBox()
+        Me.campo_Categoria = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TexboxDescripcion = New System.Windows.Forms.TextBox()
+        Me.Campo_Descripcion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,13 +104,13 @@ Partial Class ABMArticulo
         Me.Label8.TabIndex = 45
         Me.Label8.Text = "Stock Max"
         '
-        'TexboxStockMax
+        'Campo_StockMax
         '
-        Me.TexboxStockMax.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMax", True))
-        Me.TexboxStockMax.Location = New System.Drawing.Point(93, 231)
-        Me.TexboxStockMax.Name = "TexboxStockMax"
-        Me.TexboxStockMax.Size = New System.Drawing.Size(86, 20)
-        Me.TexboxStockMax.TabIndex = 44
+        Me.Campo_StockMax.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMax", True))
+        Me.Campo_StockMax.Location = New System.Drawing.Point(93, 231)
+        Me.Campo_StockMax.Name = "Campo_StockMax"
+        Me.Campo_StockMax.Size = New System.Drawing.Size(86, 20)
+        Me.Campo_StockMax.TabIndex = 44
         '
         'Label7
         '
@@ -123,13 +123,13 @@ Partial Class ABMArticulo
         Me.Label7.TabIndex = 43
         Me.Label7.Text = "Stock Min"
         '
-        'TexboxStockMin
+        'Campo_StockMin
         '
-        Me.TexboxStockMin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMin", True))
-        Me.TexboxStockMin.Location = New System.Drawing.Point(93, 205)
-        Me.TexboxStockMin.Name = "TexboxStockMin"
-        Me.TexboxStockMin.Size = New System.Drawing.Size(86, 20)
-        Me.TexboxStockMin.TabIndex = 42
+        Me.Campo_StockMin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMin", True))
+        Me.Campo_StockMin.Location = New System.Drawing.Point(93, 205)
+        Me.Campo_StockMin.Name = "Campo_StockMin"
+        Me.Campo_StockMin.Size = New System.Drawing.Size(86, 20)
+        Me.Campo_StockMin.TabIndex = 42
         '
         'Label6
         '
@@ -142,13 +142,14 @@ Partial Class ABMArticulo
         Me.Label6.TabIndex = 41
         Me.Label6.Text = "Stock"
         '
-        'TexboxStock
+        'Campo_Stock
         '
-        Me.TexboxStock.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
-        Me.TexboxStock.Location = New System.Drawing.Point(93, 177)
-        Me.TexboxStock.Name = "TexboxStock"
-        Me.TexboxStock.Size = New System.Drawing.Size(86, 20)
-        Me.TexboxStock.TabIndex = 40
+        Me.Campo_Stock.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
+        Me.Campo_Stock.Enabled = False
+        Me.Campo_Stock.Location = New System.Drawing.Point(93, 177)
+        Me.Campo_Stock.Name = "Campo_Stock"
+        Me.Campo_Stock.Size = New System.Drawing.Size(86, 20)
+        Me.Campo_Stock.TabIndex = 40
         '
         'Label5
         '
@@ -161,13 +162,14 @@ Partial Class ABMArticulo
         Me.Label5.TabIndex = 39
         Me.Label5.Text = "Precio Venta"
         '
-        'TexboxPrecioVenta
+        'campo_PrecioVenta
         '
-        Me.TexboxPrecioVenta.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioVenta", True))
-        Me.TexboxPrecioVenta.Location = New System.Drawing.Point(93, 153)
-        Me.TexboxPrecioVenta.Name = "TexboxPrecioVenta"
-        Me.TexboxPrecioVenta.Size = New System.Drawing.Size(86, 20)
-        Me.TexboxPrecioVenta.TabIndex = 38
+        Me.campo_PrecioVenta.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioVenta", True))
+        Me.campo_PrecioVenta.Enabled = False
+        Me.campo_PrecioVenta.Location = New System.Drawing.Point(93, 153)
+        Me.campo_PrecioVenta.Name = "campo_PrecioVenta"
+        Me.campo_PrecioVenta.Size = New System.Drawing.Size(86, 20)
+        Me.campo_PrecioVenta.TabIndex = 38
         '
         'Label4
         '
@@ -180,13 +182,14 @@ Partial Class ABMArticulo
         Me.Label4.TabIndex = 37
         Me.Label4.Text = "Precio Unitario"
         '
-        'TexboxPrecioUnitario
+        'campo_PrecioUnitario
         '
-        Me.TexboxPrecioUnitario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioUnitario", True))
-        Me.TexboxPrecioUnitario.Location = New System.Drawing.Point(93, 127)
-        Me.TexboxPrecioUnitario.Name = "TexboxPrecioUnitario"
-        Me.TexboxPrecioUnitario.Size = New System.Drawing.Size(86, 20)
-        Me.TexboxPrecioUnitario.TabIndex = 36
+        Me.campo_PrecioUnitario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioUnitario", True))
+        Me.campo_PrecioUnitario.Enabled = False
+        Me.campo_PrecioUnitario.Location = New System.Drawing.Point(93, 127)
+        Me.campo_PrecioUnitario.Name = "campo_PrecioUnitario"
+        Me.campo_PrecioUnitario.Size = New System.Drawing.Size(86, 20)
+        Me.campo_PrecioUnitario.TabIndex = 36
         '
         'Label3
         '
@@ -210,22 +213,22 @@ Partial Class ABMArticulo
         Me.Label2.TabIndex = 34
         Me.Label2.Text = "Nombre"
         '
-        'TexboxNombre
+        'Campo_Nombre
         '
-        Me.TexboxNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Nombre", True))
-        Me.TexboxNombre.Location = New System.Drawing.Point(93, 75)
-        Me.TexboxNombre.Name = "TexboxNombre"
-        Me.TexboxNombre.Size = New System.Drawing.Size(186, 20)
-        Me.TexboxNombre.TabIndex = 33
+        Me.Campo_Nombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Nombre", True))
+        Me.Campo_Nombre.Location = New System.Drawing.Point(93, 75)
+        Me.Campo_Nombre.Name = "Campo_Nombre"
+        Me.Campo_Nombre.Size = New System.Drawing.Size(186, 20)
+        Me.Campo_Nombre.TabIndex = 33
         '
-        'TexboxCategoria
+        'campo_Categoria
         '
-        Me.TexboxCategoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
-        Me.TexboxCategoria.FormattingEnabled = True
-        Me.TexboxCategoria.Location = New System.Drawing.Point(93, 100)
-        Me.TexboxCategoria.Name = "TexboxCategoria"
-        Me.TexboxCategoria.Size = New System.Drawing.Size(186, 21)
-        Me.TexboxCategoria.TabIndex = 31
+        Me.campo_Categoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
+        Me.campo_Categoria.FormattingEnabled = True
+        Me.campo_Categoria.Location = New System.Drawing.Point(93, 100)
+        Me.campo_Categoria.Name = "campo_Categoria"
+        Me.campo_Categoria.Size = New System.Drawing.Size(186, 21)
+        Me.campo_Categoria.TabIndex = 31
         '
         'Label9
         '
@@ -238,14 +241,14 @@ Partial Class ABMArticulo
         Me.Label9.TabIndex = 49
         Me.Label9.Text = "Descripcion"
         '
-        'TexboxDescripcion
+        'Campo_Descripcion
         '
-        Me.TexboxDescripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
-        Me.TexboxDescripcion.Location = New System.Drawing.Point(93, 257)
-        Me.TexboxDescripcion.Multiline = True
-        Me.TexboxDescripcion.Name = "TexboxDescripcion"
-        Me.TexboxDescripcion.Size = New System.Drawing.Size(186, 96)
-        Me.TexboxDescripcion.TabIndex = 48
+        Me.Campo_Descripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
+        Me.Campo_Descripcion.Location = New System.Drawing.Point(93, 257)
+        Me.Campo_Descripcion.Multiline = True
+        Me.Campo_Descripcion.Name = "Campo_Descripcion"
+        Me.Campo_Descripcion.Size = New System.Drawing.Size(186, 96)
+        Me.Campo_Descripcion.TabIndex = 48
         '
         'Label1
         '
@@ -269,23 +272,23 @@ Partial Class ABMArticulo
         Me.ClientSize = New System.Drawing.Size(324, 405)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TexboxDescripcion)
+        Me.Controls.Add(Me.Campo_Descripcion)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.TexboxId)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TexboxStockMax)
+        Me.Controls.Add(Me.Campo_StockMax)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TexboxStockMin)
+        Me.Controls.Add(Me.Campo_StockMin)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TexboxStock)
+        Me.Controls.Add(Me.Campo_Stock)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TexboxPrecioVenta)
+        Me.Controls.Add(Me.campo_PrecioVenta)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TexboxPrecioUnitario)
+        Me.Controls.Add(Me.campo_PrecioUnitario)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TexboxNombre)
-        Me.Controls.Add(Me.TexboxCategoria)
+        Me.Controls.Add(Me.Campo_Nombre)
+        Me.Controls.Add(Me.campo_Categoria)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
         Me.DoubleBuffered = True
@@ -305,21 +308,21 @@ Partial Class ABMArticulo
     Friend WithEvents Label11 As Label
     Friend WithEvents TexboxId As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents TexboxStockMax As TextBox
+    Friend WithEvents Campo_StockMax As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TexboxStockMin As TextBox
+    Friend WithEvents Campo_StockMin As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TexboxStock As TextBox
+    Friend WithEvents Campo_Stock As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TexboxPrecioVenta As TextBox
+    Friend WithEvents campo_PrecioVenta As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TexboxPrecioUnitario As TextBox
+    Friend WithEvents campo_PrecioUnitario As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TexboxNombre As TextBox
-    Friend WithEvents TexboxCategoria As ComboBox
+    Friend WithEvents Campo_Nombre As TextBox
+    Friend WithEvents campo_Categoria As ComboBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TexboxDescripcion As TextBox
+    Friend WithEvents Campo_Descripcion As TextBox
     Friend WithEvents ArticuloBindingSource As BindingSource
     Friend WithEvents Label1 As Label
 End Class

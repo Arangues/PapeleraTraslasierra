@@ -104,6 +104,8 @@ Public Class Articulo
 
     End Sub
 
+
+
     Public Sub Validador()
 
         If String.IsNullOrEmpty(Nombre) Then

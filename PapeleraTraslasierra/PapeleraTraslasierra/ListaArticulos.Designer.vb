@@ -25,6 +25,14 @@ Partial Class ListaArticulos
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListaArticulos))
         Me.dgv_CLIENTE = New System.Windows.Forms.DataGridView()
+        Me.IdArticuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.eliminarArticuloButton = New System.Windows.Forms.Button()
         Me.modificarArticuloButton = New System.Windows.Forms.Button()
         Me.agregarArticuloButton = New System.Windows.Forms.Button()
@@ -34,14 +42,6 @@ Partial Class ListaArticulos
         Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.IdArticuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,14 +52,68 @@ Partial Class ListaArticulos
         Me.dgv_CLIENTE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_CLIENTE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdArticuloDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CategoriaDataGridViewTextBoxColumn, Me.PrecioUnitarioDataGridViewTextBoxColumn, Me.PrecioVentaDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
         Me.dgv_CLIENTE.DataSource = Me.ArticuloBindingSource
-        Me.dgv_CLIENTE.Location = New System.Drawing.Point(32, 73)
+        Me.dgv_CLIENTE.Location = New System.Drawing.Point(34, 73)
         Me.dgv_CLIENTE.Name = "dgv_CLIENTE"
         Me.dgv_CLIENTE.ReadOnly = True
         Me.dgv_CLIENTE.Size = New System.Drawing.Size(747, 286)
         Me.dgv_CLIENTE.TabIndex = 0
         '
+        'IdArticuloDataGridViewTextBoxColumn
+        '
+        Me.IdArticuloDataGridViewTextBoxColumn.DataPropertyName = "idArticulo"
+        Me.IdArticuloDataGridViewTextBoxColumn.HeaderText = "idArticulo"
+        Me.IdArticuloDataGridViewTextBoxColumn.Name = "IdArticuloDataGridViewTextBoxColumn"
+        Me.IdArticuloDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CategoriaDataGridViewTextBoxColumn
+        '
+        Me.CategoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria"
+        Me.CategoriaDataGridViewTextBoxColumn.HeaderText = "Categoria"
+        Me.CategoriaDataGridViewTextBoxColumn.Name = "CategoriaDataGridViewTextBoxColumn"
+        Me.CategoriaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioUnitarioDataGridViewTextBoxColumn
+        '
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario"
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecioUnitario"
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.Name = "PrecioUnitarioDataGridViewTextBoxColumn"
+        Me.PrecioUnitarioDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'PrecioVentaDataGridViewTextBoxColumn
+        '
+        Me.PrecioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta"
+        Me.PrecioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta"
+        Me.PrecioVentaDataGridViewTextBoxColumn.Name = "PrecioVentaDataGridViewTextBoxColumn"
+        Me.PrecioVentaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StockDataGridViewTextBoxColumn
+        '
+        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
+        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
+        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
+        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DescripcionDataGridViewTextBoxColumn
+        '
+        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
+        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
+        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ArticuloBindingSource
+        '
+        Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
+        '
         'eliminarArticuloButton
         '
+        Me.eliminarArticuloButton.Enabled = False
         Me.eliminarArticuloButton.Location = New System.Drawing.Point(209, 13)
         Me.eliminarArticuloButton.Name = "eliminarArticuloButton"
         Me.eliminarArticuloButton.Size = New System.Drawing.Size(75, 23)
@@ -142,59 +196,6 @@ Partial Class ListaArticulos
         Me.Label1.Size = New System.Drawing.Size(87, 25)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Articulos"
-        '
-        'IdArticuloDataGridViewTextBoxColumn
-        '
-        Me.IdArticuloDataGridViewTextBoxColumn.DataPropertyName = "idArticulo"
-        Me.IdArticuloDataGridViewTextBoxColumn.HeaderText = "idArticulo"
-        Me.IdArticuloDataGridViewTextBoxColumn.Name = "IdArticuloDataGridViewTextBoxColumn"
-        Me.IdArticuloDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CategoriaDataGridViewTextBoxColumn
-        '
-        Me.CategoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria"
-        Me.CategoriaDataGridViewTextBoxColumn.HeaderText = "Categoria"
-        Me.CategoriaDataGridViewTextBoxColumn.Name = "CategoriaDataGridViewTextBoxColumn"
-        Me.CategoriaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrecioUnitarioDataGridViewTextBoxColumn
-        '
-        Me.PrecioUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecioUnitario"
-        Me.PrecioUnitarioDataGridViewTextBoxColumn.HeaderText = "PrecioUnitario"
-        Me.PrecioUnitarioDataGridViewTextBoxColumn.Name = "PrecioUnitarioDataGridViewTextBoxColumn"
-        Me.PrecioUnitarioDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PrecioVentaDataGridViewTextBoxColumn
-        '
-        Me.PrecioVentaDataGridViewTextBoxColumn.DataPropertyName = "PrecioVenta"
-        Me.PrecioVentaDataGridViewTextBoxColumn.HeaderText = "PrecioVenta"
-        Me.PrecioVentaDataGridViewTextBoxColumn.Name = "PrecioVentaDataGridViewTextBoxColumn"
-        Me.PrecioVentaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'StockDataGridViewTextBoxColumn
-        '
-        Me.StockDataGridViewTextBoxColumn.DataPropertyName = "Stock"
-        Me.StockDataGridViewTextBoxColumn.HeaderText = "Stock"
-        Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
-        Me.StockDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DescripcionDataGridViewTextBoxColumn
-        '
-        Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
-        Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
-        Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ArticuloBindingSource
-        '
-        Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
         '
         'ListaArticulos
         '

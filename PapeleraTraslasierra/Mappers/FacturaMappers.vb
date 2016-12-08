@@ -23,7 +23,7 @@ Public Class FacturaMappers
             Throw New Exception("Debe especificar un Factura a dar de alta")
         End If
 
-        ' nuevaFactura.Validador()
+
 
         Dim NombreStoreProcedure As String = "InsertarFactura"
 
@@ -36,14 +36,16 @@ Public Class FacturaMappers
         misParametros.Add(parametroRetorno)
 
         misParametros.Add(New SqlParameter("@idFactura", nuevaFactura.IdFactura))
+        misParametros.Add(New SqlParameter("@FacturaNumero", nuevaFactura.FacturaNumero))
         misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
         misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
-        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.Facturatotal))
+        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.FacturaTotal))
+
 
 
 
         Dim FacturaId As Integer = CInt(parametroRetorno.Value)
-        ''armo la relacion 
+
         For Each d As FacturaDetalle In nuevaFactura.Detalle
             d.IdFactura = FacturaId
         Next
@@ -74,7 +76,7 @@ Public Class FacturaMappers
         misParametros.Add(New SqlParameter("@idFactura", nuevaFactura.IdFactura))
         misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
         misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
-        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.Facturatotal))
+        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.FacturaTotal))
 
 
 
@@ -88,8 +90,9 @@ Public Class FacturaMappers
 
         Dim miFactura As New Factura(CInt(row("IdFactura")))
         miFactura.IdFactura = CInt(row("idFactura"))
+        miFactura.FacturaNumero = CInt(row("FacturaNumero"))
         miFactura.Tipo = row("Tipo").ToString()
-        miFactura.Facturatotal = Convert.ToDecimal(row("FacturaTotal"))
+        miFactura.FacturaTotal = Convert.ToDecimal(row("FacturaTotal"))
         miFactura.Fecha = Convert.ToDateTime(row("Fecha"))
 
 
@@ -133,16 +136,15 @@ Public Class FacturaMappers
         Return ConvertirRowEnFactura(datos.Rows)
     End Function
 
-    Public Shared Function ObtenerFacturaPorNumeroDocumento(dni As String) As Factura
-        If dni.Length > 8 Or dni.Length < 7 Then
-            Throw New Exception("el numero de documento no es valido.")
+    Public Shared Function ObtenerUltimmoNumeroFactura(FacturaNumero As String) As Factura
+        If FacturaNumero.Length <= 0 Then
+            Throw New Exception("Error el numero de factura")
         End If
 
-        Dim NombreStoreProcedure As String = "ObtenerFacturaPorNumeroDocumento"
-
+        Dim NombreStoreProcedure As String = "ObtenerNumeroFactura"
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@numeroDocumento", dni))
+        misParametros.Add(New SqlParameter("@FacturaNumero", FacturaNumero))
 
 
 

@@ -27,12 +27,12 @@ Partial Class frm_menu
         Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuarioMenuStrinp = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStripPapelera.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -41,7 +41,7 @@ Partial Class frm_menu
         '
         Me.MenuStripPapelera.BackColor = System.Drawing.Color.SkyBlue
         Me.MenuStripPapelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ArticulosToolStripMenuItem, Me.UsuarioMenuStrinp, Me.CambiarUsuarioToolStripMenuItem})
+        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.UsuarioMenuStrinp, Me.CambiarUsuarioToolStripMenuItem, Me.ArticulosToolStripMenuItem})
         Me.MenuStripPapelera.Location = New System.Drawing.Point(0, 0)
         Me.MenuStripPapelera.Name = "MenuStripPapelera"
         Me.MenuStripPapelera.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -71,18 +71,17 @@ Partial Class frm_menu
         Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
-        'ArticulosToolStripMenuItem
-        '
-        Me.ArticulosToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.ArticulosToolStripMenuItem.Name = "ArticulosToolStripMenuItem"
-        Me.ArticulosToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
-        Me.ArticulosToolStripMenuItem.Text = "Articulos"
-        '
         'UsuarioMenuStrinp
         '
         Me.UsuarioMenuStrinp.Name = "UsuarioMenuStrinp"
         Me.UsuarioMenuStrinp.Size = New System.Drawing.Size(59, 20)
         Me.UsuarioMenuStrinp.Text = "Usuario"
+        '
+        'CambiarUsuarioToolStripMenuItem
+        '
+        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
+        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
+        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario"
         '
         'TableLayoutPanel1
         '
@@ -126,11 +125,11 @@ Partial Class frm_menu
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "Usuario:"
         '
-        'CambiarUsuarioToolStripMenuItem
+        'ArticulosToolStripMenuItem
         '
-        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
-        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
-        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario"
+        Me.ArticulosToolStripMenuItem.Name = "ArticulosToolStripMenuItem"
+        Me.ArticulosToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
+        Me.ArticulosToolStripMenuItem.Text = "Articulos"
         '
         'frm_menu
         '
@@ -160,11 +159,11 @@ Partial Class frm_menu
     Friend WithEvents MenuStripPapelera As System.Windows.Forms.MenuStrip
     Friend WithEvents ClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ArticulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UsuarioMenuStrinp As ToolStripMenuItem
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents UsuarioLabel As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents CambiarUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ArticulosToolStripMenuItem As ToolStripMenuItem
 End Class

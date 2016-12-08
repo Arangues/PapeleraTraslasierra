@@ -30,3 +30,4 @@ C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\En
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.dll
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.xml
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.pdb
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbprojResolveAssemblyReference.cache

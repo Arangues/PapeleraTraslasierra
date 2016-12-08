@@ -31,3 +31,4 @@ C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.dll
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.xml
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache

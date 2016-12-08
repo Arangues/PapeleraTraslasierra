@@ -23,7 +23,7 @@ Public Class ArticuloMappers
             Throw New Exception("Debe especificar un articulo a dar de alta")
         End If
 
-        nuevoArticulo.Validador()
+
 
         Dim NombreStoreProcedure As String = "InsertarArticulo"
 
@@ -65,7 +65,7 @@ Public Class ArticuloMappers
         If nuevoArticulo Is Nothing Then
             Throw New Exception("Debe especificar que articulo desea modificar")
         End If
-        nuevoArticulo.Validador()
+
 
         Dim NombreStoreProcedure As String = "ModificarArticulo"
 
@@ -92,7 +92,7 @@ Public Class ArticuloMappers
             Throw New Exception("Debe especificar un Articulo a eliminar")
         End If
 
-        nuevoArticulo.Validador()
+
 
         Dim NombreStoreProcedure As String = "EliminarArticulo"
 

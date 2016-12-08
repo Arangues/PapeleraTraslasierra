@@ -5,7 +5,7 @@ Imports System.Data.SqlClient
 
 Public Class ListProveedor
     Public usuarioProveedor_ As String
-
+    Private _Proveedores As List(Of Proveedor)
     Public Property UsuarioArticulo() As String
         Get
             Return usuarioProveedor_
@@ -29,7 +29,8 @@ Public Class ListProveedor
         Dim pregunta As DialogResult = MsgBox("¿ Desea eliminar al proveedor" & " " & frmproveedor.Proveedores.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar registro")
         If pregunta = DialogResult.Yes Then
             ProveedoresMappers.EliminaProveedor(frmproveedor.Proveedores)
-            ProveedorBindingSource.DataSource = ProveedoresMappers.ObtenerTodos
+            _Proveedores = ProveedoresMappers.ObtenerTodos
+            ProveedorBindingSource.DataSource = _Proveedores
         End If
     End Sub
 
@@ -40,9 +41,10 @@ Public Class ListProveedor
             Dim pregunta As DialogResult = MsgBox("¿ Desea modificar al proveedor" & " " & frmProveedores.Proveedores.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar registro")
             If pregunta = DialogResult.Yes Then
                 ProveedoresMappers.ModificarProveedor(frmProveedores.Proveedores)
-                ProveedorBindingSource.DataSource = ProveedoresMappers.ObtenerTodos
+
             End If
-            ProveedorBindingSource.DataSource = ProveedoresMappers.ObtenerTodos
+            _Proveedores = ProveedoresMappers.ObtenerTodos
+            ProveedorBindingSource.DataSource = _Proveedores
         End If
     End Sub
 
@@ -53,9 +55,10 @@ Public Class ListProveedor
             Dim pregunta As DialogResult = MsgBox("¿ Desea agregar al proveedor" & " " & frmProveedores.Proveedores.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar registro")
             If pregunta = DialogResult.Yes Then
                 ProveedoresMappers.InsertarProveedor(frmProveedores.Proveedores)
-                ProveedorBindingSource.DataSource = ProveedoresMappers.ObtenerTodos
+
             End If
-            ProveedorBindingSource.DataSource = ProveedoresMappers.ObtenerTodos
+            _Proveedores = ProveedoresMappers.ObtenerTodos
+            ProveedorBindingSource.DataSource = _Proveedores
         End If
     End Sub
 
@@ -68,10 +71,6 @@ Public Class ListProveedor
     End Sub
 
     Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
-        Dim conexion As New ConexionDB
-        Dim buscar As New SqlDataAdapter("select * from Proveedor where Categoria like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
-        Dim ds As New DataSet()
-        buscar.Fill(ds, "Proveedor")
-        DataGridViewProveedor.DataSource = ds.Tables(0)
+        ProveedorBindingSource.DataSource = _Proveedores.Where(Function(c) c.nombre.ToLower Like txt_buscar_nombre.Text.Trim.ToLower + "*")
     End Sub
 End Class

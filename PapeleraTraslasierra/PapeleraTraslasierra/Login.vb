@@ -21,6 +21,7 @@ Public Class Login
 
 
     Private _usuario As String
+    Private _tipo As String
     Dim contador As Byte = 4
     Private Shared _cargarLista As Boolean = True
     Private Dispositivos As FilterInfoCollection
@@ -81,6 +82,7 @@ Public Class Login
             ContraseñaTexBox.Show()
             PictureBox.Show()
             IngresarButton.Show()
+            UsuarioTextBox.Focus()
 
 
             ProgressBar1.Hide()
@@ -114,11 +116,17 @@ Public Class Login
         End If
 
         If UsuarioRegla.ValidarUsuario(_usuario, ContraseñaTexBox.Text) Then
+            If UsuarioRegla.EsAdmin() Then
+                _tipo = "admin"
+            Else
+                _tipo = "Usuario"
+            End If
             UsuarioTextBox.Text = ""
             ContraseñaTexBox.Text = ""
             Me.Hide()
             Dim menu = New frm_menu()
             menu.UsuarioMenu = _usuario
+            menu.Tipo = _tipo
             menu.ShowDialog()
 
         Else

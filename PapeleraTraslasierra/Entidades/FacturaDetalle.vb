@@ -1,6 +1,7 @@
 ﻿Public Class FacturaDetalle
     Dim idFacturaDetalle_ As Integer
     Dim idFactura_ As Integer
+    Dim idArticulo_ As Integer
     Dim nombre_ As String
     Dim precio_ As Decimal
     Dim cantidad_ As Integer
@@ -27,6 +28,15 @@
         End Get
         Set(value As Integer)
             idFactura_ = value
+        End Set
+    End Property
+
+    Public Property IdArticulo As Integer
+        Get
+            Return idArticulo_
+        End Get
+        Set(value As Integer)
+            idArticulo_ = value
         End Set
     End Property
 

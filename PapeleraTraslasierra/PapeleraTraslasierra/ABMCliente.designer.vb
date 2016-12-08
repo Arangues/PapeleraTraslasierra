@@ -24,11 +24,11 @@ Partial Class ABMCliente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ABMCliente))
-        Me.txt_nombre = New System.Windows.Forms.TextBox()
+        Me.campo_Nombre = New System.Windows.Forms.TextBox()
         Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.txt_direccion = New System.Windows.Forms.TextBox()
-        Me.txt_localidad = New System.Windows.Forms.TextBox()
-        Me.txt_numero_email = New System.Windows.Forms.TextBox()
+        Me.campo_Direccion = New System.Windows.Forms.TextBox()
+        Me.campo_Localidad = New System.Windows.Forms.TextBox()
+        Me.campo_Email = New System.Windows.Forms.TextBox()
         Me.Aceptar = New System.Windows.Forms.Button()
         Me.Cancelar = New System.Windows.Forms.Button()
         Me.txt_id = New System.Windows.Forms.TextBox()
@@ -38,46 +38,46 @@ Partial Class ABMCliente
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TelTextBox = New System.Windows.Forms.TextBox()
+        Me.campo_Telefono = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txt_nombre
+        'campo_Nombre
         '
-        Me.txt_nombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "nombre", True))
-        Me.txt_nombre.Location = New System.Drawing.Point(92, 72)
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(211, 20)
-        Me.txt_nombre.TabIndex = 0
+        Me.campo_Nombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "nombre", True))
+        Me.campo_Nombre.Location = New System.Drawing.Point(92, 72)
+        Me.campo_Nombre.Name = "campo_Nombre"
+        Me.campo_Nombre.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Nombre.TabIndex = 0
         '
         'ClienteBindingSource
         '
         Me.ClienteBindingSource.DataSource = GetType(Entidades.Cliente)
         '
-        'txt_direccion
+        'campo_Direccion
         '
-        Me.txt_direccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "direccion", True))
-        Me.txt_direccion.Location = New System.Drawing.Point(92, 98)
-        Me.txt_direccion.Name = "txt_direccion"
-        Me.txt_direccion.Size = New System.Drawing.Size(211, 20)
-        Me.txt_direccion.TabIndex = 1
+        Me.campo_Direccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "direccion", True))
+        Me.campo_Direccion.Location = New System.Drawing.Point(92, 98)
+        Me.campo_Direccion.Name = "campo_Direccion"
+        Me.campo_Direccion.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Direccion.TabIndex = 1
         '
-        'txt_localidad
+        'campo_Localidad
         '
-        Me.txt_localidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "localidad", True))
-        Me.txt_localidad.Location = New System.Drawing.Point(92, 124)
-        Me.txt_localidad.Name = "txt_localidad"
-        Me.txt_localidad.Size = New System.Drawing.Size(211, 20)
-        Me.txt_localidad.TabIndex = 2
+        Me.campo_Localidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "localidad", True))
+        Me.campo_Localidad.Location = New System.Drawing.Point(92, 124)
+        Me.campo_Localidad.Name = "campo_Localidad"
+        Me.campo_Localidad.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Localidad.TabIndex = 2
         '
-        'txt_numero_email
+        'campo_Email
         '
-        Me.txt_numero_email.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Email", True))
-        Me.txt_numero_email.Location = New System.Drawing.Point(92, 150)
-        Me.txt_numero_email.Name = "txt_numero_email"
-        Me.txt_numero_email.Size = New System.Drawing.Size(211, 20)
-        Me.txt_numero_email.TabIndex = 3
+        Me.campo_Email.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Email", True))
+        Me.campo_Email.Location = New System.Drawing.Point(92, 150)
+        Me.campo_Email.Name = "campo_Email"
+        Me.campo_Email.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Email.TabIndex = 3
         '
         'Aceptar
         '
@@ -160,13 +160,13 @@ Partial Class ABMCliente
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Tel"
         '
-        'TelTextBox
+        'campo_Telefono
         '
-        Me.TelTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Telefono", True))
-        Me.TelTextBox.Location = New System.Drawing.Point(92, 176)
-        Me.TelTextBox.Name = "TelTextBox"
-        Me.TelTextBox.Size = New System.Drawing.Size(211, 20)
-        Me.TelTextBox.TabIndex = 12
+        Me.campo_Telefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ClienteBindingSource, "Telefono", True))
+        Me.campo_Telefono.Location = New System.Drawing.Point(92, 176)
+        Me.campo_Telefono.Name = "campo_Telefono"
+        Me.campo_Telefono.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Telefono.TabIndex = 12
         '
         'Label7
         '
@@ -189,7 +189,7 @@ Partial Class ABMCliente
         Me.ClientSize = New System.Drawing.Size(330, 255)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TelTextBox)
+        Me.Controls.Add(Me.campo_Telefono)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -198,10 +198,10 @@ Partial Class ABMCliente
         Me.Controls.Add(Me.txt_id)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
-        Me.Controls.Add(Me.txt_numero_email)
-        Me.Controls.Add(Me.txt_localidad)
-        Me.Controls.Add(Me.txt_direccion)
-        Me.Controls.Add(Me.txt_nombre)
+        Me.Controls.Add(Me.campo_Email)
+        Me.Controls.Add(Me.campo_Localidad)
+        Me.Controls.Add(Me.campo_Direccion)
+        Me.Controls.Add(Me.campo_Nombre)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(330, 255)
@@ -214,10 +214,10 @@ Partial Class ABMCliente
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
-    Friend WithEvents txt_direccion As System.Windows.Forms.TextBox
-    Friend WithEvents txt_localidad As System.Windows.Forms.TextBox
-    Friend WithEvents txt_numero_email As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Nombre As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Direccion As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Localidad As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Email As System.Windows.Forms.TextBox
     Friend WithEvents Aceptar As System.Windows.Forms.Button
     Friend WithEvents Cancelar As System.Windows.Forms.Button
     Friend WithEvents txt_id As System.Windows.Forms.TextBox
@@ -228,6 +228,6 @@ Partial Class ABMCliente
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ClienteBindingSource As BindingSource
     Friend WithEvents Label6 As Label
-    Friend WithEvents TelTextBox As TextBox
+    Friend WithEvents campo_Telefono As TextBox
     Friend WithEvents Label7 As Label
 End Class

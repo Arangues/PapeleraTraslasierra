@@ -24,11 +24,11 @@ Partial Class ABMProveedores
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ABMProveedores))
-        Me.TexboxNombre = New System.Windows.Forms.TextBox()
+        Me.campo_Nombre = New System.Windows.Forms.TextBox()
         Me.ProveedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TexboxDireccion = New System.Windows.Forms.TextBox()
-        Me.TexboxLocalidad = New System.Windows.Forms.TextBox()
-        Me.TexboxTelefono = New System.Windows.Forms.TextBox()
+        Me.campo_Direccion = New System.Windows.Forms.TextBox()
+        Me.campo_Localidad = New System.Windows.Forms.TextBox()
+        Me.campo_Telefono = New System.Windows.Forms.TextBox()
         Me.Aceptar = New System.Windows.Forms.Button()
         Me.Cancelar = New System.Windows.Forms.Button()
         Me.TexboxId = New System.Windows.Forms.TextBox()
@@ -38,48 +38,48 @@ Partial Class ABMProveedores
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBoxEmail = New System.Windows.Forms.TextBox()
+        Me.campo_Email = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TexboxDescripcion = New System.Windows.Forms.TextBox()
+        Me.campo_Descripcion = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.ProveedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TexboxNombre
+        'campo_Nombre
         '
-        Me.TexboxNombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "nombre", True))
-        Me.TexboxNombre.Location = New System.Drawing.Point(86, 75)
-        Me.TexboxNombre.Name = "TexboxNombre"
-        Me.TexboxNombre.Size = New System.Drawing.Size(211, 20)
-        Me.TexboxNombre.TabIndex = 0
+        Me.campo_Nombre.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "nombre", True))
+        Me.campo_Nombre.Location = New System.Drawing.Point(86, 75)
+        Me.campo_Nombre.Name = "campo_Nombre"
+        Me.campo_Nombre.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Nombre.TabIndex = 0
         '
         'ProveedorBindingSource
         '
         Me.ProveedorBindingSource.DataSource = GetType(Entidades.Proveedor)
         '
-        'TexboxDireccion
+        'campo_Direccion
         '
-        Me.TexboxDireccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "direccion", True))
-        Me.TexboxDireccion.Location = New System.Drawing.Point(86, 101)
-        Me.TexboxDireccion.Name = "TexboxDireccion"
-        Me.TexboxDireccion.Size = New System.Drawing.Size(211, 20)
-        Me.TexboxDireccion.TabIndex = 1
+        Me.campo_Direccion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "direccion", True))
+        Me.campo_Direccion.Location = New System.Drawing.Point(86, 101)
+        Me.campo_Direccion.Name = "campo_Direccion"
+        Me.campo_Direccion.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Direccion.TabIndex = 1
         '
-        'TexboxLocalidad
+        'campo_Localidad
         '
-        Me.TexboxLocalidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "Localidad", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "E2"))
-        Me.TexboxLocalidad.Location = New System.Drawing.Point(86, 127)
-        Me.TexboxLocalidad.Name = "TexboxLocalidad"
-        Me.TexboxLocalidad.Size = New System.Drawing.Size(211, 20)
-        Me.TexboxLocalidad.TabIndex = 2
+        Me.campo_Localidad.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "Localidad", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "E2"))
+        Me.campo_Localidad.Location = New System.Drawing.Point(86, 127)
+        Me.campo_Localidad.Name = "campo_Localidad"
+        Me.campo_Localidad.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Localidad.TabIndex = 2
         '
-        'TexboxTelefono
+        'campo_Telefono
         '
-        Me.TexboxTelefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "telefono", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "N2"))
-        Me.TexboxTelefono.Location = New System.Drawing.Point(86, 153)
-        Me.TexboxTelefono.Name = "TexboxTelefono"
-        Me.TexboxTelefono.Size = New System.Drawing.Size(211, 20)
-        Me.TexboxTelefono.TabIndex = 3
+        Me.campo_Telefono.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "telefono", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "N2"))
+        Me.campo_Telefono.Location = New System.Drawing.Point(86, 153)
+        Me.campo_Telefono.Name = "campo_Telefono"
+        Me.campo_Telefono.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Telefono.TabIndex = 3
         '
         'Aceptar
         '
@@ -162,13 +162,13 @@ Partial Class ABMProveedores
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Email "
         '
-        'TextBoxEmail
+        'campo_Email
         '
-        Me.TextBoxEmail.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "email", True))
-        Me.TextBoxEmail.Location = New System.Drawing.Point(86, 179)
-        Me.TextBoxEmail.Name = "TextBoxEmail"
-        Me.TextBoxEmail.Size = New System.Drawing.Size(211, 20)
-        Me.TextBoxEmail.TabIndex = 12
+        Me.campo_Email.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "email", True))
+        Me.campo_Email.Location = New System.Drawing.Point(86, 179)
+        Me.campo_Email.Name = "campo_Email"
+        Me.campo_Email.Size = New System.Drawing.Size(211, 20)
+        Me.campo_Email.TabIndex = 12
         '
         'Label7
         '
@@ -179,14 +179,14 @@ Partial Class ABMProveedores
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Descripcion"
         '
-        'TexboxDescripcion
+        'campo_Descripcion
         '
-        Me.TexboxDescripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "Descripcion", True))
-        Me.TexboxDescripcion.Location = New System.Drawing.Point(86, 205)
-        Me.TexboxDescripcion.Multiline = True
-        Me.TexboxDescripcion.Name = "TexboxDescripcion"
-        Me.TexboxDescripcion.Size = New System.Drawing.Size(211, 87)
-        Me.TexboxDescripcion.TabIndex = 14
+        Me.campo_Descripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProveedorBindingSource, "Descripcion", True))
+        Me.campo_Descripcion.Location = New System.Drawing.Point(86, 205)
+        Me.campo_Descripcion.Multiline = True
+        Me.campo_Descripcion.Name = "campo_Descripcion"
+        Me.campo_Descripcion.Size = New System.Drawing.Size(211, 87)
+        Me.campo_Descripcion.TabIndex = 14
         '
         'Label8
         '
@@ -209,9 +209,9 @@ Partial Class ABMProveedores
         Me.ClientSize = New System.Drawing.Size(330, 339)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TexboxDescripcion)
+        Me.Controls.Add(Me.campo_Descripcion)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBoxEmail)
+        Me.Controls.Add(Me.campo_Email)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -220,10 +220,10 @@ Partial Class ABMProveedores
         Me.Controls.Add(Me.TexboxId)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
-        Me.Controls.Add(Me.TexboxTelefono)
-        Me.Controls.Add(Me.TexboxLocalidad)
-        Me.Controls.Add(Me.TexboxDireccion)
-        Me.Controls.Add(Me.TexboxNombre)
+        Me.Controls.Add(Me.campo_Telefono)
+        Me.Controls.Add(Me.campo_Localidad)
+        Me.Controls.Add(Me.campo_Direccion)
+        Me.Controls.Add(Me.campo_Nombre)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximumSize = New System.Drawing.Size(330, 339)
@@ -236,10 +236,10 @@ Partial Class ABMProveedores
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TexboxNombre As System.Windows.Forms.TextBox
-    Friend WithEvents TexboxDireccion As System.Windows.Forms.TextBox
-    Friend WithEvents TexboxLocalidad As System.Windows.Forms.TextBox
-    Friend WithEvents TexboxTelefono As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Nombre As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Direccion As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Localidad As System.Windows.Forms.TextBox
+    Friend WithEvents campo_Telefono As System.Windows.Forms.TextBox
     Friend WithEvents Aceptar As System.Windows.Forms.Button
     Friend WithEvents Cancelar As System.Windows.Forms.Button
     Friend WithEvents TexboxId As System.Windows.Forms.TextBox
@@ -249,9 +249,9 @@ Partial Class ABMProveedores
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBoxEmail As TextBox
+    Friend WithEvents campo_Email As TextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents TexboxDescripcion As TextBox
+    Friend WithEvents campo_Descripcion As TextBox
     Friend WithEvents ProveedorBindingSource As BindingSource
     Friend WithEvents Label8 As Label
 End Class

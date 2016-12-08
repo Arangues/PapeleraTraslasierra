@@ -89,10 +89,11 @@ Partial Class Login
         '
         Me.ContraseñaTexBox.BackColor = System.Drawing.Color.SkyBlue
         Me.ContraseñaTexBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ContraseñaTexBox.Location = New System.Drawing.Point(138, 133)
+        Me.ContraseñaTexBox.Location = New System.Drawing.Point(138, 126)
         Me.ContraseñaTexBox.Multiline = True
         Me.ContraseñaTexBox.Name = "ContraseñaTexBox"
-        Me.ContraseñaTexBox.Size = New System.Drawing.Size(155, 10)
+        Me.ContraseñaTexBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.ContraseñaTexBox.Size = New System.Drawing.Size(155, 17)
         Me.ContraseñaTexBox.TabIndex = 13
         '
         'IngresarButton

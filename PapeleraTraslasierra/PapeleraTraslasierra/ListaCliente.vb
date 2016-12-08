@@ -6,8 +6,8 @@ Imports System.Data.SqlClient
 Public Class ListaCliente
     Public usuarioCliente_ As String
     Dim CLiente As New Cliente
-
-    Public Property UsuarioArticulo() As String
+    Private _clientes As List(Of Cliente)
+    Public Property UsuarioTipoCliente() As String
         Get
             Return usuarioCliente_
         End Get
@@ -18,11 +18,12 @@ Public Class ListaCliente
 
 
     Private Sub ListaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If usuarioCliente_ = "Sergio" Then
+        If usuarioCliente_ = "Usuario" Then
             btn_eliminar.Enabled = False
             btn_modificar.Enabled = False
         End If
-        ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+        _clientes = ClienteMappers.ObtenerTodos
+        ClienteBindingSource.DataSource = _clientes
     End Sub
 
     Private Sub ButtonAgregar_Click(sender As Object, e As EventArgs) Handles ButtonAgregar.Click
@@ -34,10 +35,10 @@ Public Class ListaCliente
             If pregunta = DialogResult.Yes Then
 
                 ClienteMappers.InsertarCliente(frmcliente.Cliente)
-                ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
                 dgv_Cliente.Refresh()
             End If
-            ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+            _clientes = ClienteMappers.ObtenerTodos
+            ClienteBindingSource.DataSource = _clientes
         End If
 
     End Sub
@@ -50,9 +51,10 @@ Public Class ListaCliente
             Dim pregunta As DialogResult = MsgBox("¿ Desea Modifcar al cliente" & " " & frmcliente.Cliente.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Modificar registro")
             If pregunta = DialogResult.Yes Then
                 ClienteMappers.ModificarCliente(frmcliente.Cliente)
-                ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+
             End If
-            ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+            _clientes = ClienteMappers.ObtenerTodos
+            ClienteBindingSource.DataSource = _clientes
         End If
     End Sub
 
@@ -62,7 +64,8 @@ Public Class ListaCliente
         Dim pregunta As DialogResult = MsgBox("¿ Desea eliminar al cliente" & " " & frmcliente.Cliente.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar registro")
         If pregunta = DialogResult.Yes Then
             ClienteMappers.EliminaCliente(frmcliente.Cliente)
-            ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
+            _clientes = ClienteMappers.ObtenerTodos
+            ClienteBindingSource.DataSource = _clientes
         End If
     End Sub
 
@@ -72,17 +75,10 @@ Public Class ListaCliente
 
     Private Sub txt_buscar_nombre_TextChanged(sender As Object, e As EventArgs) Handles txt_buscar_nombre.TextChanged
 
+        ClienteBindingSource.DataSource = _clientes.Where(Function(c) c.nombre.ToLower Like txt_buscar_nombre.Text.Trim.ToLower + "*")
 
-        Dim conexion As New ConexionDB
-            Dim buscar As New SqlDataAdapter("select * from Cliente where Nombre like '%" + txt_buscar_nombre.Text + "%'", conexion.Conexion)
-            Dim ds As New DataSet()
-            buscar.Fill(ds, "Cliente")
-            dgv_Cliente.DataSource = ds.Tables(0)
 
     End Sub
 
-    Private Sub txt_buscar_nombre_LostFocus(sender As Object, e As EventArgs) Handles txt_buscar_nombre.LostFocus
-        txt_buscar_nombre.Text = ""
-        ClienteBindingSource.DataSource = ClienteMappers.ObtenerTodos
-    End Sub
+
 End Class
