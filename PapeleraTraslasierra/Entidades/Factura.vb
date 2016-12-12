@@ -4,6 +4,8 @@
     Dim tipo_ As String
     Dim fecha_ As DateTime
     Dim facturaTotal_ As Decimal
+    Dim usuario_ As String
+    Dim cliente_ As String
 
     Public Sub New()
         Me.Detalle = New DetalleFacturaList
@@ -57,6 +59,24 @@
         End Get
         Set(value As Integer)
             facturaNumero_ = value
+        End Set
+    End Property
+
+    Public Property Usuario As String
+        Get
+            Return usuario_
+        End Get
+        Set(value As String)
+            usuario_ = value
+        End Set
+    End Property
+
+    Public Property Cliente As String
+        Get
+            Return cliente_
+        End Get
+        Set(value As String)
+            cliente_ = value
         End Set
     End Property
 

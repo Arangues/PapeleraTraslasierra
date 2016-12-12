@@ -12,7 +12,7 @@ Public Class ListaArticulos
 
     Private Sub ListaArticulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        eliminarArticuloButton.Enabled = UsuarioRegla.EsAdmin
+        ButtonEliminar.Enabled = UsuarioRegla.EsAdmin
         _Articulos = ArticuloMappers.ObtenerTodos
         ArticuloBindingSource.DataSource = _Articulos
     End Sub
@@ -21,7 +21,7 @@ Public Class ListaArticulos
         Dim frmArticulo As New ABMArticulo
         frmArticulo.Articulo = New Articulo
         If frmArticulo.ShowDialog() = DialogResult.OK Then
-            Dim pregunta As DialogResult = MsgBox("¿ Desea insertar el Articulo" & " " & frmArticulo.Articulo.Nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Insertar registro")
+            Dim pregunta As DialogResult = MsgBox("¿ Desea insertar " & " " & frmArticulo.Articulo.Nombre & " como nuevo articulo ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Insertar registro")
             If pregunta = DialogResult.Yes Then
                 ArticuloMappers.InsertarArticulo(frmArticulo.Articulo)
 
@@ -47,19 +47,6 @@ Public Class ListaArticulos
 
     End Sub
 
-    Private Sub eliminarArticuloButton_Click(sender As Object, e As EventArgs) Handles eliminarArticuloButton.Click
-        Dim frmArticulo As New ABMArticulo
-        frmArticulo.Articulo = ArticuloBindingSource.Current
-        Dim pregunta As DialogResult = MsgBox("¿ Desea eliminar al Articulo" & " " & frmArticulo.Articulo.Nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar registro")
-        If pregunta = DialogResult.Yes Then
-            ArticuloMappers.EliminaArticulo(frmArticulo.Articulo)
-            _Articulos = ArticuloMappers.ObtenerTodos
-            ArticuloBindingSource.DataSource = _Articulos
-
-
-        End If
-
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
@@ -74,5 +61,17 @@ Public Class ListaArticulos
 
     Private Sub TXT_BUSCAR_CATEGORIA_TextChanged(sender As Object, e As EventArgs) Handles TXT_BUSCAR_CATEGORIA.TextChanged
         ArticuloBindingSource.DataSource = _Articulos.Where(Function(c) c.Categoria.ToLower Like TXT_BUSCAR_CATEGORIA.Text.Trim.ToLower + "*")
+    End Sub
+    Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
+
+        'Dim frmArticulo As New ABMArticulo
+        'frmArticulo.Articulo = ArticuloBindingSource.Current
+        'Dim pregunta As DialogResult = MsgBox("¿ Desea eliminar al Articulo" & " " & frmArticulo.Articulo.Nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Eliminar registro")
+        'If pregunta = DialogResult.Yes Then
+        '    ArticuloMappers.EliminaArticulo(frmArticulo.Articulo)
+        '    _Articulos = ArticuloMappers.ObtenerTodos
+        '    ArticuloBindingSource.DataSource = _Articulos
+
+        'End If
     End Sub
 End Class

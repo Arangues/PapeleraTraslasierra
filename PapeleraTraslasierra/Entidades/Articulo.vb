@@ -2,14 +2,15 @@
 
 Public Class Articulo
     Dim idArticulo_ As Integer
-    Dim nombre_ As String
-    Dim categoria_ As String
-    Dim precio_unitario_ As Decimal
-    Dim precio_venta_ As Decimal
-    Dim stock_ As Integer
-    Dim stock_min_ As Integer
-    Dim stock_max_ As Integer
-    Dim descripcion_ As String
+    Private nombre_ As String
+    Private categoria_ As String
+    Private precio_unitario_ As Decimal
+    Private precio_venta_ As Decimal
+    Private stock_ As Integer
+    Private stock_min_ As Integer
+    Private stock_max_ As Integer
+    Private proveedor_ As String
+    Private descripcion_ As String
 
     Public Sub New()
 
@@ -96,6 +97,14 @@ Public Class Articulo
         End Get
         Set(value As String)
             descripcion_ = value
+        End Set
+    End Property
+    Public Property Proveedor As String
+        Get
+            Return proveedor_
+        End Get
+        Set(value As String)
+            proveedor_ = value
         End Set
     End Property
 

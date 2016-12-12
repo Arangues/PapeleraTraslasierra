@@ -11,6 +11,8 @@ Public Class ABMArticulo
     End Property
 
     Private Sub ABMArticulo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Mappers.ArticuloMappers.CategoriaCargarCombo(campo_Categoria)
+        Mappers.ArticuloMappers.ProveedorCargarCombo(campo_Proveedor)
         campo_PrecioUnitario.Enabled = Reglas.UsuarioRegla.EsAdmin
         campo_PrecioVenta.Enabled = Reglas.UsuarioRegla.EsAdmin
         Campo_Stock.Enabled = Reglas.UsuarioRegla.EsAdmin
@@ -42,6 +44,5 @@ Public Class ABMArticulo
         Next
 
     End Function
-
 
 End Class

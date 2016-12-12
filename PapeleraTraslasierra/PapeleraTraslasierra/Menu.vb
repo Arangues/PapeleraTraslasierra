@@ -31,7 +31,6 @@ Public Class frm_menu
 
     Private Sub ClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClienteToolStripMenuItem.Click
         Dim ListaCliente As New ListaCliente
-        ListaCliente.UsuarioTipoCliente = _tipo
         ListaCliente.ShowDialog()
     End Sub
 
@@ -42,7 +41,8 @@ Public Class frm_menu
     End Sub
 
     Private Sub ProveedoresToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ProveedoresToolStripMenuItem.Click
-        ListProveedor.ShowDialog()
+        Dim ListaProveedores As New ListaProveedores
+        ListaProveedores.ShowDialog()
     End Sub
 
     Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -50,7 +50,8 @@ Public Class frm_menu
     End Sub
 
     Private Sub UsuarioMenuStrinp_Click(sender As Object, e As EventArgs) Handles UsuarioMenuStrinp.Click
-        My.Forms.MDIMenu.Show()
+        My.Forms.ListaUsuario.ShowDialog()
+
     End Sub
 
     Private Sub CambiarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarUsuarioToolStripMenuItem.Click
@@ -61,8 +62,24 @@ Public Class frm_menu
 
     End Sub
 
-    Private Sub ArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ArticulosToolStripMenuItem.Click
-        Dim ListaArticulos As New ListaArticulos
+    Private Sub ArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Dim ListaArticulos As New ListasArticulo
         ListaArticulos.ShowDialog()
+    End Sub
+
+    Private Sub AsdToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        My.Forms.Form1.Show()
+    End Sub
+
+    Private Sub salirButton_Click(sender As Object, e As EventArgs) Handles salirButton.Click
+        Dim pregunta As DialogResult = MsgBox("¿ Seguro desea salir del programa ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Salir")
+        If pregunta = DialogResult.Yes Then
+            Me.Close()
+        End If
+
+    End Sub
+
+    Private Sub minimizarButton_Click(sender As Object, e As EventArgs) Handles minimizarButton.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

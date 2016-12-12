@@ -15,6 +15,88 @@ Public Class UsuarioMappers
         Return ConvertirRowEnUsuario(datos.Rows)
     End Function
 
+
+    Public Shared Sub InsertarUsuario(nuevoUsuario As Usuario)
+
+        If nuevoUsuario Is Nothing Then
+            Throw New Exception("Debe especificar un Usuario a dar de alta")
+        End If
+
+        Dim NombreStoreProcedure As String = "InsertarUsuario"
+
+        Dim misParametros As New List(Of SqlParameter)()
+
+
+        Dim parametroRetorno As New SqlParameter("@idUsuario", SqlDbType.Int)
+        parametroRetorno.Direction = ParameterDirection.Output
+
+        misParametros.Add(parametroRetorno)
+
+        misParametros.Add(New SqlParameter("@Usuario", nuevoUsuario.Usuario))
+        misParametros.Add(New SqlParameter("@Contraseña", nuevoUsuario.Password))
+        misParametros.Add(New SqlParameter("@Tipo", nuevoUsuario.Tipo))
+
+
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+
+
+        Dim UsuarioId As Integer = CInt(parametroRetorno.Value)
+
+        nuevoUsuario.AsignarUsuarioId(UsuarioId)
+    End Sub
+
+    Public Shared Sub InsertarUsuario(nuevosUsuarios As List(Of Usuario))
+
+        For Each c As Usuario In nuevosUsuarios
+            InsertarUsuario(c)
+        Next
+    End Sub
+
+
+    Public Shared Sub EliminaUsuario(nuevoUsuario As Usuario)
+
+        If nuevoUsuario Is Nothing Then
+            Throw New Exception("Debe especificar un Usuario a eliminar")
+        End If
+
+
+
+        Dim NombreStoreProcedure As String = "EliminarUsuario"
+
+        Dim misParametros As New List(Of SqlParameter)()
+
+
+
+
+        misParametros.Add(New SqlParameter("@idUsuario", nuevoUsuario.IdUsuario))
+
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+
+
+    End Sub
+
+
+    Public Shared Sub ModificarUsuario(nuevoUsuario As Usuario)
+
+        If nuevoUsuario Is Nothing Then
+            Throw New Exception("Debe especificar que Usuario desea modificar")
+        End If
+        Dim NombreStoreProcedure As String = "ModificarUsuario"
+
+        Dim misParametros As New List(Of SqlParameter)()
+        misParametros.Add(New SqlParameter("@idUsuario", nuevoUsuario.IdUsuario))
+        misParametros.Add(New SqlParameter("@Usuario", nuevoUsuario.Usuario))
+        misParametros.Add(New SqlParameter("@Contraseña", nuevoUsuario.Password))
+        misParametros.Add(New SqlParameter("@Tipo", nuevoUsuario.Tipo))
+
+
+
+
+
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+
+    End Sub
+
     Private Shared Function ConvertirRowEnUsuario(row As DataRow) As Usuario
 
         Dim miUsuario As New Usuario(CStr(row("idUsuario")))

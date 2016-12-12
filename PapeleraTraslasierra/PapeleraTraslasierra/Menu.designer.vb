@@ -22,66 +22,59 @@ Partial Class frm_menu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_menu))
-        Me.MenuStripPapelera = New System.Windows.Forms.MenuStrip()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.salirButton = New System.Windows.Forms.Button()
+        Me.UsuarioLabel = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuarioMenuStrinp = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStripPapelera.SuspendLayout()
+        Me.MenuStripPapelera = New System.Windows.Forms.MenuStrip()
+        Me.minimizarButton = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStripPapelera.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStripPapelera
+        'Label1
         '
-        Me.MenuStripPapelera.BackColor = System.Drawing.Color.SkyBlue
-        Me.MenuStripPapelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.UsuarioMenuStrinp, Me.CambiarUsuarioToolStripMenuItem, Me.ArticulosToolStripMenuItem})
-        Me.MenuStripPapelera.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStripPapelera.Name = "MenuStripPapelera"
-        Me.MenuStripPapelera.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStripPapelera.Size = New System.Drawing.Size(671, 24)
-        Me.MenuStripPapelera.TabIndex = 0
-        Me.MenuStripPapelera.Text = "MenuStrip"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Rockwell", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(577, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(60, 17)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Usuario:"
         '
-        'ClienteToolStripMenuItem
+        'salirButton
         '
-        Me.ClienteToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
-        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
-        Me.ClienteToolStripMenuItem.Text = "Cliente"
+        Me.salirButton.BackColor = System.Drawing.Color.SkyBlue
+        Me.salirButton.Location = New System.Drawing.Point(670, 3)
+        Me.salirButton.Name = "salirButton"
+        Me.salirButton.Size = New System.Drawing.Size(31, 18)
+        Me.salirButton.TabIndex = 37
+        Me.salirButton.Text = "X"
+        Me.salirButton.UseVisualStyleBackColor = False
         '
-        'FacturasToolStripMenuItem
+        'UsuarioLabel
         '
-        Me.FacturasToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.FacturasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.FacturasToolStripMenuItem.Name = "FacturasToolStripMenuItem"
-        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
-        Me.FacturasToolStripMenuItem.Text = "Facturas"
-        '
-        'ProveedoresToolStripMenuItem
-        '
-        Me.ProveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.Black
-        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
-        '
-        'UsuarioMenuStrinp
-        '
-        Me.UsuarioMenuStrinp.Name = "UsuarioMenuStrinp"
-        Me.UsuarioMenuStrinp.Size = New System.Drawing.Size(59, 20)
-        Me.UsuarioMenuStrinp.Text = "Usuario"
-        '
-        'CambiarUsuarioToolStripMenuItem
-        '
-        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
-        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(107, 20)
-        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario"
+        Me.UsuarioLabel.AutoSize = True
+        Me.UsuarioLabel.BackColor = System.Drawing.Color.Transparent
+        Me.UsuarioLabel.Font = New System.Drawing.Font("Rockwell", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsuarioLabel.ForeColor = System.Drawing.Color.White
+        Me.UsuarioLabel.Location = New System.Drawing.Point(645, 0)
+        Me.UsuarioLabel.Name = "UsuarioLabel"
+        Me.UsuarioLabel.Size = New System.Drawing.Size(56, 17)
+        Me.UsuarioLabel.TabIndex = 5
+        Me.UsuarioLabel.Text = "Usuario"
         '
         'TableLayoutPanel1
         '
@@ -93,43 +86,97 @@ Partial Class frm_menu
         Me.TableLayoutPanel1.Controls.Add(Me.UsuarioLabel, 2, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 1, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 24)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 27)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 348.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(671, 375)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(709, 372)
         Me.TableLayoutPanel1.TabIndex = 4
         '
-        'UsuarioLabel
+        'ClienteToolStripMenuItem
         '
-        Me.UsuarioLabel.AutoSize = True
-        Me.UsuarioLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsuarioLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsuarioLabel.ForeColor = System.Drawing.Color.White
-        Me.UsuarioLabel.Location = New System.Drawing.Point(607, 0)
-        Me.UsuarioLabel.Name = "UsuarioLabel"
-        Me.UsuarioLabel.Size = New System.Drawing.Size(57, 17)
-        Me.UsuarioLabel.TabIndex = 5
-        Me.UsuarioLabel.Text = "Usuario"
+        Me.ClienteToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ClienteToolStripMenuItem.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.ClienteToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ClienteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.ClienteToolStripMenuItem.Name = "ClienteToolStripMenuItem"
+        Me.ClienteToolStripMenuItem.Size = New System.Drawing.Size(73, 23)
+        Me.ClienteToolStripMenuItem.Text = "Cliente"
         '
-        'Label1
+        'FacturasToolStripMenuItem
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(539, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(61, 17)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Usuario:"
+        Me.FacturasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.FacturasToolStripMenuItem.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.FacturasToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.FacturasToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.FacturasToolStripMenuItem.Name = "FacturasToolStripMenuItem"
+        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(84, 23)
+        Me.FacturasToolStripMenuItem.Text = "Facturas"
         '
-        'ArticulosToolStripMenuItem
+        'ProveedoresToolStripMenuItem
         '
-        Me.ArticulosToolStripMenuItem.Name = "ArticulosToolStripMenuItem"
-        Me.ArticulosToolStripMenuItem.Size = New System.Drawing.Size(66, 20)
-        Me.ArticulosToolStripMenuItem.Text = "Articulos"
+        Me.ProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ProveedoresToolStripMenuItem.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.ProveedoresToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ProveedoresToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(115, 23)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.Transparent
+        Me.ToolStripMenuItem2.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.ToolStripMenuItem2.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem2.ImageTransparentColor = System.Drawing.Color.Black
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(85, 23)
+        Me.ToolStripMenuItem2.Text = "Articulos"
+        '
+        'UsuarioMenuStrinp
+        '
+        Me.UsuarioMenuStrinp.BackColor = System.Drawing.Color.Transparent
+        Me.UsuarioMenuStrinp.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.UsuarioMenuStrinp.ForeColor = System.Drawing.Color.White
+        Me.UsuarioMenuStrinp.ImageTransparentColor = System.Drawing.Color.Black
+        Me.UsuarioMenuStrinp.Name = "UsuarioMenuStrinp"
+        Me.UsuarioMenuStrinp.Size = New System.Drawing.Size(77, 23)
+        Me.UsuarioMenuStrinp.Text = "Usuario"
+        '
+        'CambiarUsuarioToolStripMenuItem
+        '
+        Me.CambiarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.CambiarUsuarioToolStripMenuItem.Font = New System.Drawing.Font("Rockwell", 12.0!)
+        Me.CambiarUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.CambiarUsuarioToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
+        Me.CambiarUsuarioToolStripMenuItem.Name = "CambiarUsuarioToolStripMenuItem"
+        Me.CambiarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(146, 23)
+        Me.CambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario"
+        '
+        'MenuStripPapelera
+        '
+        Me.MenuStripPapelera.BackColor = System.Drawing.Color.Brown
+        Me.MenuStripPapelera.BackgroundImage = CType(resources.GetObject("MenuStripPapelera.BackgroundImage"), System.Drawing.Image)
+        Me.MenuStripPapelera.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuStripPapelera.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
+        Me.MenuStripPapelera.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem, Me.FacturasToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ToolStripMenuItem2, Me.UsuarioMenuStrinp, Me.CambiarUsuarioToolStripMenuItem})
+        Me.MenuStripPapelera.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStripPapelera.Name = "MenuStripPapelera"
+        Me.MenuStripPapelera.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStripPapelera.Size = New System.Drawing.Size(709, 27)
+        Me.MenuStripPapelera.TabIndex = 0
+        Me.MenuStripPapelera.Text = "MenuStrip"
+        '
+        'minimizarButton
+        '
+        Me.minimizarButton.BackColor = System.Drawing.Color.SkyBlue
+        Me.minimizarButton.Location = New System.Drawing.Point(630, 3)
+        Me.minimizarButton.Name = "minimizarButton"
+        Me.minimizarButton.Size = New System.Drawing.Size(34, 18)
+        Me.minimizarButton.TabIndex = 38
+        Me.minimizarButton.Text = "---"
+        Me.minimizarButton.UseVisualStyleBackColor = False
         '
         'frm_menu
         '
@@ -139,31 +186,37 @@ Partial Class frm_menu
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(671, 399)
+        Me.ClientSize = New System.Drawing.Size(709, 399)
+        Me.Controls.Add(Me.minimizarButton)
         Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.salirButton)
         Me.Controls.Add(Me.MenuStripPapelera)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStripPapelera
         Me.Name = "frm_menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MENU"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStripPapelera.ResumeLayout(False)
-        Me.MenuStripPapelera.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStripPapelera.ResumeLayout(False)
+        Me.MenuStripPapelera.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents MenuStripPapelera As System.Windows.Forms.MenuStrip
-    Friend WithEvents ClienteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents FacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UsuarioMenuStrinp As ToolStripMenuItem
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents UsuarioLabel As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents salirButton As Button
+    Friend WithEvents UsuarioLabel As Label
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents ClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FacturasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents UsuarioMenuStrinp As ToolStripMenuItem
     Friend WithEvents CambiarUsuarioToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ArticulosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuStripPapelera As MenuStrip
+    Friend WithEvents minimizarButton As Button
 End Class

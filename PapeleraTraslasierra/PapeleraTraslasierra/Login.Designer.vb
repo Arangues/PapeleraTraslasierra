@@ -28,11 +28,11 @@ Partial Class Login
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.IniciadoLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
-        Me.PictureBox = New System.Windows.Forms.PictureBox()
         Me.ContraseñaTexBox = New System.Windows.Forms.TextBox()
         Me.IngresarButton = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -74,17 +74,6 @@ Partial Class Login
         Me.UsuarioTextBox.Size = New System.Drawing.Size(145, 14)
         Me.UsuarioTextBox.TabIndex = 11
         '
-        'PictureBox
-        '
-        Me.PictureBox.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox.Image = CType(resources.GetObject("PictureBox.Image"), System.Drawing.Image)
-        Me.PictureBox.Location = New System.Drawing.Point(1, -1)
-        Me.PictureBox.Name = "PictureBox"
-        Me.PictureBox.Size = New System.Drawing.Size(451, 294)
-        Me.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox.TabIndex = 12
-        Me.PictureBox.TabStop = False
-        '
         'ContraseñaTexBox
         '
         Me.ContraseñaTexBox.BackColor = System.Drawing.Color.SkyBlue
@@ -108,6 +97,7 @@ Partial Class Login
         '
         'ProgressBar1
         '
+        Me.ProgressBar1.BackColor = System.Drawing.Color.GreenYellow
         Me.ProgressBar1.Location = New System.Drawing.Point(77, 52)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(298, 23)
@@ -117,6 +107,17 @@ Partial Class Login
         '
         'Timer2
         '
+        '
+        'PictureBox
+        '
+        Me.PictureBox.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox.Image = CType(resources.GetObject("PictureBox.Image"), System.Drawing.Image)
+        Me.PictureBox.Location = New System.Drawing.Point(1, -1)
+        Me.PictureBox.Name = "PictureBox"
+        Me.PictureBox.Size = New System.Drawing.Size(451, 294)
+        Me.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox.TabIndex = 12
+        Me.PictureBox.TabStop = False
         '
         'Login
         '
@@ -146,9 +147,9 @@ Partial Class Login
     Friend WithEvents Timer1 As Timer
     Friend WithEvents IniciadoLabel As Label
     Friend WithEvents UsuarioTextBox As TextBox
-    Friend WithEvents PictureBox As PictureBox
     Friend WithEvents ContraseñaTexBox As TextBox
     Friend WithEvents IngresarButton As Button
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents PictureBox As PictureBox
 End Class

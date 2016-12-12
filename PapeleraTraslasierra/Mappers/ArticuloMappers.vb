@@ -42,6 +42,7 @@ Public Class ArticuloMappers
         misParametros.Add(New SqlParameter("@Stock", nuevoArticulo.Stock))
         misParametros.Add(New SqlParameter("@StockMin", nuevoArticulo.StockMin))
         misParametros.Add(New SqlParameter("@StockMax", nuevoArticulo.StockMax))
+        misParametros.Add(New SqlParameter("@Proveedor", nuevoArticulo.Proveedor))
         misParametros.Add(New SqlParameter("@Descripcion", nuevoArticulo.Descripcion))
         ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
 
@@ -78,6 +79,7 @@ Public Class ArticuloMappers
         misParametros.Add(New SqlParameter("@Stock", nuevoArticulo.Stock))
         misParametros.Add(New SqlParameter("@StockMin", nuevoArticulo.StockMin))
         misParametros.Add(New SqlParameter("@StockMax", nuevoArticulo.StockMax))
+        misParametros.Add(New SqlParameter("@Proveedor", nuevoArticulo.Proveedor))
         misParametros.Add(New SqlParameter("@Descripcion", nuevoArticulo.Descripcion))
 
 
@@ -119,8 +121,10 @@ Public Class ArticuloMappers
         miArticulo.Categoria = row("Categoria").ToString()
         miArticulo.PrecioUnitario = row("PrecioUnitario")
         miArticulo.PrecioVenta = row("precioVenta").ToString()
+        miArticulo.Stock = row("Stock").ToString()
         miArticulo.StockMin = row("StockMin").ToString()
         miArticulo.StockMax = row("StockMax").ToString()
+        miArticulo.Proveedor = row("Proveedor").ToString()
         miArticulo.Descripcion = row("Descripcion").ToString()
 
 
@@ -200,6 +204,55 @@ Public Class ArticuloMappers
 
 
         Return ConvertirRowEnArticulo(datos.Rows(0))
+    End Function
+
+    Public Shared Function CategoriaCargarCombo(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("CategoriaCargarCombo", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "Nombre"
+                .ValueMember = "idCategoria"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
+    Public Shared Function ProveedorCargarCombo(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("ObtenerTodosProveedores", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "Nombre"
+                .ValueMember = "idProveedor"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
     End Function
 
 End Class

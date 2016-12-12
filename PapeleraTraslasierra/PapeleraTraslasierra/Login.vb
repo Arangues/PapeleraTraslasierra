@@ -129,10 +129,12 @@ Public Class Login
             menu.Tipo = _tipo
             menu.ShowDialog()
 
+            Me.Show()
+
         Else
             MsgBox("El usuario o la contraseña son incorrectas")
         End If
-        Me.Show()
+
 
     End Sub
 

@@ -40,8 +40,8 @@ Public Class FacturaMappers
         misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
         misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
         misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.FacturaTotal))
-
-
+        misParametros.Add(New SqlParameter("@Cliente", nuevaFactura.Cliente))
+        misParametros.Add(New SqlParameter("@Usuario", nuevaFactura.Usuario))
 
 
         Dim FacturaId As Integer = CInt(parametroRetorno.Value)
@@ -92,9 +92,10 @@ Public Class FacturaMappers
         miFactura.IdFactura = CInt(row("idFactura"))
         miFactura.FacturaNumero = CInt(row("FacturaNumero"))
         miFactura.Tipo = row("Tipo").ToString()
-        miFactura.FacturaTotal = Convert.ToDecimal(row("FacturaTotal"))
         miFactura.Fecha = Convert.ToDateTime(row("Fecha"))
-
+        miFactura.FacturaTotal = Convert.ToDecimal(row("FacturaTotal"))
+        miFactura.Cliente = row("Cliente").ToString()
+        miFactura.Usuario = row("Usuario").ToString()
 
         Return miFactura
     End Function
@@ -223,6 +224,57 @@ Public Class FacturaMappers
         End Try
         Return True
     End Function
+
+    Public Shared Function CargarComboFiltroFactura(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("FacturaFiltro", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "NombrFiltro"
+                .ValueMember = "idFacturaFiltros"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
+
+    Public Shared Function CargarComboFiltroUsuario(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("CargarComboFiltroUsuario", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "NombrFiltro"
+                .ValueMember = "idFacturaFiltros"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
+
 
     Public Function ActualizarDetalleActual(ByVal tabla As DataGridView, ByRef subtotal As Decimal, ByVal txtSubtotal As TextBox)
         Try

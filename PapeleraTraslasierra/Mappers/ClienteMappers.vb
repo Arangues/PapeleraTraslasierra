@@ -30,7 +30,7 @@ Public Class ClienteMappers
         Dim misParametros As New List(Of SqlParameter)()
 
 
-        Dim parametroRetorno As New SqlParameter("@ClienteId", SqlDbType.Int)
+        Dim parametroRetorno As New SqlParameter("@idCliente", SqlDbType.Int)
         parametroRetorno.Direction = ParameterDirection.Output
 
         misParametros.Add(parametroRetorno)
@@ -109,7 +109,7 @@ Public Class ClienteMappers
 
     Private Shared Function ConvertirRowEnCliente(row As DataRow) As Cliente
 
-        Dim miCliente As New Cliente(CInt(row("IdCliente")))
+        Dim miCliente As New Cliente(CInt(row("idCliente")))
 
         miCliente.IdCliente = CInt(row("idCliente"))
         miCliente.nombre = row("Nombre").ToString()
@@ -119,7 +119,7 @@ Public Class ClienteMappers
         miCliente.Telefono = row("Telefono").ToString()
 
 
-    
+
         Return miCliente
     End Function
 

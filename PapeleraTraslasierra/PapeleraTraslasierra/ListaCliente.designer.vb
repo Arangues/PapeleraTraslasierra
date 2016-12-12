@@ -95,7 +95,7 @@ Partial Class ListaCliente
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(231, 12)
+        Me.btn_eliminar.Location = New System.Drawing.Point(204, 12)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(75, 23)
         Me.btn_eliminar.TabIndex = 9
@@ -104,7 +104,7 @@ Partial Class ListaCliente
         '
         'btn_modificar
         '
-        Me.btn_modificar.Location = New System.Drawing.Point(150, 12)
+        Me.btn_modificar.Location = New System.Drawing.Point(123, 12)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(75, 23)
         Me.btn_modificar.TabIndex = 8
@@ -113,7 +113,7 @@ Partial Class ListaCliente
         '
         'ButtonAgregar
         '
-        Me.ButtonAgregar.Location = New System.Drawing.Point(69, 12)
+        Me.ButtonAgregar.Location = New System.Drawing.Point(42, 12)
         Me.ButtonAgregar.Name = "ButtonAgregar"
         Me.ButtonAgregar.Size = New System.Drawing.Size(75, 23)
         Me.ButtonAgregar.TabIndex = 7

@@ -4,24 +4,13 @@ Imports Datos
 Imports System.Data.SqlClient
 
 Public Class ListaCliente
-    Public usuarioCliente_ As String
+
     Dim CLiente As New Cliente
     Private _clientes As List(Of Cliente)
-    Public Property UsuarioTipoCliente() As String
-        Get
-            Return usuarioCliente_
-        End Get
-        Set(ByVal value As String)
-            usuarioCliente_ = value
-        End Set
-    End Property
+
 
 
     Private Sub ListaCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If usuarioCliente_ = "Usuario" Then
-            btn_eliminar.Enabled = False
-            btn_modificar.Enabled = False
-        End If
         _clientes = ClienteMappers.ObtenerTodos
         ClienteBindingSource.DataSource = _clientes
     End Sub
@@ -31,7 +20,7 @@ Public Class ListaCliente
         frmcliente.Cliente = New Cliente
         If frmcliente.ShowDialog() = DialogResult.OK Then
 
-            Dim pregunta As DialogResult = MsgBox("¿ Desea agregar al cliente" & " " & frmcliente.Cliente.nombre & " ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar registro")
+            Dim pregunta As DialogResult = MsgBox("¿ Desea agregar " & " " & frmcliente.Cliente.nombre & " como nuevo cliente ?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Agregar registro")
             If pregunta = DialogResult.Yes Then
 
                 ClienteMappers.InsertarCliente(frmcliente.Cliente)

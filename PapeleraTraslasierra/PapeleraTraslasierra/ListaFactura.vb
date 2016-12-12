@@ -14,6 +14,9 @@ Public Class ListaFactura
     End Sub
 
     Private Sub ListaFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Mappers.FacturaMappers.CargarComboFiltroFactura(FiltrarFacturaComboBox)
+        Mappers.FacturaMappers.CargarComboClientes(ClienteComboBox)
+
         anularButton.Enabled = Reglas.UsuarioRegla.EsAdmin
         _Facturas = FacturaMappers.ObtenerTodos
         FacturasBindingSource.DataSource = _Facturas
@@ -27,21 +30,25 @@ Public Class ListaFactura
     Private Sub Label9_Click(sender As Object, e As EventArgs)
 
     End Sub
+    Private Sub buscarPorNumeroTextBox_LostFocus(sender As Object, e As EventArgs)
+        buscarPorNumeroTextBox.Text = ""
+    End Sub
 
-    Private Sub TodosRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles TodosRadioButton.CheckedChanged
-        FacturasBindingSource.DataSource = FacturaMappers.ObtenerTodos()
+    Private Sub buscarPorNumeroTextBox_TextChanged_1(sender As Object, e As EventArgs) Handles buscarPorNumeroTextBox.TextChanged
+        FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.FacturaNumero Like buscarPorNumeroTextBox.Text + "*")
     End Sub
 
     Private Sub MonthCalendar2_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MonthCalendar2.DateChanged
-        FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.FacturaNumero Like MonthCalendar2.SelectionRange.Start + "*")
+        Dim dia As String
+        dia = MonthCalendar2.SelectionStart
+        FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.Fecha Like dia + "*")
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        Dim Todos As String = New Date.Today()
-        FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.Fecha Like Todos + "*")
+    Private Sub ClienteComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ClienteComboBox.SelectedIndexChanged
+        ' FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.Cliente Like ClienteComboBox.SelectedItem.ToString + "*")
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles buscarPorNumeroTextBox.TextChanged
-        FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.FacturaNumero Like buscarPorNumeroTextBox.Text + "*")
+    Private Sub FiltrarFacturaComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FiltrarFacturaComboBox.SelectedIndexChanged
+        ' FacturasBindingSource.DataSource = _Facturas.Where(Function(c) c.Tipo Like FiltrarFacturaComboBox.SelectedItem.ToString + "*")
     End Sub
 End Class

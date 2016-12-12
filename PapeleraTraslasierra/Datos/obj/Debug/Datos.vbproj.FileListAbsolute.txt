@@ -26,9 +26,9 @@ C:\DotNet\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\bin\Debug\Datos.dll
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\bin\Debug\Datos.pdb
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\bin\Debug\Datos.xml
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.Resources.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbproj.GenerateResource.Cache
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.dll
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.xml
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.pdb
-C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Datos\obj\Debug\Datos.vbprojResolveAssemblyReference.cache

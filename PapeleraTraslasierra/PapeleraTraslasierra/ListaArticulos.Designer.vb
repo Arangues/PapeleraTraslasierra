@@ -31,9 +31,9 @@ Partial Class ListaArticulos
         Me.PrecioUnitarioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioVentaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StockDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.eliminarArticuloButton = New System.Windows.Forms.Button()
         Me.modificarArticuloButton = New System.Windows.Forms.Button()
         Me.agregarArticuloButton = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -42,6 +42,8 @@ Partial Class ListaArticulos
         Me.txt_buscar_nombre = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.anularButton = New System.Windows.Forms.Button()
+        Me.ButtonEliminar = New System.Windows.Forms.Button()
         CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,12 +52,12 @@ Partial Class ListaArticulos
         '
         Me.dgv_CLIENTE.AutoGenerateColumns = False
         Me.dgv_CLIENTE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_CLIENTE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdArticuloDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CategoriaDataGridViewTextBoxColumn, Me.PrecioUnitarioDataGridViewTextBoxColumn, Me.PrecioVentaDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
+        Me.dgv_CLIENTE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdArticuloDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.CategoriaDataGridViewTextBoxColumn, Me.PrecioUnitarioDataGridViewTextBoxColumn, Me.PrecioVentaDataGridViewTextBoxColumn, Me.StockDataGridViewTextBoxColumn, Me.Proveedor, Me.DescripcionDataGridViewTextBoxColumn})
         Me.dgv_CLIENTE.DataSource = Me.ArticuloBindingSource
         Me.dgv_CLIENTE.Location = New System.Drawing.Point(34, 73)
         Me.dgv_CLIENTE.Name = "dgv_CLIENTE"
         Me.dgv_CLIENTE.ReadOnly = True
-        Me.dgv_CLIENTE.Size = New System.Drawing.Size(747, 286)
+        Me.dgv_CLIENTE.Size = New System.Drawing.Size(855, 286)
         Me.dgv_CLIENTE.TabIndex = 0
         '
         'IdArticuloDataGridViewTextBoxColumn
@@ -100,6 +102,13 @@ Partial Class ListaArticulos
         Me.StockDataGridViewTextBoxColumn.Name = "StockDataGridViewTextBoxColumn"
         Me.StockDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'Proveedor
+        '
+        Me.Proveedor.DataPropertyName = "Proveedor"
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        '
         'DescripcionDataGridViewTextBoxColumn
         '
         Me.DescripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion"
@@ -110,16 +119,6 @@ Partial Class ListaArticulos
         'ArticuloBindingSource
         '
         Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
-        '
-        'eliminarArticuloButton
-        '
-        Me.eliminarArticuloButton.Enabled = False
-        Me.eliminarArticuloButton.Location = New System.Drawing.Point(209, 13)
-        Me.eliminarArticuloButton.Name = "eliminarArticuloButton"
-        Me.eliminarArticuloButton.Size = New System.Drawing.Size(75, 23)
-        Me.eliminarArticuloButton.TabIndex = 9
-        Me.eliminarArticuloButton.Text = "Eliminar"
-        Me.eliminarArticuloButton.UseVisualStyleBackColor = True
         '
         'modificarArticuloButton
         '
@@ -178,7 +177,7 @@ Partial Class ListaArticulos
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.SkyBlue
-        Me.Button1.Location = New System.Drawing.Point(728, 11)
+        Me.Button1.Location = New System.Drawing.Point(837, 15)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(53, 23)
         Me.Button1.TabIndex = 31
@@ -191,11 +190,32 @@ Partial Class ListaArticulos
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(629, 9)
+        Me.Label1.Location = New System.Drawing.Point(738, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 25)
         Me.Label1.TabIndex = 32
         Me.Label1.Text = "Articulos"
+        '
+        'anularButton
+        '
+        Me.anularButton.BackColor = System.Drawing.Color.LightGreen
+        Me.anularButton.Enabled = False
+        Me.anularButton.Location = New System.Drawing.Point(290, 12)
+        Me.anularButton.Name = "anularButton"
+        Me.anularButton.Size = New System.Drawing.Size(108, 23)
+        Me.anularButton.TabIndex = 34
+        Me.anularButton.Text = "Agregar Categoria"
+        Me.anularButton.UseVisualStyleBackColor = False
+        '
+        'ButtonEliminar
+        '
+        Me.ButtonEliminar.Enabled = False
+        Me.ButtonEliminar.Location = New System.Drawing.Point(209, 12)
+        Me.ButtonEliminar.Name = "ButtonEliminar"
+        Me.ButtonEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonEliminar.TabIndex = 35
+        Me.ButtonEliminar.Text = "Eliminar"
+        Me.ButtonEliminar.UseVisualStyleBackColor = True
         '
         'ListaArticulos
         '
@@ -204,14 +224,15 @@ Partial Class ListaArticulos
         Me.BackColor = System.Drawing.SystemColors.ControlText
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(814, 390)
+        Me.ClientSize = New System.Drawing.Size(923, 390)
+        Me.Controls.Add(Me.ButtonEliminar)
+        Me.Controls.Add(Me.anularButton)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.TXT_BUSCAR_CATEGORIA)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txt_buscar_nombre)
-        Me.Controls.Add(Me.eliminarArticuloButton)
         Me.Controls.Add(Me.modificarArticuloButton)
         Me.Controls.Add(Me.agregarArticuloButton)
         Me.Controls.Add(Me.dgv_CLIENTE)
@@ -227,7 +248,6 @@ Partial Class ListaArticulos
 
     End Sub
     Friend WithEvents dgv_CLIENTE As System.Windows.Forms.DataGridView
-    Friend WithEvents eliminarArticuloButton As Button
     Friend WithEvents modificarArticuloButton As Button
     Friend WithEvents agregarArticuloButton As Button
     Friend WithEvents Label10 As Label
@@ -235,13 +255,16 @@ Partial Class ListaArticulos
     Friend WithEvents Label9 As Label
     Friend WithEvents txt_buscar_nombre As TextBox
     Friend WithEvents ArticuloBindingSource As BindingSource
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
     Friend WithEvents IdArticuloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategoriaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioUnitarioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioVentaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StockDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Proveedor As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents anularButton As Button
+    Friend WithEvents ButtonEliminar As Button
 End Class

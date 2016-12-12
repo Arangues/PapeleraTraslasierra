@@ -111,11 +111,12 @@ C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\o
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMArticulo.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMCliente.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMProveedores.resources
-C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListProveedor.resources
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Form1.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frmFactura.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaArticulos.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaCliente.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaFactura.resources
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaProveedores.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.Login.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.MDIMenu.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.frm_menu.resources
@@ -124,3 +125,6 @@ C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\o
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.exe
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.xml
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.pdb
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListaUsuario.resources
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ABMUsuario.resources
+C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\PapeleraTraslasierra\obj\Debug\PapeleraTraslasierra.ListasArticulo.resources
