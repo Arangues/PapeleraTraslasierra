@@ -160,24 +160,6 @@ Public Class ClienteMappers
         Return ConvertirRowEnCliente(datos.Rows)
     End Function
 
-    Public Shared Function ObtenerClientePorNumeroDocumento(dni As String) As Cliente
-        If dni.Length > 8 Or dni.Length < 7 Then
-            Throw New Exception("el numero de documento no es valido.")
-        End If
-
-        Dim NombreStoreProcedure As String = "ObtenerClientePorNumeroDocumento"
-
-        Dim misParametros As New List(Of SqlParameter)()
-
-        misParametros.Add(New SqlParameter("@numeroDocumento", dni))
-
-
-
-        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
-
-
-        Return ConvertirRowEnCliente(datos.Rows(0))
-    End Function
 
     Public Shared Function ObtenerClientePorId(id As Integer) As Cliente
         If id < 0 Then
@@ -188,7 +170,7 @@ Public Class ClienteMappers
 
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@ClienteId", id))
+        misParametros.Add(New SqlParameter("@idCliente", id))
 
 
 
@@ -198,7 +180,26 @@ Public Class ClienteMappers
         Return ConvertirRowEnCliente(datos.Rows(0))
     End Function
 
+    Public Shared Function CargarComboClientes(ByVal comboactual As Object)
+        Try
 
+            Dim misClientes = Mappers.ClienteMappers.ObtenerTodos()
+
+            With comboactual
+                .DataSource = misClientes
+                .DisplayMember = "Nombre"
+                .ValueMember = "Nombre"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
 
 
 

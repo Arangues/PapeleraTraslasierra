@@ -8,21 +8,22 @@ Public Class UsuarioRegla
     Public Shared listUsuario As New List(Of Usuario)()
     Private Shared _cargarLista As Boolean = True
 
+    Public Shared Function UsuarioLogin() As Usuario
 
-    Private Shared Sub Listar()
+        Return usuarioLogeado
+    End Function
+
+    Private Shared Function Listar()
 
         listUsuario = UsuarioMappers.ObtenerTodos()
-
-    End Sub
+        Return True
+    End Function
     Public Shared Function ValidarUsuario(Usuario As String, Contraseña As String) As Boolean
         If String.IsNullOrEmpty(Usuario) AndAlso String.IsNullOrEmpty(Contraseña) Then
             Throw New Exception("No existe la cuenta o la clave es incorrecta ")
         End If
 
-        If _cargarLista Then
-            Listar()
-            _cargarLista = False
-        End If
+        Listar()
 
         For Each Resultado As Usuario In listUsuario
             If Resultado.Usuario.Equals(Usuario) AndAlso Resultado.Password.Equals(Contraseña) Then

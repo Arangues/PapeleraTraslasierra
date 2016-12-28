@@ -68,7 +68,7 @@ Public Class frm_menu
     End Sub
 
     Private Sub AsdToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        My.Forms.Form1.Show()
+
     End Sub
 
     Private Sub salirButton_Click(sender As Object, e As EventArgs) Handles salirButton.Click

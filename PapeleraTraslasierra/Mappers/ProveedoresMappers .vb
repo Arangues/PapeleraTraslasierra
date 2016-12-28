@@ -179,6 +179,26 @@ Public Class ProveedoresMappers
         Return ConvertirRowEnProveedor(datos.Rows(0))
     End Function
 
+    Public Shared Function CargarComboProveedor(ByVal comboactual As Object)
+        Try
+
+            Dim misClientes = Mappers.ProveedoresMappers.ObtenerTodos()
+
+            With comboactual
+                .DataSource = misClientes
+                .DisplayMember = "Nombre"
+                .ValueMember = "Nombre"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
+    End Function
 End Class
 
 

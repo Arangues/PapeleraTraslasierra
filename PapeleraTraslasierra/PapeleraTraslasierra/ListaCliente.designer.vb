@@ -44,6 +44,8 @@ Partial Class ListaCliente
         '
         'dgv_Cliente
         '
+        Me.dgv_Cliente.AllowUserToAddRows = False
+        Me.dgv_Cliente.AllowUserToDeleteRows = False
         Me.dgv_Cliente.AutoGenerateColumns = False
         Me.dgv_Cliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Cliente.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.DireccionDataGridViewTextBoxColumn, Me.LocalidadDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn, Me.TelefonoDataGridViewTextBoxColumn})
@@ -51,6 +53,7 @@ Partial Class ListaCliente
         Me.dgv_Cliente.Location = New System.Drawing.Point(27, 77)
         Me.dgv_Cliente.Name = "dgv_Cliente"
         Me.dgv_Cliente.ReadOnly = True
+        Me.dgv_Cliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_Cliente.Size = New System.Drawing.Size(595, 322)
         Me.dgv_Cliente.TabIndex = 0
         '

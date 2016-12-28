@@ -25,7 +25,6 @@ C:\DotNet\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.pdb
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.dll
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.pdb
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\bin\Debug\Entidades.xml
-C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbprojResolveAssemblyReference.cache
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.Resources.resources
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
 C:\DotNet\PapeleraTraslasierra\trunk\PapeleraTraslasierra\Entidades\obj\Debug\Entidades.dll

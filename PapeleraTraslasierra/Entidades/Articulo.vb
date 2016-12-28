@@ -3,13 +3,10 @@
 Public Class Articulo
     Dim idArticulo_ As Integer
     Private nombre_ As String
-    Private categoria_ As String
-    Private precio_unitario_ As Decimal
+    Private categoria_ As Categoria
     Private precio_venta_ As Decimal
     Private stock_ As Integer
-    Private stock_min_ As Integer
-    Private stock_max_ As Integer
-    Private proveedor_ As String
+    Private proveedor_ As Proveedor
     Private descripcion_ As String
 
     Public Sub New()
@@ -37,24 +34,6 @@ Public Class Articulo
         End Set
     End Property
 
-    Public Property Categoria() As String
-        Get
-            Return categoria_
-        End Get
-        Set(value As String)
-            categoria_ = value
-        End Set
-    End Property
-
-    Public Property PrecioUnitario() As Decimal
-        Get
-            Return precio_unitario_
-        End Get
-        Set(value As Decimal)
-            precio_unitario_ = value
-        End Set
-    End Property
-
     Public Property PrecioVenta() As Decimal
         Get
             Return precio_venta_
@@ -73,23 +52,7 @@ Public Class Articulo
         End Set
     End Property
 
-    Public Property StockMin() As Integer
-        Get
-            Return stock_min_
-        End Get
-        Set(value As Integer)
-            stock_min_ = value
-        End Set
-    End Property
 
-    Public Property StockMax() As Integer
-        Get
-            Return stock_max_
-        End Get
-        Set(value As Integer)
-            stock_max_ = value
-        End Set
-    End Property
 
     Public Property Descripcion As String
         Get
@@ -99,12 +62,21 @@ Public Class Articulo
             descripcion_ = value
         End Set
     End Property
-    Public Property Proveedor As String
+    Public Property Proveedor As Proveedor
         Get
             Return proveedor_
         End Get
-        Set(value As String)
+        Set(value As Proveedor)
             proveedor_ = value
+        End Set
+    End Property
+
+    Public Property Categoria As Categoria
+        Get
+            Return categoria_
+        End Get
+        Set(value As Categoria)
+            categoria_ = value
         End Set
     End Property
 
@@ -115,36 +87,7 @@ Public Class Articulo
 
 
 
-    Public Sub Validador()
 
-        If String.IsNullOrEmpty(Nombre) Then
-            Throw New Exception("El articulo debe tener un nombre ")
-        End If
-
-        If String.IsNullOrEmpty(Categoria) Then
-            Throw New Exception("El articulo debe tener un nombre y apellido")
-        End If
-
-        If String.IsNullOrEmpty(PrecioUnitario) Then
-            Throw New Exception("El articulo debe tener un precio unitario")
-        End If
-        If String.IsNullOrEmpty(PrecioVenta) Then
-            Throw New Exception("El articulo debe tener un precio venta")
-        End If
-        If String.IsNullOrEmpty(Stock) Then
-            Throw New Exception("El articulo debe tener un stock")
-        End If
-        If String.IsNullOrEmpty(StockMin) Then
-            Throw New Exception("El articulo debe tener un stockMin")
-        End If
-        If String.IsNullOrEmpty(StockMax) Then
-            Throw New Exception("El articulo debe tener un stockMax")
-        End If
-        If String.IsNullOrEmpty(Descripcion) Then
-            Throw New Exception("El articulo debe tener una descripcion")
-        End If
-
-    End Sub
 
 
 End Class

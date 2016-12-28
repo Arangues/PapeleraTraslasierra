@@ -32,8 +32,6 @@ Partial Class ABMArticulo
         Me.Campo_Stock = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.campo_PrecioVenta = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.campo_PrecioUnitario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Campo_Nombre = New System.Windows.Forms.TextBox()
@@ -44,16 +42,12 @@ Partial Class ABMArticulo
         Me.Label10 = New System.Windows.Forms.Label()
         Me.campo_Proveedor = New System.Windows.Forms.ComboBox()
         Me.ArticuloBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Campo_StockMin = New System.Windows.Forms.TextBox()
-        Me.Campo_StockMax = New System.Windows.Forms.TextBox()
         CType(Me.ArticuloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Aceptar
         '
-        Me.Aceptar.Location = New System.Drawing.Point(84, 361)
+        Me.Aceptar.Location = New System.Drawing.Point(93, 285)
         Me.Aceptar.Name = "Aceptar"
         Me.Aceptar.Size = New System.Drawing.Size(75, 23)
         Me.Aceptar.TabIndex = 4
@@ -62,7 +56,7 @@ Partial Class ABMArticulo
         '
         'Cancelar
         '
-        Me.Cancelar.Location = New System.Drawing.Point(165, 361)
+        Me.Cancelar.Location = New System.Drawing.Point(174, 285)
         Me.Cancelar.Name = "Cancelar"
         Me.Cancelar.Size = New System.Drawing.Size(75, 23)
         Me.Cancelar.TabIndex = 5
@@ -96,7 +90,7 @@ Partial Class ABMArticulo
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.SystemColors.Window
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label6.Location = New System.Drawing.Point(50, 180)
+        Me.Label6.Location = New System.Drawing.Point(50, 154)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 15)
         Me.Label6.TabIndex = 41
@@ -106,7 +100,7 @@ Partial Class ABMArticulo
         '
         Me.Campo_Stock.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Stock", True))
         Me.Campo_Stock.Enabled = False
-        Me.Campo_Stock.Location = New System.Drawing.Point(93, 177)
+        Me.Campo_Stock.Location = New System.Drawing.Point(93, 151)
         Me.Campo_Stock.Name = "Campo_Stock"
         Me.Campo_Stock.Size = New System.Drawing.Size(86, 20)
         Me.Campo_Stock.TabIndex = 40
@@ -116,7 +110,7 @@ Partial Class ABMArticulo
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.SystemColors.Window
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label5.Location = New System.Drawing.Point(17, 153)
+        Me.Label5.Location = New System.Drawing.Point(17, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(70, 15)
         Me.Label5.TabIndex = 39
@@ -126,30 +120,10 @@ Partial Class ABMArticulo
         '
         Me.campo_PrecioVenta.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioVenta", True))
         Me.campo_PrecioVenta.Enabled = False
-        Me.campo_PrecioVenta.Location = New System.Drawing.Point(93, 153)
+        Me.campo_PrecioVenta.Location = New System.Drawing.Point(93, 127)
         Me.campo_PrecioVenta.Name = "campo_PrecioVenta"
         Me.campo_PrecioVenta.Size = New System.Drawing.Size(86, 20)
         Me.campo_PrecioVenta.TabIndex = 38
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.SystemColors.Window
-        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Location = New System.Drawing.Point(10, 127)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 15)
-        Me.Label4.TabIndex = 37
-        Me.Label4.Text = "Precio Unitario"
-        '
-        'campo_PrecioUnitario
-        '
-        Me.campo_PrecioUnitario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "PrecioUnitario", True))
-        Me.campo_PrecioUnitario.Enabled = False
-        Me.campo_PrecioUnitario.Location = New System.Drawing.Point(93, 127)
-        Me.campo_PrecioUnitario.Name = "campo_PrecioUnitario"
-        Me.campo_PrecioUnitario.Size = New System.Drawing.Size(86, 20)
-        Me.campo_PrecioUnitario.TabIndex = 36
         '
         'Label3
         '
@@ -183,8 +157,7 @@ Partial Class ABMArticulo
         '
         'campo_Categoria
         '
-        Me.campo_Categoria.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Categoria", True))
-        Me.campo_Categoria.FormattingEnabled = True
+        Me.campo_Categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.campo_Categoria.Location = New System.Drawing.Point(93, 100)
         Me.campo_Categoria.Name = "campo_Categoria"
         Me.campo_Categoria.Size = New System.Drawing.Size(186, 21)
@@ -195,7 +168,7 @@ Partial Class ABMArticulo
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.SystemColors.Window
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label9.Location = New System.Drawing.Point(22, 290)
+        Me.Label9.Location = New System.Drawing.Point(22, 219)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(65, 15)
         Me.Label9.TabIndex = 49
@@ -204,7 +177,7 @@ Partial Class ABMArticulo
         'Campo_Descripcion
         '
         Me.Campo_Descripcion.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Descripcion", True))
-        Me.Campo_Descripcion.Location = New System.Drawing.Point(93, 290)
+        Me.Campo_Descripcion.Location = New System.Drawing.Point(93, 216)
         Me.Campo_Descripcion.Multiline = True
         Me.Campo_Descripcion.Name = "Campo_Descripcion"
         Me.Campo_Descripcion.Size = New System.Drawing.Size(186, 63)
@@ -227,7 +200,7 @@ Partial Class ABMArticulo
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.SystemColors.Window
         Me.Label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label10.Location = New System.Drawing.Point(28, 260)
+        Me.Label10.Location = New System.Drawing.Point(29, 183)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(58, 15)
         Me.Label10.TabIndex = 52
@@ -235,9 +208,8 @@ Partial Class ABMArticulo
         '
         'campo_Proveedor
         '
-        Me.campo_Proveedor.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "Proveedor", True))
-        Me.campo_Proveedor.FormattingEnabled = True
-        Me.campo_Proveedor.Location = New System.Drawing.Point(93, 257)
+        Me.campo_Proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.campo_Proveedor.Location = New System.Drawing.Point(93, 177)
         Me.campo_Proveedor.Name = "campo_Proveedor"
         Me.campo_Proveedor.Size = New System.Drawing.Size(186, 21)
         Me.campo_Proveedor.TabIndex = 53
@@ -246,44 +218,6 @@ Partial Class ABMArticulo
         '
         Me.ArticuloBindingSource.DataSource = GetType(Entidades.Articulo)
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.SystemColors.Window
-        Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label7.Location = New System.Drawing.Point(31, 205)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 15)
-        Me.Label7.TabIndex = 43
-        Me.Label7.Text = "Stock Min"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.SystemColors.Window
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Location = New System.Drawing.Point(28, 234)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 15)
-        Me.Label8.TabIndex = 45
-        Me.Label8.Text = "Stock Max"
-        '
-        'Campo_StockMin
-        '
-        Me.Campo_StockMin.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMin", True))
-        Me.Campo_StockMin.Location = New System.Drawing.Point(93, 205)
-        Me.Campo_StockMin.Name = "Campo_StockMin"
-        Me.Campo_StockMin.Size = New System.Drawing.Size(86, 20)
-        Me.Campo_StockMin.TabIndex = 42
-        '
-        'Campo_StockMax
-        '
-        Me.Campo_StockMax.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ArticuloBindingSource, "StockMax", True))
-        Me.Campo_StockMax.Location = New System.Drawing.Point(93, 231)
-        Me.Campo_StockMax.Name = "Campo_StockMax"
-        Me.Campo_StockMax.Size = New System.Drawing.Size(86, 20)
-        Me.Campo_StockMax.TabIndex = 44
-        '
         'ABMArticulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,7 +225,7 @@ Partial Class ABMArticulo
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(324, 405)
+        Me.ClientSize = New System.Drawing.Size(324, 331)
         Me.Controls.Add(Me.campo_Proveedor)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label1)
@@ -299,16 +233,10 @@ Partial Class ABMArticulo
         Me.Controls.Add(Me.Campo_Descripcion)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.TexboxId)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Campo_StockMax)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Campo_StockMin)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Campo_Stock)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.campo_PrecioVenta)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.campo_PrecioUnitario)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Campo_Nombre)
@@ -317,8 +245,6 @@ Partial Class ABMArticulo
         Me.Controls.Add(Me.Aceptar)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.MaximumSize = New System.Drawing.Size(324, 405)
-        Me.MinimumSize = New System.Drawing.Size(324, 405)
         Me.Name = "ABMArticulo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ARTICULO"
@@ -335,20 +261,14 @@ Partial Class ABMArticulo
     Friend WithEvents Campo_Stock As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents campo_PrecioVenta As TextBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents campo_PrecioUnitario As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Campo_Nombre As TextBox
-    Friend WithEvents campo_Categoria As ComboBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Campo_Descripcion As TextBox
     Friend WithEvents ArticuloBindingSource As BindingSource
     Friend WithEvents Label1 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents campo_Proveedor As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Campo_StockMin As TextBox
-    Friend WithEvents Campo_StockMax As TextBox
+    Private WithEvents campo_Categoria As ComboBox
+    Private WithEvents campo_Proveedor As ComboBox
 End Class

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArticuloMappers.vb" />
+    <Compile Include="CategoriaMappers.vb" />
     <Compile Include="FacturaDetalleMappers.vb" />
     <Compile Include="FacturaMappers.vb" />
     <Compile Include="UsuarioMappers.vb" />
@@ -95,6 +96,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

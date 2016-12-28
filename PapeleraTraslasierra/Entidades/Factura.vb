@@ -1,17 +1,19 @@
-﻿Public Class Factura
+﻿Imports Entidades
+
+Public Class Factura
     Dim idFactura_ As Integer
     Dim facturaNumero_ As Integer
     Dim tipo_ As String
     Dim fecha_ As DateTime
-    Dim facturaTotal_ As Decimal
-    Dim usuario_ As String
-    Dim cliente_ As String
+    Public Property Detalle As FacturaDetalleList
+    Dim usuario_ As Usuario
+    Dim cliente_ As Cliente
 
     Public Sub New()
-        Me.Detalle = New DetalleFacturaList
+        Me.Detalle = New FacturaDetalleList
     End Sub
     Public Sub New(idFactura As Integer)
-        Me.Detalle = New DetalleFacturaList
+        Me.Detalle = New FacturaDetalleList
         Me.idFactura_ = idFactura
     End Sub
 
@@ -40,17 +42,25 @@
             fecha_ = value
         End Set
     End Property
-
-
-    Public Property Detalle As DetalleFacturaList
-
-    Public Property FacturaTotal As Decimal
+    Public ReadOnly Property NombreCliente As String
         Get
-            Return facturaTotal_
+            Return Cliente.nombre
         End Get
-        Set(value As Decimal)
-            facturaTotal_ = value
-        End Set
+
+    End Property
+
+    Public ReadOnly Property NombreUsuario As String
+        Get
+            Return Usuario.Usuario
+        End Get
+
+    End Property
+
+    Public ReadOnly Property FacturaTotal As Decimal
+        Get
+            Return Detalle.Sum(Function(d) d.Total)
+        End Get
+
     End Property
 
     Public Property FacturaNumero As Integer
@@ -62,23 +72,25 @@
         End Set
     End Property
 
-    Public Property Usuario As String
+    Public Property Usuario As Usuario
         Get
             Return usuario_
         End Get
-        Set(value As String)
+        Set(value As Usuario)
             usuario_ = value
         End Set
     End Property
 
-    Public Property Cliente As String
+    Public Property Cliente As Cliente
         Get
             Return cliente_
         End Get
-        Set(value As String)
+        Set(value As Cliente)
             cliente_ = value
         End Set
     End Property
+
+
 
     Public Sub AsignarFacturaId(nuevoIdFactura As Integer)
         nuevoIdFactura = IdFactura

@@ -30,15 +30,15 @@ Public Class ConexionDB
     End Sub
 
     Public Sub CerrarConexion()
-            Try
+        Try
 
-                objConexion.Open()
-            Catch ex1 As InvalidOperationException
-                Throw ex1
-            Finally
-                objConexion.Close()
-            End Try
-        End Sub
+            objConexion.Open()
+        Catch ex1 As InvalidOperationException
+            Throw ex1
+        Finally
+            objConexion.Close()
+        End Try
+    End Sub
 
     Public Shared Function ObtenerConexion() As SqlConnection
         AbrirConexion()

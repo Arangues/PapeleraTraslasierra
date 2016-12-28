@@ -6,11 +6,9 @@ Public Class ArticuloMappers
 
 
     Public Shared Function ObtenerTodos() As List(Of Articulo)
-        Dim Conexion As ConexionDB
         Dim NombreStoreProcedure As String = "ObtenerTodosArticulos"
 
-
-        Dim datos As DataTable = Conexion.ObtenerDatos(NombreStoreProcedure)
+        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure)
 
         Return ConvertirRowEnArticulo(datos.Rows)
     End Function
@@ -36,14 +34,11 @@ Public Class ArticuloMappers
         misParametros.Add(parametroRetorno)
 
         misParametros.Add(New SqlParameter("@Nombre", nuevoArticulo.Nombre))
-        misParametros.Add(New SqlParameter("@Categoria", nuevoArticulo.Categoria))
-        misParametros.Add(New SqlParameter("@PrecioUnitario", nuevoArticulo.PrecioUnitario))
+        misParametros.Add(New SqlParameter("@idCategoria", nuevoArticulo.Categoria.IdCategoria))
         misParametros.Add(New SqlParameter("@precioVenta", nuevoArticulo.PrecioVenta))
         misParametros.Add(New SqlParameter("@Stock", nuevoArticulo.Stock))
-        misParametros.Add(New SqlParameter("@StockMin", nuevoArticulo.StockMin))
-        misParametros.Add(New SqlParameter("@StockMax", nuevoArticulo.StockMax))
-        misParametros.Add(New SqlParameter("@Proveedor", nuevoArticulo.Proveedor))
         misParametros.Add(New SqlParameter("@Descripcion", nuevoArticulo.Descripcion))
+        misParametros.Add(New SqlParameter("@idProveedor", nuevoArticulo.Proveedor.IdProveedor))
         ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
 
 
@@ -71,18 +66,13 @@ Public Class ArticuloMappers
         Dim NombreStoreProcedure As String = "ModificarArticulo"
 
         Dim misParametros As New List(Of SqlParameter)()
-        misParametros.Add(New SqlParameter("@idArticulo", nuevoArticulo.idArticulo))
         misParametros.Add(New SqlParameter("@Nombre", nuevoArticulo.Nombre))
-        misParametros.Add(New SqlParameter("@Categoria", nuevoArticulo.Categoria))
-        misParametros.Add(New SqlParameter("@PrecioUnitario", nuevoArticulo.PrecioUnitario))
+        misParametros.Add(New SqlParameter("@idCategoria", nuevoArticulo.Categoria.IdCategoria))
         misParametros.Add(New SqlParameter("@precioVenta", nuevoArticulo.PrecioVenta))
         misParametros.Add(New SqlParameter("@Stock", nuevoArticulo.Stock))
-        misParametros.Add(New SqlParameter("@StockMin", nuevoArticulo.StockMin))
-        misParametros.Add(New SqlParameter("@StockMax", nuevoArticulo.StockMax))
-        misParametros.Add(New SqlParameter("@Proveedor", nuevoArticulo.Proveedor))
         misParametros.Add(New SqlParameter("@Descripcion", nuevoArticulo.Descripcion))
-
-
+        misParametros.Add(New SqlParameter("@IdProveedor", nuevoArticulo.Proveedor.IdProveedor))
+        misParametros.Add(New SqlParameter("@idArticulo", nuevoArticulo.idArticulo))
 
         ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
 
@@ -117,16 +107,12 @@ Public Class ArticuloMappers
         Dim miArticulo As New Articulo(CInt(row("idArticulo")))
 
         miArticulo.idArticulo = CInt(row("idArticulo"))
-        miArticulo.Nombre = row("Nombre").ToString()
-        miArticulo.Categoria = row("Categoria").ToString()
-        miArticulo.PrecioUnitario = row("PrecioUnitario")
+        miArticulo.Categoria = CategoriaMappers.ObtenerCategoriaPorId(row("idCategoria"))
         miArticulo.PrecioVenta = row("precioVenta").ToString()
         miArticulo.Stock = row("Stock").ToString()
-        miArticulo.StockMin = row("StockMin").ToString()
-        miArticulo.StockMax = row("StockMax").ToString()
-        miArticulo.Proveedor = row("Proveedor").ToString()
+        miArticulo.Proveedor = ProveedoresMappers.ObtenerProovedorPorId(row("IdProveedor"))
         miArticulo.Descripcion = row("Descripcion").ToString()
-
+        miArticulo.Nombre = row("Nombre").ToString()
 
         Return miArticulo
     End Function
@@ -196,7 +182,7 @@ Public Class ArticuloMappers
 
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@ArticuloId", id))
+        misParametros.Add(New SqlParameter("@idArticulo", id))
 
 
 
@@ -206,54 +192,7 @@ Public Class ArticuloMappers
         Return ConvertirRowEnArticulo(datos.Rows(0))
     End Function
 
-    Public Shared Function CategoriaCargarCombo(ByVal comboactual As Object)
-        Try
 
-            Dim conexion As New ConexionDB
-            Dim objComando As New SqlCommand("CategoriaCargarCombo", conexion.Conexion)
-            objComando.CommandType = CommandType.StoredProcedure
-            Dim objDataTable As New Data.DataTable
-            Dim objDataAdapter As New SqlDataAdapter(objComando)
-            objDataAdapter.Fill(objDataTable)
-            With comboactual
-                .DataSource = objDataTable
-                .DisplayMember = "Nombre"
-                .ValueMember = "idCategoria"
-
-            End With
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-
-
-        End Try
-        Return True
-    End Function
-    Public Shared Function ProveedorCargarCombo(ByVal comboactual As Object)
-        Try
-
-            Dim conexion As New ConexionDB
-            Dim objComando As New SqlCommand("ObtenerTodosProveedores", conexion.Conexion)
-            objComando.CommandType = CommandType.StoredProcedure
-            Dim objDataTable As New Data.DataTable
-            Dim objDataAdapter As New SqlDataAdapter(objComando)
-            objDataAdapter.Fill(objDataTable)
-            With comboactual
-                .DataSource = objDataTable
-                .DisplayMember = "Nombre"
-                .ValueMember = "idProveedor"
-
-            End With
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
-
-
-        End Try
-        Return True
-    End Function
 
 End Class
 

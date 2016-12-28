@@ -24,93 +24,32 @@ Partial Class ListaFactura
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ListaFactura))
-        Me.dgv_CLIENTE = New System.Windows.Forms.DataGridView()
-        Me.FacturaNumero = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.anularButton = New System.Windows.Forms.Button()
         Me.ButtonAceptar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.usuarioBuscarTextBox = New System.Windows.Forms.TextBox()
+        Me.clienteBuscarTextBox = New System.Windows.Forms.TextBox()
+        Me.tipoBuscarTextBox = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.MonthCalendar2 = New System.Windows.Forms.MonthCalendar()
-        Me.FiltrarFacturaComboBox = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.buscarPorNumeroTextBox = New System.Windows.Forms.TextBox()
         Me.imprimirButton = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ClienteComboBox = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
-        CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.FacturaNumeroDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BindingSourceFactura = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSourceFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'dgv_CLIENTE
-        '
-        Me.dgv_CLIENTE.AutoGenerateColumns = False
-        Me.dgv_CLIENTE.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_CLIENTE.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FacturaNumero, Me.TipoDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.Cliente, Me.Usuario})
-        Me.dgv_CLIENTE.DataSource = Me.FacturasBindingSource
-        Me.dgv_CLIENTE.Location = New System.Drawing.Point(22, 67)
-        Me.dgv_CLIENTE.Name = "dgv_CLIENTE"
-        Me.dgv_CLIENTE.ReadOnly = True
-        Me.dgv_CLIENTE.Size = New System.Drawing.Size(544, 340)
-        Me.dgv_CLIENTE.TabIndex = 0
-        '
-        'FacturaNumero
-        '
-        Me.FacturaNumero.DataPropertyName = "FacturaNumero"
-        Me.FacturaNumero.HeaderText = "FacturaNumero"
-        Me.FacturaNumero.Name = "FacturaNumero"
-        Me.FacturaNumero.ReadOnly = True
-        '
-        'TipoDataGridViewTextBoxColumn
-        '
-        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
-        Me.TipoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FechaDataGridViewTextBoxColumn
-        '
-        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
-        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
-        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
-        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Cliente
-        '
-        Me.Cliente.DataPropertyName = "Cliente"
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        Me.Cliente.ReadOnly = True
-        '
-        'Usuario
-        '
-        Me.Usuario.DataPropertyName = "Usuario"
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        Me.Usuario.ReadOnly = True
-        '
-        'FacturasBindingSource
-        '
-        Me.FacturasBindingSource.DataSource = GetType(Entidades.Factura)
-        '
-        'anularButton
-        '
-        Me.anularButton.Enabled = False
-        Me.anularButton.Location = New System.Drawing.Point(103, 12)
-        Me.anularButton.Name = "anularButton"
-        Me.anularButton.Size = New System.Drawing.Size(75, 23)
-        Me.anularButton.TabIndex = 8
-        Me.anularButton.Text = "Anular"
-        Me.anularButton.UseVisualStyleBackColor = True
         '
         'ButtonAceptar
         '
@@ -124,7 +63,7 @@ Partial Class ListaFactura
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.SkyBlue
-        Me.Button1.Location = New System.Drawing.Point(720, 16)
+        Me.Button1.Location = New System.Drawing.Point(793, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(53, 23)
         Me.Button1.TabIndex = 37
@@ -137,7 +76,7 @@ Partial Class ListaFactura
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(626, 12)
+        Me.Label1.Location = New System.Drawing.Point(699, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 25)
         Me.Label1.TabIndex = 36
@@ -146,22 +85,65 @@ Partial Class ListaFactura
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.usuarioBuscarTextBox)
+        Me.GroupBox1.Controls.Add(Me.clienteBuscarTextBox)
+        Me.GroupBox1.Controls.Add(Me.tipoBuscarTextBox)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.UsuarioComboBox)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.ClienteComboBox)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.MonthCalendar2)
-        Me.GroupBox1.Controls.Add(Me.FiltrarFacturaComboBox)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.buscarPorNumeroTextBox)
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(567, 67)
+        Me.GroupBox1.Location = New System.Drawing.Point(630, 41)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(211, 311)
+        Me.GroupBox1.Size = New System.Drawing.Size(211, 315)
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "FILTROS"
+        '
+        'usuarioBuscarTextBox
+        '
+        Me.usuarioBuscarTextBox.Location = New System.Drawing.Point(88, 112)
+        Me.usuarioBuscarTextBox.Name = "usuarioBuscarTextBox"
+        Me.usuarioBuscarTextBox.Size = New System.Drawing.Size(69, 20)
+        Me.usuarioBuscarTextBox.TabIndex = 67
+        '
+        'clienteBuscarTextBox
+        '
+        Me.clienteBuscarTextBox.Location = New System.Drawing.Point(88, 82)
+        Me.clienteBuscarTextBox.Name = "clienteBuscarTextBox"
+        Me.clienteBuscarTextBox.Size = New System.Drawing.Size(69, 20)
+        Me.clienteBuscarTextBox.TabIndex = 66
+        '
+        'tipoBuscarTextBox
+        '
+        Me.tipoBuscarTextBox.Location = New System.Drawing.Point(88, 53)
+        Me.tipoBuscarTextBox.Name = "tipoBuscarTextBox"
+        Me.tipoBuscarTextBox.Size = New System.Drawing.Size(69, 20)
+        Me.tipoBuscarTextBox.TabIndex = 65
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(25, 112)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(60, 13)
+        Me.Label5.TabIndex = 64
+        Me.Label5.Text = "Por usuario"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(25, 85)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 13)
+        Me.Label4.TabIndex = 62
+        Me.Label4.Text = "Por cliente"
         '
         'Label3
         '
@@ -179,14 +161,6 @@ Partial Class ListaFactura
         Me.MonthCalendar2.Location = New System.Drawing.Point(11, 137)
         Me.MonthCalendar2.Name = "MonthCalendar2"
         Me.MonthCalendar2.TabIndex = 59
-        '
-        'FiltrarFacturaComboBox
-        '
-        Me.FiltrarFacturaComboBox.FormattingEnabled = True
-        Me.FiltrarFacturaComboBox.Location = New System.Drawing.Point(88, 50)
-        Me.FiltrarFacturaComboBox.Name = "FiltrarFacturaComboBox"
-        Me.FiltrarFacturaComboBox.Size = New System.Drawing.Size(69, 21)
-        Me.FiltrarFacturaComboBox.TabIndex = 58
         '
         'Label2
         '
@@ -208,51 +182,76 @@ Partial Class ListaFactura
         '
         'imprimirButton
         '
+        Me.imprimirButton.BackColor = System.Drawing.Color.GreenYellow
         Me.imprimirButton.ForeColor = System.Drawing.Color.Black
-        Me.imprimirButton.Location = New System.Drawing.Point(695, 384)
+        Me.imprimirButton.Location = New System.Drawing.Point(771, 390)
         Me.imprimirButton.Name = "imprimirButton"
         Me.imprimirButton.Size = New System.Drawing.Size(75, 23)
         Me.imprimirButton.TabIndex = 57
         Me.imprimirButton.Text = "Imprimir"
-        Me.imprimirButton.UseVisualStyleBackColor = True
+        Me.imprimirButton.UseVisualStyleBackColor = False
         '
-        'Label4
+        'DataGridView1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(25, 85)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 13)
-        Me.Label4.TabIndex = 62
-        Me.Label4.Text = "Por cliente"
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FacturaNumeroDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.FechaDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.NombreCliente, Me.NombreUsuario})
+        Me.DataGridView1.DataSource = Me.BindingSourceFactura
+        Me.DataGridView1.Location = New System.Drawing.Point(22, 41)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(582, 337)
+        Me.DataGridView1.TabIndex = 58
         '
-        'ClienteComboBox
+        'FacturaNumeroDataGridViewTextBoxColumn
         '
-        Me.ClienteComboBox.FormattingEnabled = True
-        Me.ClienteComboBox.Location = New System.Drawing.Point(88, 82)
-        Me.ClienteComboBox.Name = "ClienteComboBox"
-        Me.ClienteComboBox.Size = New System.Drawing.Size(115, 21)
-        Me.ClienteComboBox.TabIndex = 61
+        Me.FacturaNumeroDataGridViewTextBoxColumn.DataPropertyName = "FacturaNumero"
+        Me.FacturaNumeroDataGridViewTextBoxColumn.HeaderText = "Numero"
+        Me.FacturaNumeroDataGridViewTextBoxColumn.Name = "FacturaNumeroDataGridViewTextBoxColumn"
+        Me.FacturaNumeroDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FacturaNumeroDataGridViewTextBoxColumn.Width = 70
         '
-        'Label5
+        'TipoDataGridViewTextBoxColumn
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(25, 112)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(60, 13)
-        Me.Label5.TabIndex = 64
-        Me.Label5.Text = "Por usuario"
+        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
+        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
+        Me.TipoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.TipoDataGridViewTextBoxColumn.Width = 60
         '
-        'UsuarioComboBox
+        'FechaDataGridViewTextBoxColumn
         '
-        Me.UsuarioComboBox.FormattingEnabled = True
-        Me.UsuarioComboBox.Location = New System.Drawing.Point(88, 109)
-        Me.UsuarioComboBox.Name = "UsuarioComboBox"
-        Me.UsuarioComboBox.Size = New System.Drawing.Size(115, 21)
-        Me.UsuarioComboBox.TabIndex = 63
+        Me.FechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.HeaderText = "Fecha"
+        Me.FechaDataGridViewTextBoxColumn.Name = "FechaDataGridViewTextBoxColumn"
+        Me.FechaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "FacturaTotal"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "FacturaTotal"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'NombreCliente
+        '
+        Me.NombreCliente.DataPropertyName = "NombreCliente"
+        Me.NombreCliente.HeaderText = "NombreCliente"
+        Me.NombreCliente.Name = "NombreCliente"
+        Me.NombreCliente.ReadOnly = True
+        '
+        'NombreUsuario
+        '
+        Me.NombreUsuario.DataPropertyName = "NombreUsuario"
+        Me.NombreUsuario.HeaderText = "NombreUsuario"
+        Me.NombreUsuario.Name = "NombreUsuario"
+        Me.NombreUsuario.ReadOnly = True
+        '
+        'BindingSourceFactura
+        '
+        Me.BindingSourceFactura.DataSource = GetType(Entidades.Factura)
         '
         'ListaFactura
         '
@@ -260,48 +259,47 @@ Partial Class ListaFactura
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(790, 429)
+        Me.ClientSize = New System.Drawing.Size(873, 429)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.imprimirButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.anularButton)
         Me.Controls.Add(Me.ButtonAceptar)
-        Me.Controls.Add(Me.dgv_CLIENTE)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListaFactura"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FACTURAS"
-        CType(Me.dgv_CLIENTE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSourceFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents dgv_CLIENTE As System.Windows.Forms.DataGridView
-    Friend WithEvents anularButton As Button
     Friend WithEvents ButtonAceptar As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents FacturatotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FacturasBindingSource As BindingSource
-    Friend WithEvents FacturaNumero As DataGridViewTextBoxColumn
-    Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Cliente As DataGridViewTextBoxColumn
-    Friend WithEvents Usuario As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
     Friend WithEvents MonthCalendar2 As MonthCalendar
-    Friend WithEvents FiltrarFacturaComboBox As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents buscarPorNumeroTextBox As TextBox
     Friend WithEvents imprimirButton As Button
     Friend WithEvents Label5 As Label
-    Friend WithEvents UsuarioComboBox As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents ClienteComboBox As ComboBox
+    Friend WithEvents BindingSourceFactura As BindingSource
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents usuarioBuscarTextBox As TextBox
+    Friend WithEvents clienteBuscarTextBox As TextBox
+    Friend WithEvents tipoBuscarTextBox As TextBox
+    Friend WithEvents FacturaNumeroDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents FechaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents NombreCliente As DataGridViewTextBoxColumn
+    Friend WithEvents NombreUsuario As DataGridViewTextBoxColumn
 End Class

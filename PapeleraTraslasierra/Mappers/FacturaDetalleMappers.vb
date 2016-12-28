@@ -27,18 +27,23 @@ Public Class FacturaDetalleDetalleMappers
         Dim misParametros As New List(Of SqlParameter)()
 
 
-        Dim parametroRetorno As New SqlParameter("@FacturaDetalleId", SqlDbType.Int)
+        Dim parametroRetorno As New SqlParameter("@IdFacturaDetalle", SqlDbType.Int)
         parametroRetorno.Direction = ParameterDirection.Output
 
         misParametros.Add(parametroRetorno)
 
-        misParametros.Add(New SqlParameter("@idFacturaDetalle", nuevaFacturaDetalle.IdFacturaDetalle))
-        misParametros.Add(New SqlParameter("@Idactura", nuevaFacturaDetalle.IdFactura))
-        misParametros.Add(New SqlParameter("@Nombre", nuevaFacturaDetalle.Nombre))
+
+        misParametros.Add(New SqlParameter("@IdFactura", nuevaFacturaDetalle.IdFactura))
+        misParametros.Add(New SqlParameter("@IdArticulo", nuevaFacturaDetalle.Articulo.idArticulo))
         misParametros.Add(New SqlParameter("@Precio", nuevaFacturaDetalle.Precio))
         misParametros.Add(New SqlParameter("@Cantidad", nuevaFacturaDetalle.Cantidad))
-        misParametros.Add(New SqlParameter("@Total", nuevaFacturaDetalle.Total))
 
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+
+
+        Dim detalleId As Integer = CInt(parametroRetorno.Value)
+
+        nuevaFacturaDetalle.AsignarFacturaDetalleId(detalleId)
 
         Dim FacturaDetalleId As Integer = CInt(parametroRetorno.Value)
 
@@ -46,7 +51,7 @@ Public Class FacturaDetalleDetalleMappers
         nuevaFacturaDetalle.AsignarFacturaDetalleId(FacturaDetalleId)
     End Sub
 
-    Public Shared Sub InsertarFacturaDetalle(nuevaFacturaDetalle As DetalleFacturaList)
+    Public Shared Sub InsertarFacturaDetalle(nuevaFacturaDetalle As FacturaDetalleList)
 
         For Each c As FacturaDetalle In nuevaFacturaDetalle
             InsertarFacturaDetalle(c)
@@ -62,16 +67,17 @@ Public Class FacturaDetalleDetalleMappers
         End If
         ' nuevaFacturaDetalle.Validador()
 
-        Dim NombreStoreProcedure As String = "ModificarFacturaDetalle"
+        Dim NombreStoreProcedure As String = "@IdFacturaDetalle"
 
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@idFacturaDetalle", nuevaFacturaDetalle.IdFacturaDetalle))
+
+        misParametros.Add(New SqlParameter("@IdFacturaDetalle", nuevaFacturaDetalle.IdFacturaDetalle))
         misParametros.Add(New SqlParameter("@IdFactura", nuevaFacturaDetalle.IdFactura))
-        misParametros.Add(New SqlParameter("@Nombre", nuevaFacturaDetalle.Nombre))
+        misParametros.Add(New SqlParameter("@IdFactura", nuevaFacturaDetalle.Articulo.idArticulo))
         misParametros.Add(New SqlParameter("@Precio", nuevaFacturaDetalle.Precio))
         misParametros.Add(New SqlParameter("@Cantidad", nuevaFacturaDetalle.Cantidad))
-        misParametros.Add(New SqlParameter("@Total", nuevaFacturaDetalle.Total))
+
 
 
 
@@ -83,20 +89,20 @@ Public Class FacturaDetalleDetalleMappers
 
     Private Shared Function ConvertirRowEnFacturaDetalle(row As DataRow) As FacturaDetalle
 
-        Dim miFacturaDetalle As New FacturaDetalle(CInt(row("IdFacturaDetalle")))
+        Dim miFacturaDetalle As New FacturaDetalle(CInt(row("IdDetalles")))
 
-        miFacturaDetalle.IdFacturaDetalle = CInt(row("idFacturaDetalle"))
+        miFacturaDetalle.IdFacturaDetalle = CInt(row("IdDetalles"))
         miFacturaDetalle.IdFactura = CInt(row("IdFactura"))
-        miFacturaDetalle.Nombre = row("Nombre").ToString()
+        miFacturaDetalle.Articulo = ArticuloMappers.ObtenerArticuloPorId(row("idArticulo"))
         miFacturaDetalle.Precio = Convert.ToDecimal(row("Precio"))
         miFacturaDetalle.Cantidad = CInt(row("Cantidad"))
-        miFacturaDetalle.Total = Convert.ToDecimal(row("Total"))
+
         Return miFacturaDetalle
     End Function
 
-    Private Shared Function ConvertirRowEnFacturaDetalle(rows As DataRowCollection) As List(Of FacturaDetalle)
+    Private Shared Function ConvertirRowEnFacturaDetalle(rows As DataRowCollection) As FacturaDetalleList
 
-        Dim misFacturaDetalles As New List(Of FacturaDetalle)()
+        Dim misFacturaDetalles As New FacturaDetalleList
         For Each registro As DataRow In rows
 
             Dim unFacturaDetalle As FacturaDetalle = Nothing
@@ -131,24 +137,7 @@ Public Class FacturaDetalleDetalleMappers
         Return ConvertirRowEnFacturaDetalle(datos.Rows)
     End Function
 
-    Public Shared Function ObtenerFacturaDetallePorNumeroDocumento(dni As String) As FacturaDetalle
-        If dni.Length > 8 Or dni.Length < 7 Then
-            Throw New Exception("el numero de documento no es valido.")
-        End If
 
-        Dim NombreStoreProcedure As String = "ObtenerFacturaDetallePorNumeroDocumento"
-
-        Dim misParametros As New List(Of SqlParameter)()
-
-        misParametros.Add(New SqlParameter("@numeroDocumento", dni))
-
-
-
-        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
-
-
-        Return ConvertirRowEnFacturaDetalle(datos.Rows(0))
-    End Function
 
     Public Shared Function ObtenerFacturaDetallePorId(id As Integer) As FacturaDetalle
         If id < 0 Then
@@ -168,5 +157,26 @@ Public Class FacturaDetalleDetalleMappers
 
         Return ConvertirRowEnFacturaDetalle(datos.Rows(0))
     End Function
+
+    Public Shared Function obtenerFacturaDetallePorIdFactura(id As Integer) As List(Of FacturaDetalle)
+        If id < 0 Then
+            Throw New Exception("el numero de documento no es valido.")
+        End If
+
+        Dim NombreStoreProcedure As String = "obtenerFacturaDetallePorIdFactura"
+
+        Dim misParametros As New List(Of SqlParameter)()
+
+        misParametros.Add(New SqlParameter("@idFactura", id))
+
+
+
+        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
+
+
+        Return ConvertirRowEnFacturaDetalle(datos.Rows())
+    End Function
+
+
 
 End Class

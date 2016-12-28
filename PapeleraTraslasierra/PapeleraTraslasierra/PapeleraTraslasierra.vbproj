@@ -90,6 +90,12 @@
     <Compile Include="ABMArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABMCategoria.Designer.vb">
+      <DependentUpon>ABMCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABMCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABMCliente.designer.vb">
       <DependentUpon>ABMCliente.vb</DependentUpon>
     </Compile>
@@ -102,10 +108,10 @@
     <Compile Include="ABMProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="FacturaReporte.Designer.vb">
+      <DependentUpon>FacturaReporte.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="FacturaReporte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmFactura.Designer.vb">
@@ -120,10 +126,10 @@
     <Compile Include="ABMUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListaArticulos.Designer.vb">
-      <DependentUpon>ListaArticulos.vb</DependentUpon>
+    <Compile Include="ListaCategoria.Designer.vb">
+      <DependentUpon>ListaCategoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="ListaArticulos.vb">
+    <Compile Include="ListaCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListaCliente.designer.vb">
@@ -194,14 +200,17 @@
     <EmbeddedResource Include="ABMArticulo.resx">
       <DependentUpon>ABMArticulo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMCategoria.resx">
+      <DependentUpon>ABMCategoria.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABMCliente.resx">
       <DependentUpon>ABMCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMProveedores.resx">
       <DependentUpon>ABMProveedores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="FacturaReporte.resx">
+      <DependentUpon>FacturaReporte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFactura.resx">
       <DependentUpon>frmFactura.vb</DependentUpon>
@@ -209,8 +218,8 @@
     <EmbeddedResource Include="ABMUsuario.resx">
       <DependentUpon>ABMUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListaArticulos.resx">
-      <DependentUpon>ListaArticulos.vb</DependentUpon>
+    <EmbeddedResource Include="ListaCategoria.resx">
+      <DependentUpon>ListaCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaCliente.resx">
       <DependentUpon>ListaCliente.vb</DependentUpon>
@@ -249,6 +258,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\DataSources\Entidades.Articulo.datasource" />
+    <None Include="My Project\DataSources\Entidades.Categoria.datasource" />
     <None Include="My Project\DataSources\Entidades.Cliente.datasource" />
     <None Include="My Project\DataSources\Entidades.Detalle_Factura.datasource" />
     <None Include="My Project\DataSources\Entidades.EncabezadoFactura.datasource" />

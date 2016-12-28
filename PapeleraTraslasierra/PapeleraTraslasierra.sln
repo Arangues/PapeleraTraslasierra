@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PapeleraTraslasierra", "PapeleraTraslasierra\PapeleraTraslasierra.vbproj", "{C437EF49-F78A-44AF-8324-5F068A3D70DD}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Mappers", "Mappers\Mappers.vbproj", "{D934ACCE-38C5-440E-A607-CFEF0E1255B2}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Reglas", "Reglas\Reglas.vbproj", "{41AADC92-B0E5-4A59-95A7-BDA70FDB25D3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Reporte", "Reporte\Reporte.vbproj", "{29407550-EE80-47AF-936A-84F531C23431}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{41AADC92-B0E5-4A59-95A7-BDA70FDB25D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41AADC92-B0E5-4A59-95A7-BDA70FDB25D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41AADC92-B0E5-4A59-95A7-BDA70FDB25D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29407550-EE80-47AF-936A-84F531C23431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29407550-EE80-47AF-936A-84F531C23431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29407550-EE80-47AF-936A-84F531C23431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29407550-EE80-47AF-936A-84F531C23431}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

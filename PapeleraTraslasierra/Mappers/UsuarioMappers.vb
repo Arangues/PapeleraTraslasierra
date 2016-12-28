@@ -100,6 +100,7 @@ Public Class UsuarioMappers
     Private Shared Function ConvertirRowEnUsuario(row As DataRow) As Usuario
 
         Dim miUsuario As New Usuario(CStr(row("idUsuario")))
+        miUsuario.IdUsuario = CInt(row("idUsuario"))
         miUsuario.Usuario = row("Usuario").ToString()
         miUsuario.Password = row("Contraseña").ToString()
         miUsuario.Tipo = row("Tipo").ToString()
@@ -118,6 +119,48 @@ Public Class UsuarioMappers
             misUsuario.Add(unUsuario)
         Next
         Return misUsuario
+    End Function
+    Public Shared Function ObtenerUsuarioPorId(id As Integer) As Usuario
+        If id < 0 Then
+            Throw New Exception("el numero de usuario no es valido.")
+        End If
+
+        Dim NombreStoreProcedure As String = "ObtenerUsuarioPorId"
+
+        Dim misParametros As New List(Of SqlParameter)()
+
+        misParametros.Add(New SqlParameter("@idUsuario", id))
+
+
+
+        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
+
+
+        Return ConvertirRowEnUsuario(datos.Rows(0))
+    End Function
+    Public Shared Function CargarComboTipo(ByVal comboactual As Object)
+        Try
+
+            Dim conexion As New ConexionDB
+            Dim objComando As New SqlCommand("CargarComboTipo", conexion.Conexion)
+            objComando.CommandType = CommandType.StoredProcedure
+            Dim objDataTable As New Data.DataTable
+            Dim objDataAdapter As New SqlDataAdapter(objComando)
+            objDataAdapter.Fill(objDataTable)
+            With comboactual
+                .DataSource = objDataTable
+                .DisplayMember = "NombreTipoUsuario"
+                .ValueMember = "idTipoUsuario"
+
+            End With
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+
+
+        End Try
+        Return True
     End Function
 
 End Class

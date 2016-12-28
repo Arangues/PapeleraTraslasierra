@@ -20,37 +20,40 @@ Public Class FacturaMappers
     Public Shared Sub InsertarFactura(nuevaFactura As Factura)
 
         If nuevaFactura Is Nothing Then
-            Throw New Exception("Debe especificar un Factura a dar de alta")
-        End If
+                Throw New Exception("Debe especificar un Factura a dar de alta")
+            End If
+
+            Dim NombreStoreProcedure As String = "InsertarFactura"
+
+            Dim misParametros As New List(Of SqlParameter)()
+
+            Dim parametroRetorno As New SqlParameter("@idFactura", SqlDbType.Int)
+            parametroRetorno.Direction = ParameterDirection.Output
+
+            misParametros.Add(parametroRetorno)
+
+            misParametros.Add(New SqlParameter("@FacturaNumero", nuevaFactura.FacturaNumero))
+            misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
+            misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
+            misParametros.Add(New SqlParameter("@idCliente", nuevaFactura.Cliente.IdCliente))
+            misParametros.Add(New SqlParameter("@idUsuario", nuevaFactura.Usuario.IdUsuario))
+
+            ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
 
 
+            Dim FacturaId As Integer = CInt(parametroRetorno.Value)
 
-        Dim NombreStoreProcedure As String = "InsertarFactura"
+            nuevaFactura.AsignarFacturaId(FacturaId)
 
-        Dim misParametros As New List(Of SqlParameter)()
+           
 
-
-        Dim parametroRetorno As New SqlParameter("@idFactura", SqlDbType.Int)
-        parametroRetorno.Direction = ParameterDirection.Output
-
-        misParametros.Add(parametroRetorno)
-
-        misParametros.Add(New SqlParameter("@idFactura", nuevaFactura.IdFactura))
-        misParametros.Add(New SqlParameter("@FacturaNumero", nuevaFactura.FacturaNumero))
-        misParametros.Add(New SqlParameter("@Tipo", nuevaFactura.Tipo))
-        misParametros.Add(New SqlParameter("@Fecha", nuevaFactura.Fecha))
-        misParametros.Add(New SqlParameter("@FacturaTotal", nuevaFactura.FacturaTotal))
-        misParametros.Add(New SqlParameter("@Cliente", nuevaFactura.Cliente))
-        misParametros.Add(New SqlParameter("@Usuario", nuevaFactura.Usuario))
+            For Each d As FacturaDetalle In nuevaFactura.Detalle
+                d.IdFactura = FacturaId
+            Next
+            FacturaDetalleDetalleMappers.InsertarFacturaDetalle(nuevaFactura.Detalle)
+            nuevaFactura.AsignarFacturaId(FacturaId)
 
 
-        Dim FacturaId As Integer = CInt(parametroRetorno.Value)
-
-        For Each d As FacturaDetalle In nuevaFactura.Detalle
-            d.IdFactura = FacturaId
-        Next
-        FacturaDetalleDetalleMappers.InsertarFacturaDetalle(nuevaFactura.Detalle)
-        nuevaFactura.AsignarFacturaId(FacturaId)
     End Sub
 
     Public Shared Sub InsertarFactura(nuevaFactura As List(Of Factura))
@@ -85,33 +88,57 @@ Public Class FacturaMappers
     End Sub
 
 
+    Public Shared Sub EliminarFactura(factura As Factura)
+        If factura Is Nothing Then
+            Throw New Exception("Debe especificar que Factura desea eliminar")
+        End If
+        ' nuevaFactura.Validador()
+
+        Dim NombreStoreProcedure As String = "EliminarFacturaDetalle"
+
+        Dim misParametros As New List(Of SqlParameter)()
+
+        misParametros.Add(New SqlParameter("@idFactura", factura.IdFactura))
+
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+
+        NombreStoreProcedure = "EliminarFactura"
+        ConexionDB.EjecutarProcedimientoAlmacenado(NombreStoreProcedure, misParametros)
+    End Sub
+
 
     Private Shared Function ConvertirRowEnFactura(row As DataRow) As Factura
 
         Dim miFactura As New Factura(CInt(row("IdFactura")))
-        miFactura.IdFactura = CInt(row("idFactura"))
-        miFactura.FacturaNumero = CInt(row("FacturaNumero"))
-        miFactura.Tipo = row("Tipo").ToString()
+            miFactura.IdFactura = CInt(row("idFactura"))
+            miFactura.FacturaNumero = CInt(row("FacturaNumero"))
+            miFactura.Tipo = row("Tipo").ToString()
         miFactura.Fecha = Convert.ToDateTime(row("Fecha"))
-        miFactura.FacturaTotal = Convert.ToDecimal(row("FacturaTotal"))
-        miFactura.Cliente = row("Cliente").ToString()
-        miFactura.Usuario = row("Usuario").ToString()
+        miFactura.Detalle = FacturaDetalleDetalleMappers.obtenerFacturaDetallePorIdFactura(row("idFactura"))
+        miFactura.Cliente = ClienteMappers.ObtenerClientePorId(row("idCLiente"))
+        miFactura.Usuario = UsuarioMappers.ObtenerUsuarioPorId(row("idUsuario"))
 
         Return miFactura
+
+
     End Function
+
+
 
     Private Shared Function ConvertirRowEnFactura(rows As DataRowCollection) As List(Of Factura)
 
         Dim misFacturas As New List(Of Factura)()
-        For Each registro As DataRow In rows
+            For Each registro As DataRow In rows
 
-            Dim unFactura As Factura = Nothing
+                Dim unFactura As Factura = Nothing
 
-            unFactura = ConvertirRowEnFactura(registro)
+                unFactura = ConvertirRowEnFactura(registro)
 
-            misFacturas.Add(unFactura)
-        Next
-        Return misFacturas
+                misFacturas.Add(unFactura)
+            Next
+            Return misFacturas
+
+
     End Function
 
 
@@ -137,22 +164,16 @@ Public Class FacturaMappers
         Return ConvertirRowEnFactura(datos.Rows)
     End Function
 
-    Public Shared Function ObtenerUltimmoNumeroFactura(FacturaNumero As String) As Factura
-        If FacturaNumero.Length <= 0 Then
-            Throw New Exception("Error el numero de factura")
-        End If
+    Public Shared Function ObtenerUltimmoNumeroFactura() As Integer
+
 
         Dim NombreStoreProcedure As String = "ObtenerNumeroFactura"
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@FacturaNumero", FacturaNumero))
-
-
-
         Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
 
 
-        Return ConvertirRowEnFactura(datos.Rows(0))
+        Return (datos.Rows(0)("FacturaNumero"))
     End Function
 
     Public Shared Function ObtenerFacturaPorId(id As Integer) As Factura
@@ -164,7 +185,7 @@ Public Class FacturaMappers
 
         Dim misParametros As New List(Of SqlParameter)()
 
-        misParametros.Add(New SqlParameter("@FacturaId", id))
+        misParametros.Add(New SqlParameter("@idFactura", id))
 
 
 
@@ -174,29 +195,23 @@ Public Class FacturaMappers
         Return ConvertirRowEnFactura(datos.Rows(0))
     End Function
 
-    Public Shared Function CargarComboClientes(ByVal comboactual As Object)
-        Try
+    Public Shared Function obtenerFacturaDetallePorIdFactura(id As Integer) As Factura
+        If id < 0 Then
+            Throw New Exception("el numero de documento no es valido.")
+        End If
 
-            Dim conexion As New ConexionDB
-            Dim objComando As New SqlCommand("ClienteCargarCombo", conexion.Conexion)
-            objComando.CommandType = CommandType.StoredProcedure
-            Dim objDataTable As New Data.DataTable
-            Dim objDataAdapter As New SqlDataAdapter(objComando)
-            objDataAdapter.Fill(objDataTable)
-            With comboactual
-                .DataSource = objDataTable
-                .DisplayMember = "Nombre"
-                .ValueMember = "idCLiente"
+        Dim NombreStoreProcedure As String = "obtenerFacturaDetallePorIdFactura"
 
-            End With
+        Dim misParametros As New List(Of SqlParameter)()
 
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        Finally
+        misParametros.Add(New SqlParameter("@idFactura", id))
 
 
-        End Try
-        Return True
+
+        Dim datos As DataTable = ConexionDB.ObtenerDatos(NombreStoreProcedure, misParametros)
+
+
+        Return ConvertirRowEnFactura(datos.Rows(0))
     End Function
 
 
@@ -204,15 +219,15 @@ Public Class FacturaMappers
         Try
 
             Dim conexion As New ConexionDB
-            Dim objComando As New SqlCommand("TipoCargarCombo", conexion.Conexion)
+            Dim objComando As New SqlCommand("FacturaTipoCargarCombo", conexion.Conexion)
             objComando.CommandType = CommandType.StoredProcedure
             Dim objDataTable As New Data.DataTable
             Dim objDataAdapter As New SqlDataAdapter(objComando)
             objDataAdapter.Fill(objDataTable)
             With comboactual
                 .DataSource = objDataTable
-                .DisplayMember = "Tipo"
-                .ValueMember = "idTipo"
+                .DisplayMember = "tipo"
+                .ValueMember = "tipo"
 
             End With
 
@@ -223,6 +238,9 @@ Public Class FacturaMappers
 
         End Try
         Return True
+
+
+
     End Function
 
     Public Shared Function CargarComboFiltroFactura(ByVal comboactual As Object)
@@ -251,18 +269,15 @@ Public Class FacturaMappers
     End Function
 
     Public Shared Function CargarComboFiltroUsuario(ByVal comboactual As Object)
+
         Try
 
-            Dim conexion As New ConexionDB
-            Dim objComando As New SqlCommand("CargarComboFiltroUsuario", conexion.Conexion)
-            objComando.CommandType = CommandType.StoredProcedure
-            Dim objDataTable As New Data.DataTable
-            Dim objDataAdapter As New SqlDataAdapter(objComando)
-            objDataAdapter.Fill(objDataTable)
+            Dim misClientes = Mappers.UsuarioMappers.ObtenerTodos()
+
             With comboactual
-                .DataSource = objDataTable
-                .DisplayMember = "NombrFiltro"
-                .ValueMember = "idFacturaFiltros"
+                .DataSource = misClientes
+                .DisplayMember = "Usuario"
+                .ValueMember = "Usuario"
 
             End With
 
@@ -273,6 +288,8 @@ Public Class FacturaMappers
 
         End Try
         Return True
+
+
     End Function
 
 
@@ -289,6 +306,7 @@ Public Class FacturaMappers
             MsgBox(ex.Message)
         End Try
     End Function
+
 
 
 

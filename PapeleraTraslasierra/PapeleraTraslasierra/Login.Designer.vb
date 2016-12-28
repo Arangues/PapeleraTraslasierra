@@ -33,6 +33,7 @@ Partial Class Login
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox = New System.Windows.Forms.PictureBox()
+        Me.CerrarButton = New System.Windows.Forms.Button()
         CType(Me.PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -119,6 +120,16 @@ Partial Class Login
         Me.PictureBox.TabIndex = 12
         Me.PictureBox.TabStop = False
         '
+        'CerrarButton
+        '
+        Me.CerrarButton.BackColor = System.Drawing.Color.SkyBlue
+        Me.CerrarButton.Location = New System.Drawing.Point(389, 13)
+        Me.CerrarButton.Name = "CerrarButton"
+        Me.CerrarButton.Size = New System.Drawing.Size(53, 23)
+        Me.CerrarButton.TabIndex = 38
+        Me.CerrarButton.Text = "Cerrar"
+        Me.CerrarButton.UseVisualStyleBackColor = False
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -126,6 +137,7 @@ Partial Class Login
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(454, 230)
+        Me.Controls.Add(Me.CerrarButton)
         Me.Controls.Add(Me.ContraseñaTexBox)
         Me.Controls.Add(Me.UsuarioTextBox)
         Me.Controls.Add(Me.IniciadoLabel)
@@ -152,4 +164,5 @@ Partial Class Login
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer2 As Timer
     Friend WithEvents PictureBox As PictureBox
+    Friend WithEvents CerrarButton As Button
 End Class

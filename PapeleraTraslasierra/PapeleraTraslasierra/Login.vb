@@ -24,8 +24,7 @@ Public Class Login
     Private _tipo As String
     Dim contador As Byte = 4
     Private Shared _cargarLista As Boolean = True
-    Private Dispositivos As FilterInfoCollection
-    Private FuenteDeVideo As VideoCaptureDevice
+
 
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -37,7 +36,7 @@ Public Class Login
         ContraseñaTexBox.Hide()
         PictureBox.Hide()
         IngresarButton.Hide()
-
+        CerrarButton.Hide()
 
 
 
@@ -75,18 +74,18 @@ Public Class Login
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If ProgressBar1.Value = 100 Then
-            ' Me.Opacity -= 0.07
-            '  If Me.Opacity = 0.0 Then
+
             Timer1.Enabled = False
             UsuarioTextBox.Show()
             ContraseñaTexBox.Show()
             PictureBox.Show()
             IngresarButton.Show()
+            CerrarButton.Show()
             UsuarioTextBox.Focus()
 
 
             ProgressBar1.Hide()
-            'End If
+
         Else
             ProgressBar1.Value += 2
             If ProgressBar1.Value = contador Then
@@ -131,6 +130,8 @@ Public Class Login
 
             Me.Show()
 
+
+
         Else
             MsgBox("El usuario o la contraseña son incorrectas")
         End If
@@ -138,7 +139,7 @@ Public Class Login
 
     End Sub
 
-
-
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles CerrarButton.Click
+        Me.Close()
+    End Sub
 End Class

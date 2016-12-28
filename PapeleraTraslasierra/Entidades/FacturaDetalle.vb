@@ -1,11 +1,10 @@
 ﻿Public Class FacturaDetalle
     Dim idFacturaDetalle_ As Integer
     Dim idFactura_ As Integer
-    Dim idArticulo_ As Integer
-    Dim nombre_ As String
+    Dim Articulo_ As Articulo
     Dim precio_ As Decimal
     Dim cantidad_ As Integer
-    Dim total_ As Decimal
+
 
     Public Sub New()
     End Sub
@@ -31,22 +30,20 @@
         End Set
     End Property
 
-    Public Property IdArticulo As Integer
+    Public Property Articulo As Articulo
         Get
-            Return idArticulo_
+            Return Articulo_
         End Get
-        Set(value As Integer)
-            idArticulo_ = value
+        Set(value As Articulo)
+            Articulo_ = value
         End Set
     End Property
 
-    Public Property Nombre As String
+    Public ReadOnly Property NombreArticulo
         Get
-            Return nombre_
+            Return IIf(Articulo_ Is Nothing, "", Articulo_.Nombre)
         End Get
-        Set(value As String)
-            nombre_ = value
-        End Set
+
     End Property
 
     Public Property Precio As Decimal
@@ -67,13 +64,12 @@
         End Set
     End Property
 
-    Public Property Total As Decimal
+    Public ReadOnly Property Total As Decimal
         Get
-            Return total_
+            Return cantidad_ * precio_
         End Get
-        Set(value As Decimal)
-            total_ = value
-        End Set
+
+
     End Property
 
     Public Sub AsignarFacturaDetalleId(nuevoIdFacturaDtalle As Integer)
@@ -82,6 +78,6 @@
 
 End Class
 
-Public Class DetalleFacturaList
+Public Class FacturaDetalleList
     Inherits List(Of FacturaDetalle)
 End Class
